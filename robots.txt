@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://beyondelastic.github.io/sitemap.xml
