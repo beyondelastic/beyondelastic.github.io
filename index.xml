@@ -7,7 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Alexander Ullah</copyright>
-    <lastBuildDate>Thu, 30 Jan 2025 16:12:50 +0100</lastBuildDate><atom:link href="https://beyondelastic.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Jan 2025 16:29:42 +0100</lastBuildDate><atom:link href="https://beyondelastic.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Disclaimer</title>
+      <link>https://beyondelastic.github.io/disclaimer/</link>
+      <pubDate>Thu, 30 Jan 2025 16:29:42 +0100</pubDate>
+      
+      <guid>https://beyondelastic.github.io/disclaimer/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Author</title>
+      <link>https://beyondelastic.github.io/author/</link>
+      <pubDate>Thu, 30 Jan 2025 16:11:50 +0100</pubDate>
+      
+      <guid>https://beyondelastic.github.io/author/</guid>
+      <description></description>
+      
+    </item>
     
   </channel>
 </rss>
