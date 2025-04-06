@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="dark"
+  data-auto-appearance="true"><head>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>Azure AI Agent Service &middot; BeyondElastic</title>
+  <meta name="title" content="Azure AI Agent Service &middot; BeyondElastic" />
+  
+  
+  
+  
+  
+  <link rel="canonical" href="https://beyondelastic.github.io/posts/agent/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.c9b6c5bad9d9b9a8f5b3bd6daf0b1c10c381f761b86dc05093ace16f3fdf1194cc780925f423b9d64a5e34aaf208419bef714c3e8da1939da826dbb870a6f072.css"
+    integrity="sha512-ybbFutnZuaj1s71trwscEMOB92G4bcBQk6zhbz/fEZTMeAkl9CO51kpeNKryCEGb73FMPo2hk52oJtu4cKbwcg==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.c178288131a2f1ad46910438db47ac5f7e1c48cf949e49f6dc3310c8ec9660e23fe505805eba4e2e73711335808500360d773a2b64322feb35df52856edca286.js"
+    integrity="sha512-wXgogTGi8a1GkQQ420esX34cSM&#43;Unkn23DMQyOyWYOI/5QWAXrpOLnNxEzWAhQA2DXc6K2QyL&#43;s131KFbtyihg==" data-copy="" data-copied=""></script>
+  
+  
+  
+  <script src="/lib/zoom/zoom.min.37d2094687372da3f7343a221a470f6b8806f7891aa46a5a03966af7f0ebd38b9fe536cb154e6ad28f006d184b294525a7c4054b6bbb4be62d8b453b42db99bd.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S&#43;Yti0U7QtuZvQ=="></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="https://beyondelastic.github.io/posts/agent/">
+  <meta property="og:site_name" content="BeyondElastic">
+  <meta property="og:title" content="Azure AI Agent Service">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-04-02T13:15:46+02:00">
+    <meta property="article:modified_time" content="2025-04-02T13:15:46+02:00">
+    <meta property="og:image" content="https://beyondelastic.github.io/posts/agent/featured.png">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://beyondelastic.github.io/posts/agent/featured.png">
+  <meta name="twitter:title" content="Azure AI Agent Service">
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "Azure AI Agent Service",
+    "headline": "Azure AI Agent Service",
+    
+    
+    "inLanguage": "en",
+    "url" : "https:\/\/beyondelastic.github.io\/posts\/agent\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Alexander Ullah"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-04-02T13:15:46\u002b02:00",
+    "datePublished": "2025-04-02T13:15:46\u002b02:00",
+    
+    "dateModified": "2025-04-02T13:15:46\u002b02:00",
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "1529"
+  }]
+  </script>
+
+
+  
+  
+  <meta name="author" content="Alexander Ullah" />
+  
+  
+  
+  <link href="mailto:alexander.ullah@gmail.com" rel="me" />
+  
+  
+  <link href="https://github.com/beyondelastic" rel="me" />
+  
+  
+  <link href="https://www.linkedin.com/in/alexander-ullah-a278a0b7/" rel="me" />
+  
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  <meta name="theme-color"/>
+  
+  
+</head>
+<body
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+  <div id="the-top" class="absolute flex self-center">
+    <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+      href="#main-content"><span
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a>
+  </div>
+  
+  
+  <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
+    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3">
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">BeyondElastic</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="Posts">
+        Posts
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/author/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="Author">
+        Author
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/disclaimer/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="Disclaimer">
+        Disclaimer
+    </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class=" flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" style="padding-top:5px;"
+                class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li id="menu-close-button">
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="Posts">
+            Posts
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/author/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="Author">
+            Author
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/disclaimer/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="Disclaimer">
+            Disclaimer
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+  
+  <div class="relative flex flex-col grow">
+    <main id="main-content" class="grow">
+      
+
+
+<article>
+  
+  
+  
+  
+  
+  
+
+
+
+
+    
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url(/posts/agent/featured_hu_d5599fb1cff5f177.png);">
+    
+
+
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+    </div>
+    <div
+        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
+    </div>
+</div>
+
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+<script>
+    window.addEventListener('scroll', function (e) {
+        var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        var background_blur = document.getElementById('background-blur');
+        background_blur.style.opacity = (scroll / 300)
+    });
+</script>
+
+  
+  
+
+  <header id="single_header" class="mt-5 max-w-prose">
+    
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      Azure AI Agent Service
+    </h1>
+    <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2025-04-02T13:15:46&#43;02:00">2 April 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1529 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">8 mins</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      
+      
+        
+        
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+    <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+      Author
+    </div>
+    <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+      Alexander Ullah
+    </div>
+    
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="mailto:alexander.ullah@gmail.com"
+          target="_blank"
+          aria-label="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/beyondelastic"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://www.linkedin.com/in/alexander-ullah-a278a0b7/"
+          target="_blank"
+          aria-label="Linkedin"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+      
+
+      
+
+      
+      <div class="mb-5"></div>
+      
+
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#requirements">Requirements</a>
+      <ul>
+        <li><a href="#prepare-infrastructure">Prepare infrastructure</a></li>
+        <li><a href="#prepare-local-dev-envrionment">Prepare local dev envrionment</a></li>
+      </ul>
+    </li>
+    <li><a href="#coding">Coding</a>
+      <ul>
+        <li><a href="#building-the-app">Building the app</a></li>
+        <li><a href="#running-the-app">Running the app</a></li>
+      </ul>
+    </li>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#resources">Resources</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#requirements">Requirements</a>
+      <ul>
+        <li><a href="#prepare-infrastructure">Prepare infrastructure</a></li>
+        <li><a href="#prepare-local-dev-envrionment">Prepare local dev envrionment</a></li>
+      </ul>
+    </li>
+    <li><a href="#coding">Coding</a>
+      <ul>
+        <li><a href="#building-the-app">Building the app</a></li>
+        <li><a href="#running-the-app">Running the app</a></li>
+      </ul>
+    </li>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#resources">Resources</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+</script>
+   </div>
+      </div>
+      
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+
+<h1 class="relative group">Intro to Azure AI Agent Service 
+    <div id="intro-to-azure-ai-agent-service" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#intro-to-azure-ai-agent-service" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>AI Agents are in talks, and we are going to take a look at the <strong>Azure AI Agent Service</strong>. Why should you care? Because AI Agents are the next evolution of AI-driven applications, and they will help you to automate and execute more complicated multistep tasks completely autonomously or with a human in a loop. Here are two blog posts that are worth reading to set the scene:</p>
+<ul>
+<li><a href="https://news.microsoft.com/source/features/ai/ai-agents-what-they-are-and-how-theyll-change-the-way-we-work/" target="_blank">AI agents — what they are, and how they’ll change the way we work</a></li>
+<li><a href="https://techcommunity.microsoft.com/blog/azure-ai-services-blog/introducing-azure-ai-agent-service/4298357" target="_blank">Introducing Azure AI Agent Service</a></li>
+</ul>
+<p>In this blog post, I will give you a short overview about what the Azure AI Agent Service is, what it can do for you, and how to quickly get started via the provided Python <a href="https://aka.ms/aifoundrysdk" target="_blank">Azure AI Foundry SDK</a>.</p>
+<p><strong>NOTE</strong>: At the time of writing, the Azure AI Agent Service is in public preview.</p>
+
+
+<h2 class="relative group">Overview 
+    <div id="overview" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#overview" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>The Azure <a href="https://learn.microsoft.com/en-us/azure/ai-services/agents/overview" target="_blank">Azure AI Agent Service</a> is part of <a href="https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-ai-foundry" target="_blank">Azure AI Foundry</a>. Azure AI Foundry is a unified AI platform that allows you to manage the whole lifecycle of your AI application. Key features, are:</p>
+<ul>
+<li>Rich model catalog (OpenAI, DeepSeek, Cohere, Meta, Mistral&hellip;)</li>
+<li>Deploy and experiment with different models in playgrounds</li>
+<li>Seamless Integration to other Azure services such as Azure OpenAI, Azure AI Services, and Azure AI Search</li>
+<li>Project Management with features for project creation, resource management, and access control</li>
+<li>Simplified coding experience with unified SDK</li>
+<li>Build and deploy AI agents with the Azure AI Agent Service</li>
+<li>and more&hellip;</li>
+</ul>
+<p>With the Azure AI Agent Service, Developers can easily build extensible AI Agents using out of the box tooling and integrations into Azure services. Some of the highlights are:</p>
+<ul>
+<li>Flexible model selection (not solely OpenAI models)</li>
+<li>Knowledge tools such as Azure AI Search, Grounding with Bing Search, Microsoft Fabric and file uploads</li>
+<li>Action tools such as OpenAPI 3.0 specified tools and Code Interpreter, Azure Functions and custom functions</li>
+<li>Conversation state management (providing consistent context)</li>
+<li>and more&hellip;</li>
+</ul>
+
+
+<h2 class="relative group">Requirements 
+    <div id="requirements" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#requirements" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>To start with Azure AI Agent Service, we first need to deploy the necessary Azure Services and create an Azure AI Foundry Hub and Project. Additionally, we will prepare our local development environment.</p>
+
+
+<h3 class="relative group">Prepare infrastructure 
+    <div id="prepare-infrastructure" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#prepare-infrastructure" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>In this blog post, we want to focus on how to use these services from a coding perspective. Hence, we are not going to cover the infrastructure deployment in much detail. However, we will simply use the provided bicep template from the Azure-Samples repository <a href="https://github.com/Azure-Samples/azureai-samples/tree/main/scenarios/Agents/setup/standard-agent" target="_blank">here</a>.</p>
+<p>After a successful deployment, we should see the following services in your resource group.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/agent/resources_hu_185ef519c9021348.png 330w,
+        /posts/agent/resources_hu_4be5a29f8ae3be1b.png 660w,
+        /posts/agent/resources_hu_1d3a679de3f44b7b.png 1024w,
+        /posts/agent/resources_hu_8b906ded3b722c65.png 2x"
+        src="/posts/agent/resources_hu_4be5a29f8ae3be1b.png"
+        alt="Azure Resources"
+      />
+      
+    </figure>
+</p>
+<p>The Azure AI Foundry portal can be found under <a href="https://ai.azure.com/" target="_blank">https://ai.azure.com/</a>. We should now have an Azure AI Foundry Hub and Project created for us.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/agent/foundry-hub_hu_7a753e61c551b360.png 330w,
+        /posts/agent/foundry-hub_hu_68d831fa50f69809.png 660w,
+        /posts/agent/foundry-hub_hu_65f504be7c174522.png 1024w,
+        /posts/agent/foundry-hub_hu_5f171af8f180758d.png 2x"
+        src="/posts/agent/foundry-hub_hu_68d831fa50f69809.png"
+        alt="Foundry Hub / Project"
+      />
+      
+    </figure>
+</p>
+<p>If you want to learn more about Azure AI Foundry Hubs and Projects, visit the documentation page <a href="https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources" target="_blank">here</a>.</p>
+<p>We can also view the connected resources that have been created as part of the deployment and can be used for the AI agents that we want to build.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/agent/project-resources_hu_db191b8c12f8cc0b.png 330w,
+        /posts/agent/project-resources_hu_873eb467fa6e5359.png 660w,
+        /posts/agent/project-resources_hu_c15166295e6cd87.png 1024w,
+        /posts/agent/project-resources_hu_c2f8c6d521067596.png 2x"
+        src="/posts/agent/project-resources_hu_873eb467fa6e5359.png"
+        alt="Connected resources"
+      />
+      
+    </figure>
+</p>
+
+
+<h3 class="relative group">Prepare local dev envrionment 
+    <div id="prepare-local-dev-envrionment" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#prepare-local-dev-envrionment" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>For our local development environment, we need to install the following packages:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pip install python-dotenv azure-ai-projects azure-identity 
+</span></span></code></pre></div><p>Next, we will use a local .env file to specify some variables to connect to our Azure AI Foundry Project.</p>
+<pre tabindex="0"><code>AZURE_AI_AGENT_PROJECT_CONNECTION_STRING=&#34;your_project_connection_string&#34;
+AZURE_AI_AGENT_MODEL_DEPLOYMENT_NAME=&#34;your_model_deployment&#34;
+</code></pre>
+
+<h2 class="relative group">Coding 
+    <div id="coding" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#coding" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>If everything is running we can start coding. My goal is to build an AI Agent that acts as a Basketball Assistant Coach. For those who don&rsquo;t know me, I am a big Basketball fan and combing two things that I love is pure excitement for me.</p>
+
+
+<h3 class="relative group">Building the app 
+    <div id="building-the-app" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#building-the-app" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>First we need to import the necessary classes from the SDK. In this case we are using the python SDK.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">azure.identity</span> <span class="kn">import</span> <span class="n">DefaultAzureCredential</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">azure.ai.projects</span> <span class="kn">import</span> <span class="n">AIProjectClient</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">azure.ai.projects.models</span> <span class="kn">import</span> <span class="n">CodeInterpreterTool</span><span class="p">,</span> <span class="n">FilePurpose</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+</span></span></code></pre></div><p>We will then load the variables from the .env file, and create the AIProjectClient and connect to our Azure AI Foundry Project.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># load environment variables from local .env file</span>
+</span></span><span class="line"><span class="cl"><span class="n">load_dotenv</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">PROJECT_CONNECTION_STRING</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&#34;AZURE_AI_AGENT_PROJECT_CONNECTION_STRING&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">MODEL_DEPLOYMENT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&#34;AZURE_AI_AGENT_MODEL_DEPLOYMENT_NAME&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># create ai project client</span>
+</span></span><span class="line"><span class="cl"><span class="n">project</span> <span class="o">=</span> <span class="n">AIProjectClient</span><span class="o">.</span><span class="n">from_connection_string</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="n">conn_str</span><span class="o">=</span><span class="n">PROJECT_CONNECTION_STRING</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">credential</span><span class="o">=</span><span class="n">DefaultAzureCredential</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">project_client</span><span class="p">:</span>
+</span></span></code></pre></div><p>We want our agent (Assistant Coach) to be able to analyze and interpret certain Basketball statistics. In this case, we are going to upload a csv file with statistics about 3-point shots from the NBA seasons 1996 until 2020. To achieve that, we will make use of the <a href="https://learn.microsoft.com/en-us/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&amp;pivots=code-example" target="_blank">CodeInterpreterTool</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="c1"># upload a file and add it to the client </span>
+</span></span><span class="line"><span class="cl">    <span class="n">file</span> <span class="o">=</span> <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">upload_file_and_poll</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">file_path</span><span class="o">=</span><span class="s2">&#34;nba3p.csv&#34;</span><span class="p">,</span> <span class="n">purpose</span><span class="o">=</span><span class="n">FilePurpose</span><span class="o">.</span><span class="n">AGENTS</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Uploaded file, file ID: </span><span class="si">{</span><span class="n">file</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># create a code interpreter tool instance referencing the uploaded file</span>
+</span></span><span class="line"><span class="cl">    <span class="n">code_interpreter</span> <span class="o">=</span> <span class="n">CodeInterpreterTool</span><span class="p">(</span><span class="n">file_ids</span><span class="o">=</span><span class="p">[</span><span class="n">file</span><span class="o">.</span><span class="n">id</span><span class="p">])</span>
+</span></span></code></pre></div><p>Now we can define the agent with instructions and tools.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="c1"># create an agent</span>
+</span></span><span class="line"><span class="cl">    <span class="n">agent</span> <span class="o">=</span> <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">create_agent</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">model</span><span class="o">=</span><span class="s2">&#34;gpt-4o-mini&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">name</span><span class="o">=</span><span class="s2">&#34;assistant-coach-agent&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">instructions</span><span class="o">=</span><span class="s2">&#34;You are a Basketball assistant coach that knows everything about the game of Basketball. You give advice about Basketball rules, training, statistics and strategies.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tools</span><span class="o">=</span><span class="n">code_interpreter</span><span class="o">.</span><span class="n">definitions</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tool_resources</span><span class="o">=</span><span class="n">code_interpreter</span><span class="o">.</span><span class="n">resources</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Using agent: </span><span class="si">{</span><span class="n">agent</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Next, we create a thread, which is basically the conversation between the user and the agent. In the message itself, we define the ask or task for our agent.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="c1"># create a thread with message</span>
+</span></span><span class="line"><span class="cl">    <span class="n">thread</span> <span class="o">=</span> <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">create_thread</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Thread created: </span><span class="si">{</span><span class="n">thread</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">message</span> <span class="o">=</span> <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">create_message</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">thread_id</span><span class="o">=</span><span class="n">thread</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">role</span><span class="o">=</span><span class="s2">&#34;user&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">content</span><span class="o">=</span><span class="s2">&#34;Could you please create a bar chart for 3Pointers made vs attempts during the NBA seasons 1996 until 2020 and save it as a .png file?&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span></code></pre></div><p>Almost done, we now have to specify the run or activation part in which the agent will perform our task. Additionally, we have to fetch the output in reversed chronological order, providing a clear view of the most recent interactions first.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="c1"># ask the agent to perform work on the thread</span>
+</span></span><span class="line"><span class="cl">    <span class="n">run</span> <span class="o">=</span> <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">create_and_process_run</span><span class="p">(</span><span class="n">thread_id</span><span class="o">=</span><span class="n">thread</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">agent_id</span><span class="o">=</span><span class="n">agent</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># fetch and print the conversation history including the last message</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Conversation Log:</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">messages</span> <span class="o">=</span> <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">list_messages</span><span class="p">(</span><span class="n">thread_id</span><span class="o">=</span><span class="n">thread</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">message_data</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">messages</span><span class="o">.</span><span class="n">data</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">last_message_content</span> <span class="o">=</span> <span class="n">message_data</span><span class="o">.</span><span class="n">content</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">message_data</span><span class="o">.</span><span class="n">role</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">last_message_content</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>The agent should generate a graph png that we want to look at. Hence, we have to download the file with the following code snippet.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="c1"># fetch any generated files</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">file_path_annotation</span> <span class="ow">in</span> <span class="n">messages</span><span class="o">.</span><span class="n">file_path_annotations</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">save_file</span><span class="p">(</span><span class="n">file_id</span><span class="o">=</span><span class="n">file_path_annotation</span><span class="o">.</span><span class="n">file_path</span><span class="o">.</span><span class="n">file_id</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="n">file_path_annotation</span><span class="o">.</span><span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;File saved as </span><span class="si">{</span><span class="n">Path</span><span class="p">(</span><span class="n">file_path_annotation</span><span class="o">.</span><span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Lastly, we should clean up and delete the agent and the thread.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="c1"># clean up</span>
+</span></span><span class="line"><span class="cl">    <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">delete_agent</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">delete_thread</span><span class="p">(</span><span class="n">thread</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span></span></code></pre></div>
+
+<h3 class="relative group">Running the app 
+    <div id="running-the-app" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#running-the-app" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>Note</strong>: The code snippets above should just give you an overview of the Azure AI Agent Service and are not representing a production-grade application. Error handling, logging, config management and reusability are just some things you need to add to your final application code. Nevertheless, you can find the application code and the used files on my GitHub repo <a href="https://github.com/beyondelastic/basketball-ai-agent/tree/main" target="_blank">here</a>.</p>
+<p>Let&rsquo;s run our code and see the results.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">(</span>.venv<span class="o">)</span> ➜  basketball-ai-agent python main.py
+</span></span><span class="line"><span class="cl">Uploaded file, file ID: assistant-J7sVvG3wVZXRkXHwSxELJY
+</span></span><span class="line"><span class="cl">Using agent: assistant-coach-agent
+</span></span><span class="line"><span class="cl">Thread created: thread_zqMD7857xH4zsKwN6olVvkmx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Conversation Log:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">MessageRole.USER: Could you please create a bar chart <span class="k">for</span> 3Pointers made vs attempts during the NBA seasons <span class="m">1996</span> <span class="k">until</span> <span class="m">2020</span> and save it as a .png file?
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">MessageRole.AGENT: Let<span class="s1">&#39;s start by examining the contents of the uploaded file to understand the data it contains. After that, we can create the bar chart for 3-pointers made versus attempts for the NBA seasons from 1996 to 2020.
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">MessageRole.AGENT: The uploaded data contains the following columns:
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">- **NBASeasons**: The season year.
+</span></span></span><span class="line"><span class="cl"><span class="s1">- **3PointersMade**: The number of 3-pointers made.
+</span></span></span><span class="line"><span class="cl"><span class="s1">- **3PointersAttempts**: The number of 3-pointers attempted.
+</span></span></span><span class="line"><span class="cl"><span class="s1">- **3PointersPercentage**: The percentage of successful 3-point shots.
+</span></span></span><span class="line"><span class="cl"><span class="s1">- **3PointersPercentageShareInTotalPoints**: The share of 3-pointers in total points.
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">We&#39;</span>ll create a bar chart comparing the number of 3-pointers made versus the number of 3-pointers attempted <span class="k">for</span> the NBA seasons from <span class="m">1996</span> to 2020. Let<span class="err">&#39;</span>s proceed with that.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">MessageRole.AGENT: Here is the bar chart comparing 3-pointers made versus 3-pointers attempted from the NBA seasons <span class="m">1996</span> to 2020. 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">You can download it using the link below:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Download the chart<span class="o">](</span>sandbox:/mnt/data/3_pointers_made_vs_attempts_1996_2020.png<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">File saved as 3_pointers_made_vs_attempts_1996_2020.png
+</span></span></code></pre></div><p>During the execution of our app, we can see the agent and thread getting created in Azure AI Foundry portal.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/agent/agents_hu_e32ad5cd96d8d543.jpg 330w,
+        /posts/agent/agents_hu_c83c1b71080605a2.jpg 660w,
+        /posts/agent/agents_hu_18ec5a24944bd1eb.jpg 1024w,
+        /posts/agent/agents_hu_81d3a7d077a35193.jpg 2x"
+        src="/posts/agent/agents_hu_c83c1b71080605a2.jpg"
+        alt="Agents"
+      />
+      
+    </figure>
+
+
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/agent/threads_hu_51b994ffda196a8e.png 330w,
+        /posts/agent/threads_hu_29668fffb4a07ad.png 660w,
+        /posts/agent/threads_hu_3b3348c2da4707b2.png 1024w,
+        /posts/agent/threads_hu_c2f5f4dde35c2ffe.png 2x"
+        src="/posts/agent/threads_hu_29668fffb4a07ad.png"
+        alt="Threads"
+      />
+      
+    </figure>
+</p>
+<p>After the run the agent and the thread will be deleted due to our clean-up code. If you want to keep it for troubleshooting proposes, just comment or remove the clean-up section.</p>
+<p>In the Agents view we can also see the Code Interpreter got added as action tool for our agent, and we can see the file we have uploaded.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/agent/action-tools_hu_d5dc79144eedb827.jpg 330w,
+        /posts/agent/action-tools_hu_2f1be00c835d4c27.jpg 660w,
+        /posts/agent/action-tools_hu_dbd5c0d8edda52c6.jpg 1024w,
+        /posts/agent/action-tools_hu_649e06bb97138fcd.jpg 2x"
+        src="/posts/agent/action-tools_hu_2f1be00c835d4c27.jpg"
+        alt="Action tools"
+      />
+      
+    </figure>
+
+
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/agent/files-uploaded_hu_cc0794595ce68191.png 330w,
+        /posts/agent/files-uploaded_hu_52eb60017775d1c5.png 660w,
+        /posts/agent/files-uploaded_hu_8a53bbdbece60692.png 1024w,
+        /posts/agent/files-uploaded_hu_819197a574fc980c.png 2x"
+        src="/posts/agent/files-uploaded_hu_52eb60017775d1c5.png"
+        alt="Files uploaded"
+      />
+      
+    </figure>
+</p>
+<p>Let&rsquo;s check the results. The graph generated is correct and shows quite a raise in 3 Pointers made and attempts. Thanks <a href="https://de.wikipedia.org/wiki/Stephen_Curry" target="_blank">Steph Curry</a>.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/agent/3_pointers_made_vs_attempts_1996_2020_hu_a246e3267b377cac.png 330w,
+        /posts/agent/3_pointers_made_vs_attempts_1996_2020_hu_40972943d75f437f.png 660w,
+        /posts/agent/3_pointers_made_vs_attempts_1996_2020_hu_c1026cd5a4542afd.png 1024w,
+        /posts/agent/3_pointers_made_vs_attempts_1996_2020_hu_e4c9b2b81fda4509.png 2x"
+        src="/posts/agent/3_pointers_made_vs_attempts_1996_2020_hu_40972943d75f437f.png"
+        alt="3Pointers Graph"
+      />
+      
+    </figure>
+</p>
+
+
+<h2 class="relative group">Summary 
+    <div id="summary" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#summary" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>The Azure AI Agent Service allows you to quickly and with less effort build, deploy and manage AI Agents. The comprehensive out of the box toolkit and the possibility to select different models give Developers the flexibility they need to develop agent-based AI apps that can successfully accomplish complex tasks.</p>
+<p>The Azure AI Agent Service can also easily be used with multi-agent frameworks such as <a href="https://learn.microsoft.com/en-us/semantic-kernel/overview/" target="_blank">Semantic Kernel</a>. Stay tuned for another blog post about multi-agent apps.</p>
+
+
+<h2 class="relative group">Resources 
+    <div id="resources" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#resources" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li><a href="https://news.microsoft.com/source/features/ai/ai-agents-what-they-are-and-how-theyll-change-the-way-we-work/" target="_blank">AI agents — what they are, and how they’ll change the way we work</a></li>
+<li><a href="https://techcommunity.microsoft.com/blog/azure-ai-services-blog/introducing-azure-ai-agent-service/4298357" target="_blank">Introducing Azure AI Agent Service</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/ai-services/agents/overview" target="_blank">What is Azure AI Agent Service</a></li>
+<li><a href="https://github.com/Azure-Samples/azureai-samples/tree/main/scenarios/Agents/setup/standard-agent" target="_blank">Azure AI Agent standard deployment via bicep template from Azure AI Samples repository</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&amp;pivots=code-example" target="_blank">Azure AI Agent Code Interpreter</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-ai-foundry" target="_blank">What is Azure AI Foundry</a></li>
+<li><a href="https://aka.ms/aifoundrysdk" target="_blank">Azure AI Foundry SDK</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources" target="_blank">Azure AI Foundry Hubs and Projects </a></li>
+</ul>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+        
+
+          
+      </div>
+     
+      
+      
+        
+        
+          
+          
+        
+      <script>
+        var oid = "views_posts\/agent\/index.md"
+        var oid_likes = "likes_posts\/agent\/index.md"
+      </script>
+      
+      
+      <script type="text/javascript" src="/js/page.min.0860cf4e04fa2d72cc33ddba263083464d48f67de06114529043cb4623319efed4f484fd7f1730df5abea0e2da6f3538855634081d02f2d6e920b956f063e823.js" integrity="sha512-CGDPTgT6LXLMM926JjCDRk1I9n3gYRRSkEPLRiMxnv7U9IT9fxcw31q&#43;oOLabzU4hVY0CB0C8tbpILlW8GPoIw=="></script>
+      
+  
+    </section>
+  <footer class="pt-8 max-w-prose print:hidden">
+
+    
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/intro-post/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Intro Post</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-01-30T16:12:50&#43;01:00">30 January 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+    
+  </footer>
+</article>
+
+      <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top" title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+    </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+
+    
+    
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">
+      &copy;
+      2025
+      Alexander Ullah
+    </p>
+    
+
+    
+    
+    <p class="text-xs text-neutral-500 dark:text-neutral-400">
+      
+      
+      Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+    </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script>
+  
+  
+  <script type="text/javascript" src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js" integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url="https://beyondelastic.github.io/"
+  style="z-index:500"
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+  </div>
+</body>
+
+</html>
