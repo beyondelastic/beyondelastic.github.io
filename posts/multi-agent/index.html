@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Semantic Kernel and Multi-Agent AI Apps &middot; BeyondElastic</title>
-  <meta name="title" content="Semantic Kernel and Multi-Agent AI Apps &middot; BeyondElastic" />
+  <title>Intro to Semantic Kernel and Multi-Agent AI Apps &middot; BeyondElastic</title>
+  <meta name="title" content="Intro to Semantic Kernel and Multi-Agent AI Apps &middot; BeyondElastic" />
   
   
   <meta name="keywords" content="Agents, Foundry, Azure, Semantic Kernel, Multi-Agent, " />
@@ -66,7 +66,7 @@
   
   <meta property="og:url" content="https://beyondelastic.github.io/posts/multi-agent/">
   <meta property="og:site_name" content="BeyondElastic">
-  <meta property="og:title" content="Semantic Kernel and Multi-Agent AI Apps">
+  <meta property="og:title" content="Intro to Semantic Kernel and Multi-Agent AI Apps">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -82,7 +82,7 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://beyondelastic.github.io/posts/multi-agent/featured.png">
-  <meta name="twitter:title" content="Semantic Kernel and Multi-Agent AI Apps">
+  <meta name="twitter:title" content="Intro to Semantic Kernel and Multi-Agent AI Apps">
 
   
   <script type="application/ld+json">
@@ -90,8 +90,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Semantic Kernel and Multi-Agent AI Apps",
-    "headline": "Semantic Kernel and Multi-Agent AI Apps",
+    "name": "Intro to Semantic Kernel and Multi-Agent AI Apps",
+    "headline": "Intro to Semantic Kernel and Multi-Agent AI Apps",
     
     
     "inLanguage": "en",
@@ -519,7 +519,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Semantic Kernel and Multi-Agent AI Apps
+      Intro to Semantic Kernel and Multi-Agent AI Apps
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -767,7 +767,7 @@
     <li><a href="#background">Background</a></li>
     <li><a href="#requirements">Requirements</a>
       <ul>
-        <li><a href="#prepare-local-dev-envrionment">Prepare local dev envrionment</a></li>
+        <li><a href="#prepare-local-dev-environment">Prepare local dev environment</a></li>
       </ul>
     </li>
     <li><a href="#coding">Coding</a>
@@ -794,7 +794,7 @@
     <li><a href="#background">Background</a></li>
     <li><a href="#requirements">Requirements</a>
       <ul>
-        <li><a href="#prepare-local-dev-envrionment">Prepare local dev envrionment</a></li>
+        <li><a href="#prepare-local-dev-environment">Prepare local dev environment</a></li>
       </ul>
     </li>
     <li><a href="#coding">Coding</a>
@@ -850,13 +850,13 @@
         <div class="article-content max-w-prose mb-20">
           
 
-<h1 class="relative group">Intro to Semantic Kernel and Multi-Agent AI Apps 
-    <div id="intro-to-semantic-kernel-and-multi-agent-ai-apps" class="anchor"></div>
+<h1 class="relative group">Intro 
+    <div id="intro" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#intro-to-semantic-kernel-and-multi-agent-ai-apps" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a>
     </span>        
     
 </h1>
@@ -898,13 +898,13 @@
 <p>As an execution engine, we will use the Azure AI Agent Service. We are not going to cover the infrastructure requirements in this blog post. Nevertheless, if you want to get started quickly, simply deploy this <a href="https://github.com/Azure-Samples/azureai-samples/tree/main/scenarios/Agents/setup/standard-agent" target="_blank">bicep template</a> for an standard Azure AI Agent deployment.</p>
 
 
-<h3 class="relative group">Prepare local dev envrionment 
-    <div id="prepare-local-dev-envrionment" class="anchor"></div>
+<h3 class="relative group">Prepare local dev environment 
+    <div id="prepare-local-dev-environment" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#prepare-local-dev-envrionment" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#prepare-local-dev-environment" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -926,6 +926,22 @@ AZURE_AI_AGENT_MODEL_DEPLOYMENT_NAME=&#34;your_model_deployment&#34;
     
 </h2>
 <p>My goal is to create multiple AI agents that act as Basketball coaches. A Head Coach and an Assistant Coach that will exchange ideas and come up with a game plan for a specific game situation.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/multi-agent/group-chat_hu_3c886c4ae94df677.png 330w,
+        /posts/multi-agent/group-chat_hu_8e9c42c8100fb916.png 660w,
+        /posts/multi-agent/group-chat_hu_43c9e31e8f876b4c.png 1024w,
+        /posts/multi-agent/group-chat_hu_a72ccac531dde71e.png 2x"
+        src="/posts/multi-agent/group-chat_hu_8e9c42c8100fb916.png"
+        alt="group-chat"
+      />
+      
+    </figure>
+</p>
 <p>For this blog, we will keep it very simple and don&rsquo;t play too much with plugins or extensions. We just want to create a group chat with specialized agents.</p>
 
 
@@ -1152,6 +1168,7 @@ AZURE_AI_AGENT_MODEL_DEPLOYMENT_NAME=&#34;your_model_deployment&#34;
 <li><a href="https://github.com/Azure-Samples/azureai-samples/tree/main/scenarios/Agents/setup/standard-agent" target="_blank">Azure AI Agent standard setup bicep template</a></li>
 <li><a href="https://beyondelastic.github.io/posts/agent/" target="_blank">Intro to Azure AI Agent Service</a></li>
 <li><a href="https://learn.microsoft.com/en-us/training/modules/ai-agent-fundamentals/" target="_blank">Microsoft Learn AI Agent Fundamentals</a></li>
+<li><a href="https://devblogs.microsoft.com/semantic-kernel/introducing-agents-in-semantic-kernel/" target="_blank">Introducing enterprise multi-agent support in Semantic Kernel</a></li>
 <li><a href="https://devblogs.microsoft.com/semantic-kernel/semantic-kernel-agents-are-now-generally-available/" target="_blank">Semantic Kernel Agents are now Generally Available</a></li>
 </ul>
 
@@ -1209,7 +1226,7 @@ AZURE_AI_AGENT_MODEL_DEPLOYMENT_NAME=&#34;your_model_deployment&#34;
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Azure AI Agent Service</span
+                  >Intro to Azure AI Agent Service</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
