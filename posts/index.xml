@@ -10,6 +10,16 @@
     <lastBuildDate>Thu, 10 Apr 2025 09:15:23 +0100</lastBuildDate><atom:link href="https://beyondelastic.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Multi Agent</title>
+      <link>https://beyondelastic.github.io/posts/multi-agent/</link>
+      <pubDate>Thu, 10 Apr 2025 09:15:23 +0100</pubDate>
+      
+      <guid>https://beyondelastic.github.io/posts/multi-agent/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://beyondelastic.github.io/posts/multi-agent/featured.png" />
+    </item>
+    
+    <item>
       <title>Azure AI Agent Service</title>
       <link>https://beyondelastic.github.io/posts/agent/</link>
       <pubDate>Wed, 02 Apr 2025 13:15:46 +0200</pubDate>
