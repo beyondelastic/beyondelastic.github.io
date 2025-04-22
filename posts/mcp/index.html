@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Copilot &middot; BeyondElastic</title>
-  <meta name="title" content="Copilot &middot; BeyondElastic" />
+  <title>Intro to the Model Context Protocol &middot; BeyondElastic</title>
+  <meta name="title" content="Intro to the Model Context Protocol &middot; BeyondElastic" />
   
   
+  <meta name="keywords" content="Agents, MCP, Azure, Copilot, VS Code, GitHub, " />
   
   
-  
-  <link rel="canonical" href="http://localhost:1313/posts/copilot/" />
+  <link rel="canonical" href="http://localhost:1313/posts/mcp/" />
   
   
   
@@ -64,18 +64,26 @@
   
   
   
-  <meta property="og:url" content="http://localhost:1313/posts/copilot/">
+  <meta property="og:url" content="http://localhost:1313/posts/mcp/">
   <meta property="og:site_name" content="BeyondElastic">
-  <meta property="og:title" content="Copilot">
+  <meta property="og:title" content="Intro to the Model Context Protocol">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-03-17T13:12:41+01:00">
-    <meta property="article:modified_time" content="2025-03-17T13:12:41+01:00">
+    <meta property="article:published_time" content="2025-04-11T08:37:54+02:00">
+    <meta property="article:modified_time" content="2025-04-11T08:37:54+02:00">
+    <meta property="article:tag" content="Agents">
+    <meta property="article:tag" content="MCP">
+    <meta property="article:tag" content="Azure">
+    <meta property="article:tag" content="Copilot">
+    <meta property="article:tag" content="VS Code">
+    <meta property="article:tag" content="GitHub">
+    <meta property="og:image" content="http://localhost:1313/posts/mcp/featured.jpg">
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Copilot">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/posts/mcp/featured.jpg">
+  <meta name="twitter:title" content="Intro to the Model Context Protocol">
 
   
   <script type="application/ld+json">
@@ -83,26 +91,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Copilot",
-    "headline": "Copilot",
+    "name": "Intro to the Model Context Protocol",
+    "headline": "Intro to the Model Context Protocol",
     
     
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:1313\/posts\/copilot\/",
+    "url" : "http:\/\/localhost:1313\/posts\/mcp\/",
     "author" : {
       "@type": "Person",
       "name": "Alexander Ullah"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-03-17T13:12:41\u002b01:00",
-    "datePublished": "2025-03-17T13:12:41\u002b01:00",
+    "dateCreated": "2025-04-11T08:37:54\u002b02:00",
+    "datePublished": "2025-04-11T08:37:54\u002b02:00",
     
-    "dateModified": "2025-03-17T13:12:41\u002b01:00",
+    "dateModified": "2025-04-11T08:37:54\u002b02:00",
     
-    
+    "keywords": ["Agents","MCP","Azure","Copilot","VS Code","GitHub"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "536"
+    "wordCount": "1451"
   }]
   </script>
 
@@ -129,6 +137,16 @@
 
 
 
+  
+  
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/js/mermaid.bundle.e1dc118d1d5c060fb5035f6ed11303122f4ad26ae607992d7c428d00430883ca9f26a9f029180a9dd9c7c3774502a38f34fac2ad91dd4e8eb2a739f068841356.js"
+    integrity="sha512-4dwRjR1cBg&#43;1A19u0RMDEi9K0mrmB5ktfEKNAEMIg8qfJqnwKRgKndnHw3dFAqOPNPrCrZHdTo6ypznwaIQTVg=="
+  ></script>
 
 
 
@@ -142,10 +160,23 @@
 
 
 
+    
+    <script defer src="/lib/packery/packery.pkgd.min.js" integrity=""></script>
+
+    
+    
+    <script type="text/javascript" src="/js/shortcodes/gallery.min.9b4cb28f931ed922c26fb9b2510c2debb370f6a63305050c2af81740b2919883715e24efbbdf3a081496718ec751df3a72729d4d0bc71d6071297563a97ce1ee.js" integrity="sha512-m0yyj5Me2SLCb7myUQwt67Nw9qYzBQUMKvgXQLKRmINxXiTvu986CBSWcY7HUd86cnKdTQvHHWBxKXVjqXzh7g=="></script>
 
 
 
 
+
+
+
+
+
+<link rel="stylesheet" href="/lib/lite-youtube-embed/lite-yt-embed.css" integrity=""/>
+<script src="/lib/lite-youtube-embed/lite-yt-embed.58a8a22aed9d1cd05780869df4b0d87972fcd144a9eaff8f9a1453e58e6521c5a89ccd80bdb9f48e25ae5ee87b98bd9de51b14dd9988c60e4c89630433292084.js" integrity="sha512-WKiiKu2dHNBXgIad9LDYeXL80USp6v&#43;PmhRT5Y5lIcWonM2Avbn0jiWuXuh7mL2d5RsU3ZmIxg5MiWMEMykghA=="></script>
 
 
   
@@ -480,19 +511,13 @@
   
   
   
- 
-  
-   
-  
- 
-
 
 
 
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/image_hu_3e74900dfb9d752f.jpg);">
+    style="background-image:url(/posts/mcp/featured_hu_6e01d080936f9244.jpg);">
     
 
 
@@ -518,7 +543,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Copilot
+      Intro to the Model Context Protocol
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -563,7 +588,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-03-17T13:12:41&#43;01:00">17 March 2025</time><span class="px-2 text-primary-500">&middot;</span><span>536 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+  <time datetime="2025-04-11T08:37:54&#43;02:00">11 April 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1451 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">7 mins</span>
   
 
   
@@ -587,9 +612,69 @@
   
   
   
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/ai/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    AI
+  </span>
+</span>
+  </span>
   
   
   
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/agents/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Agents
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/mcp/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    MCP
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/azure/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Azure
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/copilot/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Copilot
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/vs-code/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    VS Code
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/github/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    GitHub
+  </span>
+</span>
+  </span>
   
   
   
@@ -717,14 +802,18 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#features">Features</a>
+    <li><a href="#overview">Overview</a>
       <ul>
-        <li><a href="#code-completion">Code Completion</a></li>
-        <li><a href="#copilot-chat">Copilot Chat</a></li>
-        <li><a href="#copilot-edits">Copilot Edits</a></li>
-        <li><a href="#copilot-in-the-cli">Copilot in the CLI</a></li>
-        <li><a href="#copilot-for-pull-requests">Copilot for pull requests</a></li>
-        <li><a href="#copilot-extensions">Copilot Extensions</a></li>
+        <li><a href="#mcp-server">MCP Server</a></li>
+        <li><a href="#mcp-host--client">MCP Host / Client</a></li>
+        <li><a href="#mcp-capabilities">MCP Capabilities</a></li>
+      </ul>
+    </li>
+    <li><a href="#implementation">Implementation</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#execution">Execution</a></li>
       </ul>
     </li>
     <li><a href="#summary">Summary</a></li>
@@ -742,14 +831,18 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#features">Features</a>
+    <li><a href="#overview">Overview</a>
       <ul>
-        <li><a href="#code-completion">Code Completion</a></li>
-        <li><a href="#copilot-chat">Copilot Chat</a></li>
-        <li><a href="#copilot-edits">Copilot Edits</a></li>
-        <li><a href="#copilot-in-the-cli">Copilot in the CLI</a></li>
-        <li><a href="#copilot-for-pull-requests">Copilot for pull requests</a></li>
-        <li><a href="#copilot-extensions">Copilot Extensions</a></li>
+        <li><a href="#mcp-server">MCP Server</a></li>
+        <li><a href="#mcp-host--client">MCP Host / Client</a></li>
+        <li><a href="#mcp-capabilities">MCP Capabilities</a></li>
+      </ul>
+    </li>
+    <li><a href="#implementation">Implementation</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#execution">Execution</a></li>
       </ul>
     </li>
     <li><a href="#summary">Summary</a></li>
@@ -799,147 +892,298 @@
         <div class="article-content max-w-prose mb-20">
           
 
-<h1 class="relative group">GitHub Copilot - My AI Pair Progammer 
-    <div id="github-copilot---my-ai-pair-progammer" class="anchor"></div>
+<h1 class="relative group">Intro 
+    <div id="intro" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#github-copilot---my-ai-pair-progammer" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a>
     </span>        
     
 </h1>
-<p>In this blog post, I will concentrate on the main GitHub Copilot features, its benefits and how to use them.</p>
-<p>Frankly, I am not the best programmer myself, and I am  coming from a platform engineering background rather than being a full-fledged developer. Which makes me a good test candidate for Copilot.</p>
-<p>The promise is GitHub Copilot helps developers code faster and achieve better overall productivity. All you need is a free GitHub account to get started, sign up <a href="https://github.com/signup" target="_blank">here</a>.</p>
-<p>The official documentation can found <a href="https://docs.github.com/en/copilot" target="_blank">here</a>.</p>
-<p>GitHub Copilot is available for various IDEs such as:</p>
-<ul>
-<li>Visual Code</li>
-<li>Visual Studio Code</li>
-<li>Xcode</li>
-<li>JetBrains IDEs (e.g. IntelliJ)</li>
-<li>Eclipse (public preview)</li>
-</ul>
-<p>There are different subscriptions for GitHub Copilot including a <a href="https://docs.github.com/en/copilot/managing-copilot/managing-copilot-as-an-individual-subscriber/about-github-copilot-free" target="_blank">Free</a> version with the following limitations:</p>
-<ul>
-<li>Code completions are limited to 2000 completions per month.</li>
-<li>Copilot Chat is limited to 50 chat messages per month</li>
-</ul>
+<p>The Model Context Protocol (MCP) is trending! What is it? Let&rsquo;s check it out. MCP is an open-source project launched in November 2024. It defines an open standard for AI applications to connect to their tools and data. I heard someone referring to it as the <strong>USB adapter</strong> for AI systems because it provides a very much needed standardization. Making your AI models smarter typically requires custom code, which can be challenging when it comes to scaling and maintaining the integrations. Most likely, your teams will end up writing the same integration multiple times for different AI use-cases. MCP allows for a <strong>&ldquo;write once, work everywhere&rdquo;</strong> approach, which will save development efforts.</p>
+<p>Additionally, I recommend watching the John Savill&rsquo;s &ldquo;Model Context Protocol Overview - Why You Care!&rdquo; video:</p>
+<lite-youtube videoid="1Pf2rW5FsqQ" playlabel="1Pf2rW5FsqQ" params=""></lite-youtube>
 
 
-<h2 class="relative group">Features 
-    <div id="features" class="anchor"></div>
+
+<h2 class="relative group">Overview 
+    <div id="overview" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#features" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#overview" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
+<p>In this blog post, I want to explain and demonstrate MCP with a simple but useful example. As everyone is currently talking about MCP and the project gains popularity, we can find more and more content about it online. For example, the collection of MCP Servers is growing by the minute. Just a couple of days ago, the public preview of <a href="https://devblogs.microsoft.com/azure-sdk/introducing-the-azure-mcp-server/" target="_blank">Azure MCP Server</a> was announced. As I spent most of my time in VS Code working with GitHub Copilot, I want to run the Azure MCP Server locally and use VS Code as the client that connects to it. But basics first!</p>
 
 
-<h3 class="relative group">Code Completion 
-    <div id="code-completion" class="anchor"></div>
+<h3 class="relative group">MCP Server 
+    <div id="mcp-server" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#code-completion" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#mcp-server" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
+<p>What is an <a href="https://modelcontextprotocol.io/docs/concepts/architecture" target="_blank">MCP Server</a>? MCP uses a client-server architecture. The MCP Server is where you build your connection to your APIs and resources. This is where the heavy lifting is done as you still have to write the integration. Nevertheless, the MCP Server then exposes your servers as MCP Tools via the standardized Model Context Protocol and makes them available to your AI apps.</p>
+<p>The MCP Servers can run local (stdio) or remote via HTTP+SSE(Server-Sent Events) transport layer. However, the remote implementation is still in early stages and is evolving fast. The recent specs already replacing HTTP+SSE with Streamable HTTP. I found a great blog post from Christian Posta explaining the change in more detail.</p>
+<ul>
+<li><a href="https://blog.christianposta.com/ai/understanding-mcp-recent-change-around-http-sse" target="_blank">Understanding MCP Recent Change Around HTTP+SSE</a></li>
+</ul>
+<p>There are already blog posts and repos available to deploy a remote MCP Server on various Azure Services:</p>
+<ul>
+<li><a href="https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-app-service/4405082" target="_blank">Azure App Service</a></li>
+<li><a href="https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550" target="_blank">Azure Container Apps</a></li>
+<li><a href="https://techcommunity.microsoft.com/blog/appsonazureblog/build-ai-agent-tools-using-remote-mcp-with-azure-functions/4401059" target="_blank">Azure Functions</a></li>
+</ul>
+<p>When we talk remote MCP Servers, authentication becomes very important, and I can just recommend following Den Delimarsky&rsquo;s blog posts and his Entra ID integration ideas. But be aware, this is also evolving fast and might be irrelevant next week.</p>
+<ul>
+<li><a href="https://den.dev/blog/mcp-server-auth-entra-id-session/" target="_blank">Using Microsoft Entra ID To Authenticate With MCP Servers Via Sessions</a></li>
+</ul>
+<p>A list of example MCP Servers can be found <a href="https://modelcontextprotocol.io/examples" target="_blank">here</a>, and a quickstart on how to write your own server <a href="https://modelcontextprotocol.io/quickstart/server" target="_blank">here</a>. In this blog post, we are using a local MCP Server for the ease of use.</p>
 
 
-<h3 class="relative group">Copilot Chat 
-    <div id="copilot-chat" class="anchor"></div>
+<h3 class="relative group">MCP Host / Client 
+    <div id="mcp-host--client" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#copilot-chat" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#mcp-host--client" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>TIP: @workspace allows you to ask questions about your entire codebase!</p>
+<p>The <a href="https://modelcontextprotocol.io/docs/concepts/architecture" target="_blank">MCP Host</a> can be your AI app or LLM based coding client. It is responsible for generating tasks or queries, but does not directly interact with data sources or APIs. The MCP Host can create and manage multiple client instances.</p>
+<p>The <a href="https://modelcontextprotocol.io/docs/concepts/architecture" target="_blank">MCP Client</a> acts as an intermediary between the MCP Host and the MCP Server. It manages connections, handles communication, discovers and executes tools, and facilitates resource access. This ensures that the AI model can perform its tasks efficiently and effectively by leveraging the capabilities of the MCP Servers.</p>
+<p>In summary, the MCP Client acts as a bridge between the AI model and the MCP Servers.</p>
+<div class="mermaid" align="center">
+  
+flowchart LR
+    subgraph "MCP Host"
+        direction LR
+
+        A[MCP Client]
+        B[MCP Server]
+        C[MCP Client]
+        D[MCP Server]
+        G[MCP Client]
+end
+E[Resource]
+F[API]
+I[API]
+H[Remote MCP Server]
+A-->B
+B<-->E
+C-->D
+D<-->F
+G-->H
+H<-->I
+
+</div>
+
+<p>A list of applications that support MCP can be found <a href="https://modelcontextprotocol.io/clients" target="_blank">here</a> and a quickstart on how to build your own client <a href="https://modelcontextprotocol.io/quickstart/client" target="_blank">here</a>. Additionally, you can find more about the MCP architecture in the <a href="https://modelcontextprotocol.io/docs/concepts/architecture" target="_blank">documentation</a> and from the latest <a href="https://modelcontextprotocol.io/specification/2025-03-26/architecture" target="_blank">specifications</a> as of writing this blog post.</p>
 
 
-<h3 class="relative group">Copilot Edits 
-    <div id="copilot-edits" class="anchor"></div>
+<h3 class="relative group">MCP Capabilities 
+    <div id="mcp-capabilities" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#copilot-edits" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#mcp-capabilities" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
+<p>What are the capabilities that can be exposed by MCP Servers and used by MCP Clients?</p>
+<ul>
+<li><a href="https://modelcontextprotocol.io/docs/concepts/tools" target="_blank"><strong>MCP Tools:</strong></a> Functions that can be invoked by your LLMs. This allows for automation and extensibility into the outside world.</li>
+<li><a href="https://modelcontextprotocol.io/docs/concepts/resources" target="_blank"><strong>MCP Resources:</strong></a> Data that can be accessed by your LLMs. This allows for providing data such as files, databases, log files etc&hellip; as context to your LLMs.</li>
+<li><a href="https://modelcontextprotocol.io/docs/concepts/prompts" target="_blank"><strong>MCP Prompts:</strong></a> Reusable prompt templates that can be used by your LLMs. This allows to standardize the LLM interactions.</li>
+<li><a href="https://modelcontextprotocol.io/docs/concepts/sampling" target="_blank"><strong>MCP Sampling:</strong></a> Allows the MCP Server to request completions from the client. This is very early stages and the client support is still lacking. However, this can become very powerful as it enables bidirectional communication.</li>
+</ul>
 
 
-<h3 class="relative group">Copilot in the CLI 
-    <div id="copilot-in-the-cli" class="anchor"></div>
+<h2 class="relative group">Implementation 
+    <div id="implementation" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#copilot-in-the-cli" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#implementation" aria-label="Anchor">#</a>
     </span>        
     
-</h3>
-<p>To uses this capability we need to install the gh cli and the gh cli copilot extension.</p>
-<p>If you are using Mac OS you can install the gh cli via homebrew and the following command <code>brew install gh</code></p>
-<p>Afther the installation you can run the following commands to authenticate and install the copilot extension:</p>
-<pre tabindex="0"><code>gh auth login &amp;&amp; gh extension install github/gh-copilot
-</code></pre><p>Subsequently you can ask for suggestions for explanations for a specific command, e.g.:</p>
-<pre tabindex="0"><code>➜ gh copilot explain &#34;sudo apt-get&#34; 
+</h2>
+<p>Now that we have covered the basics, let&rsquo;s start with the implementation. As mentioned above, I want to use the <a href="https://devblogs.microsoft.com/azure-sdk/introducing-the-azure-mcp-server/" target="_blank">Azure MCP Server</a> with VS Code and GitHub Copilot.</p>
 
-Welcome to GitHub Copilot in the CLI!
-version 1.1.0 (2025-02-10)
 
-I&#39;m powered by AI, so surprises and mistakes are possible. Make sure to verify any generated code or suggestions, and share feedback so that we can learn and improve. For more information, see https://gh.io/gh-copilot-transparency
-
-Explanation:                                                                                                                                                  
-                                                                                                                                                              
-  • sudo is used to run commands with elevated privileges, allowing access to system files that require administrative rights.                                
-  • apt-get is a command-line tool for handling packages in Debian-based systems, such as Ubuntu.                                                             
-  • Common sub-commands include:                                                                                                                              
-    • update to refresh the list of available packages and their versions.                                                                                    
-    • upgrade to upgrade all installed packages to their latest versions.                                                                                     
-    • install &lt;package&gt; to install a specific package.                                                                                                        
-    • remove &lt;package&gt; to uninstall a specific package.                                                                                                       
-  • You can leverage apt-get --help for more information on available options and usage.       
-</code></pre>
-
-<h3 class="relative group">Copilot for pull requests 
-    <div id="copilot-for-pull-requests" class="anchor"></div>
+<h3 class="relative group">Prerequisites 
+    <div id="prerequisites" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#copilot-for-pull-requests" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#prerequisites" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
+<p>If you want to follow along, make sure you have the following prerequisites in place:</p>
+<ul>
+<li><a href="https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account" target="_blank">Azure Subscription</a></li>
+<li><a href="https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos" target="_blank">Azure CLI</a></li>
+<li><a href="https://github.com/" target="_blank">GitHub</a> account and a GitHub Copilot free plan or higher</li>
+<li>VS Code with <a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot" target="_blank">GitHub Copilot</a> and <a href="https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode" target="_blank">Agent Mode</a> enabled</li>
+</ul>
+<p>Make sure VS Code GitHub Copilot is signed in with your GitHub account, agent mode is enabled and selected on the bottom of the chat window.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/mcp/vscode_hu_407a0f316034518f.png 330w,
+        /posts/mcp/vscode_hu_dda5d16316be4cc.png 660w,
+        /posts/mcp/vscode_hu_93a6f01eaeeff122.png 1024w,
+        /posts/mcp/vscode_hu_d8d4c346db6374a3.png 2x"
+        src="/posts/mcp/vscode_hu_dda5d16316be4cc.png"
+        alt="VS Code"
+      />
+      
+    </figure>
+</p>
 
 
-<h3 class="relative group">Copilot Extensions 
-    <div id="copilot-extensions" class="anchor"></div>
+<h3 class="relative group">Configuration 
+    <div id="configuration" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#copilot-extensions" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#configuration" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>A GitHub Copilot Extension is an add-on that provides customized capabilities for GitHub Copilot Chat.</p>
-<p>For example:</p>
-<p>Querying documentation: A Copilot Extension can allow Copilot Chat to query a third-party documentation service to find information about a specific topic.
-AI-assisted coding: A Copilot Extension can use a third-party AI model to provide code suggestions.
-Data retrieval: A Copilot Extension can allow Copilot Chat to query a third-party data service to retrieve information about a specific topic.
-Action execution: A Copilot Extension can allow Copilot Chat to execute a specific action, such as posting to a message board or updating a tracking item in an external system.</p>
-<p>A GitHub Copilot Extension is NOT the GitHub Copilot VS Code Extension found in your IDE, but rather an extra capability to enhance it.</p>
+<ol>
+<li>First, open a terminal in VS Code and sign in to our Azure Subscription with the <code>az login</code>command.</li>
+<li>Create an empty folder and create a .vscode folder inside the first folder.</li>
+<li>Create a mcp.json file within the .vscode folder and add the following content to it.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;servers&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;Azure MCP Server&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="s2">&#34;npx&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;args&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;-y&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;@azure/mcp&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;server&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;start&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Note:</strong> I experienced some processor architecture related issues when using &ldquo;@azure/mcp@latest&rdquo; package as suggested by the <a href="https://devblogs.microsoft.com/azure-sdk/introducing-the-azure-mcp-server/" target="_blank">blog post</a> or the <a href="https://github.com/Azure/azure-mcp" target="_blank">repo</a>. I am running on a MacBook with M2 processor, and it was not finding the mcp-darwin-arm64 package. Nevertheless, after removing the @latest it was working, and the version is also identical (0.0.10 at the time of writing this blog post).</p>
+<ol start="4">
+<li>After saving the mcp.json you should see a little &ldquo;Start&rdquo; button appearing over &ldquo;Azure MCP Server&rdquo;. Press it!</li>
+</ol>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/mcp/mcpjson_hu_2b0ad52cc29bff99.png 330w,
+        /posts/mcp/mcpjson_hu_c2f0cddfcab2be67.png 660w,
+        /posts/mcp/mcpjson_hu_8586d8413f6193f.png 1024w,
+        /posts/mcp/mcpjson_hu_720e65f949f6f9c3.png 2x"
+        src="/posts/mcp/mcpjson_hu_c2f0cddfcab2be67.png"
+        alt="mcp.json"
+      />
+      
+    </figure>
+</p>
+<ol start="5">
+<li>This will start the Azure MCP Server, and it will discover the MCP Tools provided by it. Now we should see the discovered tools in our Agent mode chat window.</li>
+</ol>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/mcp/tools_hu_32521dc999230309.png 330w,
+        /posts/mcp/tools_hu_f0f4032ca136da4a.png 660w,
+        /posts/mcp/tools_hu_968033708655d4bf.png 1024w,
+        /posts/mcp/tools_hu_d3da93313c7e743.png 2x"
+        src="/posts/mcp/tools_hu_f0f4032ca136da4a.png"
+        alt="Tools"
+      />
+      
+    </figure>
+</p>
+<ol start="6">
+<li>We can inspect the available tools by clicking on the tools icon.</li>
+</ol>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/mcp/tools-list_hu_2924acbb813b676f.png 330w,
+        /posts/mcp/tools-list_hu_171da8854507b063.png 660w,
+        /posts/mcp/tools-list_hu_d5878648e51881e7.png 1024w,
+        /posts/mcp/tools-list_hu_196bb83d754d69f.png 2x"
+        src="/posts/mcp/tools-list_hu_171da8854507b063.png"
+        alt="Tools-list"
+      />
+      
+    </figure>
+</p>
+<p>So far so good, let&rsquo;s try the MCP Tools.</p>
+
+
+<h3 class="relative group">Execution 
+    <div id="execution" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#execution" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Now that we have everything in place, let&rsquo;s ask our Copilot Agent something about Azure, e.g. &ldquo;list all my Azure Resource Groups&rdquo;. It will automatically realize that it has MCP Tools available that can help here. The Agent will also recognize that it first has to get the Azure Subscription by running the &ldquo;azmcp-subscription-list&rdquo; tool. We can get more details about the tool by clicking on &ldquo;&gt; Run&rdquo;.</p>
+
+
+<div id="gallery-0d042f7de9986a7f74f51207a8bbb006" class="gallery">
+  
+  <img src="sub-list.png" class="grid-w50" />
+  <img src="sub-list-detail.png" class="grid-w50" />
+
+</div>
+<p>After approving the tool execution by clicking &ldquo;Continue&rdquo; it will run the first tool and ask to execute the second tool to list my Resource Groups. After approving the tool executio, it will show me a list with my Resource Groups.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/mcp/rglist_hu_432924c83620898e.png 330w,
+        /posts/mcp/rglist_hu_98223a25f2207554.png 660w,
+        /posts/mcp/rglist_hu_b86da1c05fffca6d.png 1024w,
+        /posts/mcp/rglist_hu_94a9509a06afb7d3.png 2x"
+        src="/posts/mcp/rglist_hu_98223a25f2207554.png"
+        alt="RG-list"
+      />
+      
+    </figure>
+</p>
+<p>Awesome, we can now use the available tools to execute azd command directly or query logs and more. Combine this with the <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azure-github-copilot" target="_blank">Azure extension</a> for GitHub Copilot and you have a powerful Azure toolset directly in VS Code GitHub Copilot.</p>
 
 
 <h2 class="relative group">Summary 
@@ -952,6 +1196,15 @@ Action execution: A Copilot Extension can allow Copilot Chat to execute a specif
     </span>        
     
 </h2>
+<p>To summarize, MCP provides a very much needed standardization in the ever-growing AI Agent space. We can already see that multiple vendors adopt it and provide MCP Servers for their solutions. In addition, the amount of community provided MCP Servers is growing by the minute. In an ideal case, you don&rsquo;t have to write your own MCP Server, you just look it up in an MCP Server registry.</p>
+<p>Here is a list of popular MCP Server registries:</p>
+<ul>
+<li><a href="https://mcp.so/servers" target="_blank">https://mcp.so/servers</a></li>
+<li><a href="https://glama.ai/mcp/servers" target="_blank">https://glama.ai/mcp/servers</a> ​</li>
+<li><a href="https://smithery.ai/" target="_blank">https://smithery.ai/</a></li>
+<li><a href="https://www.pulsemcp.com/servers" target="_blank">https://www.pulsemcp.com/servers</a></li>
+</ul>
+<p>Besides MCP, there is another standard that was just recently announced by Google. The <a href="https://learnopencv.com/googles-a2a-protocol-heres-what-you-need-to-know/" target="_blank">A2A protocol</a>, which caters more to the agent to agent collaboration across platforms. It is definitely worth to follow both projects and see how they evolve. There is no doubt, the future of agentic systems looks bright.</p>
 
 
 <h2 class="relative group">Resources 
@@ -964,6 +1217,30 @@ Action execution: A Copilot Extension can allow Copilot Chat to execute a specif
     </span>        
     
 </h2>
+<ul>
+<li><a href="https://devblogs.microsoft.com/azure-sdk/introducing-the-azure-mcp-server/" target="_blank">Azure MCP Server</a></li>
+<li><a href="https://modelcontextprotocol.io/docs/concepts/architecture" target="_blank">MCP architecture documentation</a></li>
+<li><a href="https://modelcontextprotocol.io/quickstart/server" target="_blank">MCP Server quickstart</a></li>
+<li><a href="https://modelcontextprotocol.io/examples" target="_blank">MCP Server examples</a></li>
+<li><a href="https://modelcontextprotocol.io/quickstart/client" target="_blank">MCP Client quickstart</a></li>
+<li><a href="https://modelcontextprotocol.io/clients" target="_blank">MCP Client examples</a></li>
+<li><a href="https://modelcontextprotocol.io/specification/2025-03-26/architecture" target="_blank">MCP specifications 26.03.2025</a></li>
+<li><a href="https://modelcontextprotocol.io/docs/concepts/tools" target="_blank">MCP Tools</a></li>
+<li><a href="https://modelcontextprotocol.io/docs/concepts/resources" target="_blank">MCP Resources</a></li>
+<li><a href="https://modelcontextprotocol.io/docs/concepts/prompts" target="_blank">MCP Prompts</a></li>
+<li><a href="https://modelcontextprotocol.io/docs/concepts/sampling" target="_blank">MCP Sampling</a></li>
+<li><a href="https://blog.christianposta.com/ai/understanding-mcp-recent-change-around-http-sse" target="_blank">Understanding MCP Recent Change Around HTTP+SSE</a></li>
+<li><a href="https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-app-service/4405082" target="_blank">Host remote MCP Servers on Azure App Service</a></li>
+<li><a href="https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550" target="_blank">Host remote MCP Servers on Azure Container Apps</a></li>
+<li><a href="https://techcommunity.microsoft.com/blog/appsonazureblog/build-ai-agent-tools-using-remote-mcp-with-azure-functions/4401059" target="_blank">Host remote MCP Servers on Azure Functions</a></li>
+<li><a href="https://den.dev/blog/mcp-server-auth-entra-id-session/" target="_blank">Using Microsoft Entra ID To Authenticate With MCP Servers Via Sessions</a></li>
+<li><a href="https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account" target="_blank">Azure Subscription</a></li>
+<li><a href="https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-macos" target="_blank">Azure CLI documentation</a></li>
+<li><a href="https://github.com/" target="_blank">GitHub account</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot" target="_blank">VS Code GitHub Copilot</a></li>
+<li><a href="https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode" target="_blank">GitHub Copilot Agent Mode</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azure-github-copilot" target="_blank">GitHub Copilot Azure extension</a></li>
+</ul>
 
           
           
@@ -986,8 +1263,8 @@ Action execution: A Copilot Extension can allow Copilot Chat to execute a specif
           
         
       <script>
-        var oid = "views_posts\/copilot.md"
-        var oid_likes = "likes_posts\/copilot.md"
+        var oid = "views_posts\/mcp\/index.md"
+        var oid_likes = "likes_posts\/mcp\/index.md"
       </script>
       
       
@@ -1007,7 +1284,7 @@ Action execution: A Copilot Extension can allow Copilot Chat to execute a specif
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/ade/">
+            <a class="flex group mr-3" href="/posts/multi-agent/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1019,11 +1296,11 @@ Action execution: A Copilot Extension can allow Copilot Chat to execute a specif
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Ade</span
+                  >Intro to Semantic Kernel and Multi-Agent AI Apps</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-01-31T10:10:24&#43;01:00">31 January 2025</time>
+                    <time datetime="2025-04-10T09:15:23&#43;01:00">10 April 2025</time>
                   
                 </span>
               </span>
@@ -1031,28 +1308,6 @@ Action execution: A Copilot Extension can allow Copilot Chat to execute a specif
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/posts/agent/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Intro to Azure AI Agent Service</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-04-02T13:15:46&#43;02:00">2 April 2025</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>
