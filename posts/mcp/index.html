@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Intro to the Model Context Protocol &middot; BeyondElastic</title>
-  <meta name="title" content="Intro to the Model Context Protocol &middot; BeyondElastic" />
+  <title>Intro to Model Context Protocol &middot; BeyondElastic</title>
+  <meta name="title" content="Intro to Model Context Protocol &middot; BeyondElastic" />
   
   
   <meta name="keywords" content="Agents, MCP, Azure, Copilot, VS Code, GitHub, " />
@@ -66,7 +66,7 @@
   
   <meta property="og:url" content="https://beyondelastic.github.io/posts/mcp/">
   <meta property="og:site_name" content="BeyondElastic">
-  <meta property="og:title" content="Intro to the Model Context Protocol">
+  <meta property="og:title" content="Intro to Model Context Protocol">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -83,7 +83,7 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://beyondelastic.github.io/posts/mcp/featured.jpg">
-  <meta name="twitter:title" content="Intro to the Model Context Protocol">
+  <meta name="twitter:title" content="Intro to Model Context Protocol">
 
   
   <script type="application/ld+json">
@@ -91,8 +91,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Intro to the Model Context Protocol",
-    "headline": "Intro to the Model Context Protocol",
+    "name": "Intro to Model Context Protocol",
+    "headline": "Intro to Model Context Protocol",
     
     
     "inLanguage": "en",
@@ -110,7 +110,7 @@
     "keywords": ["Agents","MCP","Azure","Copilot","VS Code","GitHub"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1470"
+    "wordCount": "1597"
   }]
   </script>
 
@@ -517,7 +517,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/posts/mcp/featured_hu_e8391698c07d3281.jpg);">
+    style="background-image:url(/posts/mcp/featured_hu_8f4707e0c16d3010.jpg);">
     
 
 
@@ -543,7 +543,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Intro to the Model Context Protocol
+      Intro to Model Context Protocol
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -588,7 +588,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-04-11T08:37:54&#43;02:00">11 April 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1470 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">7 mins</span>
+  <time datetime="2025-04-11T08:37:54&#43;02:00">11 April 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1597 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">8 mins</span>
   
 
   
@@ -925,12 +925,12 @@
     </span>        
     
 </h3>
-<p>What is an <a href="https://modelcontextprotocol.io/docs/concepts/architecture" target="_blank">MCP Server</a>? MCP uses a client-server architecture. The MCP Server is where you build your connection to your APIs and resources. This is where the heavy lifting is done as you still have to write the integration. Nevertheless, the MCP Server then exposes your servers as MCP Tools via the standardized Model Context Protocol and makes them available to your AI apps.</p>
+<p>What is an <a href="https://modelcontextprotocol.io/docs/concepts/architecture" target="_blank">MCP Server</a>? MCP uses a client-server architecture. The MCP Server is where you build your connection to your APIs and resources. This is where the heavy lifting is done as you still have to write the integration. Nevertheless, the MCP Server then exposes your services as MCP Tools via the standardized Model Context Protocol and makes them available to your AI apps.</p>
 <p>The MCP Servers can run local (stdio) or remote via HTTP+SSE(Server-Sent Events) transport layer. However, the remote implementation is still in early stages and is evolving fast. The recent specs already replacing HTTP+SSE with Streamable HTTP. I found a great blog post from Christian Posta explaining the change in more detail.</p>
 <ul>
 <li><a href="https://blog.christianposta.com/ai/understanding-mcp-recent-change-around-http-sse" target="_blank">Understanding MCP Recent Change Around HTTP+SSE</a></li>
 </ul>
-<p>There are already blog posts and repos available to deploy a remote MCP Server on various Azure Services:</p>
+<p>If you want to host a remote MCP Server on Azure, there are already multiple blog posts and repos available that you can follow:</p>
 <ul>
 <li><a href="https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-app-service/4405082" target="_blank">Host remote MCP Servers on Azure App Service</a></li>
 <li><a href="https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550" target="_blank">Host remote MCP Servers on Azure Container Apps</a></li>
@@ -1177,7 +1177,7 @@ H<-->I
       
     </figure>
 </p>
-<p>Awesome, we can now use the available tools to execute azd command directly or query logs and more. Combine this with the <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azure-github-copilot" target="_blank">Azure extension</a> for GitHub Copilot and you have a powerful Azure toolset directly in VS Code GitHub Copilot.</p>
+<p>Awesome, we can now use the MCP Tools provided by our Azure MCP Server to execute <a href="https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/" target="_blank">azd</a> commands directly or query logs and more. Combine this with the <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azure-github-copilot" target="_blank">Azure extension</a> for GitHub Copilot and you have a powerful Azure toolset directly in VS Code GitHub Copilot.</p>
 
 
 <h2 class="relative group">Summary 
@@ -1198,6 +1198,7 @@ H<-->I
 <li><a href="https://smithery.ai/" target="_blank">https://smithery.ai/</a></li>
 <li><a href="https://www.pulsemcp.com/servers" target="_blank">https://www.pulsemcp.com/servers</a></li>
 </ul>
+<p>If you wonder, is it is possible to use <a href="https://beyondelastic.github.io/posts/agent/" target="_blank">Azure AI Agent Service</a> with MCP, it is. There is a great blog post available <a href="https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/" target="_blank">here</a>. It describes how to use Azure AI Agents as MCP Tools. Which might sounds strange in the first moment as it works the other way around. In this scenario, the MCP Server uses the agent or multiple agents as tools instead of the agent querying the MCP Server for exposed tools. Which makes a lot of sense if you think about the many ootb tools and Azure integrations that are available with the Azure AI Agent Service.</p>
 <p>Besides MCP, there is another standard that was just recently announced by Google. The <a href="https://learnopencv.com/googles-a2a-protocol-heres-what-you-need-to-know/" target="_blank">A2A protocol</a>, which caters more to the agent to agent collaboration across platforms. It is definitely worth to follow both projects and see how they evolve. There is no doubt the future of agentic apps looks bright.</p>
 
 
@@ -1233,7 +1234,10 @@ H<-->I
 <li><a href="https://github.com/" target="_blank">GitHub account</a></li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot" target="_blank">VS Code GitHub Copilot</a></li>
 <li><a href="https://code.visualstudio.com/docs/copilot/chat/chat-agent-mode" target="_blank">GitHub Copilot Agent Mode</a></li>
+<li><a href="https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/" target="_blank">Azure Developer CLI</a></li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azure-github-copilot" target="_blank">GitHub Copilot Azure extension</a></li>
+<li><a href="https://beyondelastic.github.io/posts/agent/" target="_blank">Azure AI Agent Service</a></li>
+<li><a href="https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/" target="_blank">MCP with Azure AI Agent Service</a></li>
 <li><a href="https://learnopencv.com/googles-a2a-protocol-heres-what-you-need-to-know/" target="_blank">A2A protocol</a></li>
 </ul>
 
