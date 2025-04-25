@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Alexander Ullah</copyright>
-    <lastBuildDate>Fri, 11 Apr 2025 08:37:54 +0200</lastBuildDate><atom:link href="https://beyondelastic.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Apr 2025 09:42:05 +0200</lastBuildDate><atom:link href="https://beyondelastic.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Agents</title>
       <link>https://beyondelastic.github.io/tags/agents/</link>
-      <pubDate>Fri, 11 Apr 2025 08:37:54 +0200</pubDate>
+      <pubDate>Wed, 23 Apr 2025 09:42:05 +0200</pubDate>
       
       <guid>https://beyondelastic.github.io/tags/agents/</guid>
       <description></description>
@@ -22,9 +22,39 @@
     <item>
       <title>Azure</title>
       <link>https://beyondelastic.github.io/tags/azure/</link>
-      <pubDate>Fri, 11 Apr 2025 08:37:54 +0200</pubDate>
+      <pubDate>Wed, 23 Apr 2025 09:42:05 +0200</pubDate>
       
       <guid>https://beyondelastic.github.io/tags/azure/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Function Calling</title>
+      <link>https://beyondelastic.github.io/tags/function-calling/</link>
+      <pubDate>Wed, 23 Apr 2025 09:42:05 +0200</pubDate>
+      
+      <guid>https://beyondelastic.github.io/tags/function-calling/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Plugins</title>
+      <link>https://beyondelastic.github.io/tags/plugins/</link>
+      <pubDate>Wed, 23 Apr 2025 09:42:05 +0200</pubDate>
+      
+      <guid>https://beyondelastic.github.io/tags/plugins/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Semantic Kernel</title>
+      <link>https://beyondelastic.github.io/tags/semantic-kernel/</link>
+      <pubDate>Wed, 23 Apr 2025 09:42:05 +0200</pubDate>
+      
+      <guid>https://beyondelastic.github.io/tags/semantic-kernel/</guid>
       <description></description>
       
     </item>
@@ -85,16 +115,6 @@
       <pubDate>Thu, 10 Apr 2025 09:15:23 +0100</pubDate>
       
       <guid>https://beyondelastic.github.io/tags/multi-agent/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Semantic Kernel</title>
-      <link>https://beyondelastic.github.io/tags/semantic-kernel/</link>
-      <pubDate>Thu, 10 Apr 2025 09:15:23 +0100</pubDate>
-      
-      <guid>https://beyondelastic.github.io/tags/semantic-kernel/</guid>
       <description></description>
       
     </item>

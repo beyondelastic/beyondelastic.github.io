@@ -10,6 +10,16 @@
     <lastBuildDate>Wed, 23 Apr 2025 09:42:05 +0200</lastBuildDate><atom:link href="https://beyondelastic.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Semantic Kernel Function Calling &amp; Plugins</title>
+      <link>https://beyondelastic.github.io/posts/skfc/</link>
+      <pubDate>Wed, 23 Apr 2025 09:42:05 +0200</pubDate>
+      
+      <guid>https://beyondelastic.github.io/posts/skfc/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://beyondelastic.github.io/posts/skfc/featured.jpg" />
+    </item>
+    
+    <item>
       <title>Intro to Model Context Protocol</title>
       <link>https://beyondelastic.github.io/posts/mcp/</link>
       <pubDate>Fri, 11 Apr 2025 08:37:54 +0200</pubDate>
