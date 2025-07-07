@@ -3,6 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>https://beyondelastic.github.io/posts/foundry-news/</loc>
+    <lastmod>2025-07-03T11:42:12+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://beyondelastic.github.io/</loc>
     <lastmod>2025-07-03T11:42:12+02:00</lastmod>
     <changefreq>daily</changefreq>
