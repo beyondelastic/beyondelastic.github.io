@@ -109,7 +109,7 @@
     "keywords": ["Agents","Foundry","Azure","VS Code","MS Build"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "752"
+    "wordCount": "878"
   }]
   </script>
 
@@ -564,7 +564,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-07-03T11:42:12&#43;02:00">3 July 2025</time><span class="px-2 text-primary-500">&middot;</span><span>752 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
+  <time datetime="2025-07-03T11:42:12&#43;02:00">3 July 2025</time><span class="px-2 text-primary-500">&middot;</span><span>878 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
   
 
   
@@ -766,10 +766,11 @@
   <ul>
     <li><a href="#intro">Intro</a>
       <ul>
-        <li><a href="#new-resources--changes">New Resources &amp; Changes</a></li>
-        <li><a href="#api--sdk-changes">API &amp; SDK Changes</a></li>
+        <li><a href="#new-resources--changes">New resources &amp; changes</a></li>
+        <li><a href="#api--sdk-changes">API &amp; SDK changes</a></li>
         <li><a href="#build-and-deploy-azure-ai-foundry-agents-via-vs-code">Build and deploy Azure AI Foundry Agents via VS Code</a></li>
-        <li><a href="#infra-templates">Infra Templates</a></li>
+        <li><a href="#open-in-vs-code-workflow">Open in VS Code workflow</a></li>
+        <li><a href="#infrastructure-templates">Infrastructure templates</a></li>
       </ul>
     </li>
     <li><a href="#summary">Summary</a></li>
@@ -789,10 +790,11 @@
   <ul>
     <li><a href="#intro">Intro</a>
       <ul>
-        <li><a href="#new-resources--changes">New Resources &amp; Changes</a></li>
-        <li><a href="#api--sdk-changes">API &amp; SDK Changes</a></li>
+        <li><a href="#new-resources--changes">New resources &amp; changes</a></li>
+        <li><a href="#api--sdk-changes">API &amp; SDK changes</a></li>
         <li><a href="#build-and-deploy-azure-ai-foundry-agents-via-vs-code">Build and deploy Azure AI Foundry Agents via VS Code</a></li>
-        <li><a href="#infra-templates">Infra Templates</a></li>
+        <li><a href="#open-in-vs-code-workflow">Open in VS Code workflow</a></li>
+        <li><a href="#infrastructure-templates">Infrastructure templates</a></li>
       </ul>
     </li>
     <li><a href="#summary">Summary</a></li>
@@ -852,10 +854,10 @@
     </span>        
     
 </h2>
-<p>In this short blog post, I want to share with you some of the news from <a href="https://news.microsoft.com/build-2025/" target="_blank">Microsoft Build 2025</a> around Azure AI Foundry. For example, the Azure AI Foundry Agent Service aka Azure AI Agent Service is now GA. The blog post for the GA announcement can be found <a href="https://techcommunity.microsoft.com/blog/azure-ai-services-blog/announcing-general-availability-of-azure-ai-foundry-agent-service/4414352" target="_blank">here</a>. Additionally, there were plenty of new public preview features for Azure AI Foundry announced, such as <strong>Connected Agents</strong>, <strong>Model Router</strong>, <strong>Tracing</strong> and many more. A summary of the Azure AI Foundry announcements can be found <a href="https://azure.microsoft.com/en-us/blog/azure-ai-foundry-your-ai-app-and-agent-factory/" target="_blank">here</a>.</p>
+<p>In this short blog post, I want to share with you some of the news and changes from <a href="https://news.microsoft.com/build-2025/" target="_blank">Microsoft Build 2025</a> around Azure AI Foundry. For example, the Azure AI Foundry Agent Service aka Azure AI Agent Service is now GA. The blog post for the GA announcement can be found <a href="https://techcommunity.microsoft.com/blog/azure-ai-services-blog/announcing-general-availability-of-azure-ai-foundry-agent-service/4414352" target="_blank">here</a>. Additionally, there were plenty of new public preview features for Azure AI Foundry announced, such as <strong>Connected Agents</strong>, <strong>Model Router</strong>, <strong>Tracing</strong> and many more. A summary of the Azure AI Foundry announcements can be found <a href="https://azure.microsoft.com/en-us/blog/azure-ai-foundry-your-ai-app-and-agent-factory/" target="_blank">here</a>. I am not going to cover every feature in this blog post, instead we are going to focus on the introduced changes and tease some of the VS Code related capabilities.</p>
 
 
-<h3 class="relative group">New Resources &amp; Changes 
+<h3 class="relative group">New resources &amp; changes 
     <div id="new-resources--changes" class="anchor"></div>
     
     <span
@@ -865,7 +867,7 @@
     </span>        
     
 </h3>
-<p>Besides all the new announcements, there were some changes around the Azure AI Foundry resources and APIs. The former construct was built with <strong>Hub</strong>-based projects hosted in an Azure AI Foundry Hub.</p>
+<p>As mentioned above, besides all the new announcements, there were some changes around the Azure AI Foundry resources and APIs. The former construct was built with <strong>Hub</strong>-based projects hosted in an Azure AI Foundry Hub.</p>
 <p>
     <figure>
       <img
@@ -919,7 +921,7 @@
 <p>There is a great blog article covering the changes, <a href="https://techcommunity.microsoft.com/blog/aiplatformblog/build-recap-new-azure-ai-foundry-resource-developer-apis-and-tools/4427241" target="_blank">here</a>. In terms of capabilities of the different project types, there is a comparison matrix and additional information to be found, <a href="https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry#which-type-of-project-do-i-need" target="_blank">here</a>.</p>
 
 
-<h3 class="relative group">API &amp; SDK Changes 
+<h3 class="relative group">API &amp; SDK changes 
     <div id="api--sdk-changes" class="anchor"></div>
     
     <span
@@ -973,7 +975,7 @@
     </span>        
     
 </h3>
-<p>If you haven&rsquo;t done it already, you should take a look at the <a href="https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.vscode-ai-foundry" target="_blank">Azure AI Foundry VS Code extension (currently in Preview)</a>. It allows you to build, test, and deploy Azure AI Foundry Agents from within VS Code. Agents can be defined via yaml files as you can see in the following screenshot:</p>
+<p>If you haven&rsquo;t done it already, you should take a look at the <a href="https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.vscode-ai-foundry" target="_blank">Azure AI Foundry VS Code extension</a> (currently in Preview). It allows you to build, test, and deploy Azure AI Foundry Agents from within VS Code. Agents and tools can be defined via yaml files as you can see in the following screenshot:</p>
 <p>
     <figure>
       <img
@@ -1010,13 +1012,77 @@
 <p>Check out the following <a href="https://techcommunity.microsoft.com/blog/azuredevcommunityblog/create-enterprise-ai-agents-with-azure-ai-foundry-vscode-extension/4400803" target="_blank">blog post</a> and the documentation link <a href="https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/develop/vs-code-agents" target="_blank">here</a> if you are keen to learn more about working with Azure AI Foundry from within VS Code.</p>
 
 
-<h3 class="relative group">Infra Templates 
-    <div id="infra-templates" class="anchor"></div>
+<h3 class="relative group">Open in VS Code workflow 
+    <div id="open-in-vs-code-workflow" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#infra-templates" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#open-in-vs-code-workflow" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Another nice little new feature is the option to open a <a href="https://code.visualstudio.com/docs/setup/vscode-web" target="_blank">VS Code for the Web</a> session directly from the Azure AI Foundry Agent playground.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/foundry-news/playground_hu_5f5cd91985cdc6b1.png 330w,
+        /posts/foundry-news/playground_hu_f338e1c28db89577.png 660w,
+        /posts/foundry-news/playground_hu_18be571ccd3cdbab.png 1024w,
+        /posts/foundry-news/playground_hu_2191a0ce32d8635f.png 2x"
+        src="/posts/foundry-news/playground_hu_f338e1c28db89577.png"
+        alt="Foundry playground"
+      />
+      
+    </figure>
+</p>
+<p>From the sample code page, you can press <strong>Open in VS Code</strong>.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/foundry-news/open-in-vscode_hu_f2a888901486c2fc.png 330w,
+        /posts/foundry-news/open-in-vscode_hu_88a39b2f2d36ac0.png 660w,
+        /posts/foundry-news/open-in-vscode_hu_30339bcc307ab168.png 1024w,
+        /posts/foundry-news/open-in-vscode_hu_2c96c15bd919d16c.png 2x"
+        src="/posts/foundry-news/open-in-vscode_hu_88a39b2f2d36ac0.png"
+        alt="Open in VS Code"
+      />
+      
+    </figure>
+</p>
+<p>This will open a <strong>VS Code for the Web</strong> session.</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/foundry-news/vscode-web_hu_3d704f6f3dd91329.png 330w,
+        /posts/foundry-news/vscode-web_hu_d8224f62c91f62ba.png 660w,
+        /posts/foundry-news/vscode-web_hu_7cb0f0e91b1e410c.png 1024w,
+        /posts/foundry-news/vscode-web_hu_c0dc579aa7a987ff.png 2x"
+        src="/posts/foundry-news/vscode-web_hu_d8224f62c91f62ba.png"
+        alt="VS Code for the Web"
+      />
+      
+    </figure>
+</p>
+<p>If you want to learn more about this feature, have a look at the following <a href="https://devblogs.microsoft.com/foundry/open-in-vscode/" target="_blank">blog post</a>.</p>
+
+
+<h3 class="relative group">Infrastructure templates 
+    <div id="infrastructure-templates" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#infrastructure-templates" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
@@ -1053,9 +1119,11 @@
 <li><a href="https://techcommunity.microsoft.com/blog/aiplatformblog/build-recap-new-azure-ai-foundry-resource-developer-apis-and-tools/4427241" target="_blank">Build recap: new Azure AI Foundry resource, Developer APIs and Tools</a></li>
 <li><a href="https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry#which-type-of-project-do-i-need" target="_blank">Documentation &amp; comparison matrix Azure AI Foundry projects</a></li>
 <li><a href="https://devblogs.microsoft.com/foundry/coding-the-future-of-ai-with-azure-ai-foundry-api-and-sdk/" target="_blank">Coding the Future of AI with Azure AI Foundry API and SDK</a></li>
-<li><a href="https://github.com/azure-ai-foundry/foundry-samples/blob/main/samples/microsoft/infrastructure-setup/README.md" target="_blank">Azure AI Foundry bicep templates</a></li>
 <li><a href="https://techcommunity.microsoft.com/blog/azuredevcommunityblog/create-enterprise-ai-agents-with-azure-ai-foundry-vscode-extension/4400803" target="_blank">Create Enterprise AI Agents with Azure AI Foundry VSCode Extension</a></li>
 <li><a href="https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/develop/vs-code-agents" target="_blank">Documentation - Work with Azure AI Foundry Agent Service in Visual Studio Code (Preview)</a></li>
+<li><a href="https://github.com/azure-ai-foundry/foundry-samples/blob/main/samples/microsoft/infrastructure-setup/README.md" target="_blank">Azure AI Foundry bicep templates</a></li>
+<li><a href="https://code.visualstudio.com/docs/setup/vscode-web" target="_blank">Documentation - VS Code for the Web</a></li>
+<li><a href="https://devblogs.microsoft.com/foundry/open-in-vscode/" target="_blank">Code quicker with Azure AI Foundry playgrounds and Visual Studio Code</a></li>
 </ul>
 
           
