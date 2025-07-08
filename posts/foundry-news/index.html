@@ -109,7 +109,7 @@
     "keywords": ["Agents","Foundry","Azure","VS Code","MS Build"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "878"
+    "wordCount": "899"
   }]
   </script>
 
@@ -564,7 +564,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-07-03T11:42:12&#43;02:00">3 July 2025</time><span class="px-2 text-primary-500">&middot;</span><span>878 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
+  <time datetime="2025-07-03T11:42:12&#43;02:00">3 July 2025</time><span class="px-2 text-primary-500">&middot;</span><span>899 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
   
 
   
@@ -940,15 +940,33 @@
 </span></span><span class="line"><span class="cl">  <span class="n">endpoint</span><span class="o">=</span><span class="n">PROJECT_ENDPOINT</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="n">credential</span><span class="o">=</span><span class="n">DefaultAzureCredential</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="p">)</span>
-</span></span></code></pre></div><ul>
+</span></span></code></pre></div><p>The AI Foundry project endpoint url can be found under the <strong>Overview</strong> tab of your project, see following screenshot:</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/foundry-news/endpoint_hu_21d0d05b2eda5a44.png 330w,
+        /posts/foundry-news/endpoint_hu_3f01eb8891038c3a.png 660w,
+        /posts/foundry-news/endpoint_hu_8fefcf2d68598dd9.png 1024w,
+        /posts/foundry-news/endpoint_hu_8d0d6925c62fc810.png 2x"
+        src="/posts/foundry-news/endpoint_hu_3f01eb8891038c3a.png"
+        alt="Project endpoint"
+      />
+      
+    </figure>
+</p>
+<ul>
 <li>Creating a thread changed from <em>project_client.agents.create_thread</em> to <strong>project_client.agents.threads.create</strong>, see following example:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># create a thread with message</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># create a thread</span>
 </span></span><span class="line"><span class="cl"><span class="n">thread</span> <span class="o">=</span> <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">threads</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 </span></span></code></pre></div><ul>
 <li>Creating a message changed from <em>project_client.agents.create_message</em> to <strong>project_client.agents.messages.create</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># create a message</span>
+</span></span><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">    <span class="n">thread_id</span><span class="o">=</span><span class="n">thread</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">role</span><span class="o">=</span><span class="s2">&#34;user&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="n">content</span><span class="o">=</span><span class="s2">&#34;Who is the greatest Basketball player of all time?&#34;</span><span class="p">,</span>
@@ -1029,11 +1047,11 @@
         class="my-0 rounded-md"
         loading="lazy"
         srcset="
-        /posts/foundry-news/playground_hu_5f5cd91985cdc6b1.png 330w,
-        /posts/foundry-news/playground_hu_f338e1c28db89577.png 660w,
-        /posts/foundry-news/playground_hu_18be571ccd3cdbab.png 1024w,
-        /posts/foundry-news/playground_hu_2191a0ce32d8635f.png 2x"
-        src="/posts/foundry-news/playground_hu_f338e1c28db89577.png"
+        /posts/foundry-news/playground_hu_395b1e1c4086d2fa.png 330w,
+        /posts/foundry-news/playground_hu_c0c333a2dc44a1cb.png 660w,
+        /posts/foundry-news/playground_hu_d4acaa80e83a625d.png 1024w,
+        /posts/foundry-news/playground_hu_5295af64d73a8373.png 2x"
+        src="/posts/foundry-news/playground_hu_c0c333a2dc44a1cb.png"
         alt="Foundry playground"
       />
       
