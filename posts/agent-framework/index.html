@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="dark"
+  data-auto-appearance="true"><head>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>Intro to Microsoft Agent Framework &middot; BeyondElastic</title>
+  <meta name="title" content="Intro to Microsoft Agent Framework &middot; BeyondElastic" />
+  
+  
+  <meta name="keywords" content="Agents, Foundry, Azure, Semantic Kernel, Multi-Agent, VS Code, Agent Framework, " />
+  
+  
+  <link rel="canonical" href="https://beyondelastic.github.io/posts/agent-framework/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.c9b6c5bad9d9b9a8f5b3bd6daf0b1c10c381f761b86dc05093ace16f3fdf1194cc780925f423b9d64a5e34aaf208419bef714c3e8da1939da826dbb870a6f072.css"
+    integrity="sha512-ybbFutnZuaj1s71trwscEMOB92G4bcBQk6zhbz/fEZTMeAkl9CO51kpeNKryCEGb73FMPo2hk52oJtu4cKbwcg==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.f09368ab07ce36a5adf2e846b12c3df96d62bcf1f141603d031af888519b4ca2e3f6fb5178bfa47caef06cd31fe8ba39cfd61689d96f35b1d409b1c3b394295e.js"
+    integrity="sha512-8JNoqwfONqWt8uhGsSw9&#43;W1ivPHxQWA9Axr4iFGbTKLj9vtReL&#43;kfK7wbNMf6Lo5z9YWidlvNbHUCbHDs5QpXg==" data-copy="" data-copied=""></script>
+  
+  
+  
+  <script src="/lib/zoom/zoom.min.37d2094687372da3f7343a221a470f6b8806f7891aa46a5a03966af7f0ebd38b9fe536cb154e6ad28f006d184b294525a7c4054b6bbb4be62d8b453b42db99bd.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S&#43;Yti0U7QtuZvQ=="></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Intro to Microsoft Agent Framework" />
+<meta property="og:description" content="Intro # The Microsoft Agent Framework has been around for a while now and, with the 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://beyondelastic.github.io/posts/agent-framework/" /><meta property="og:image" content="https://beyondelastic.github.io/posts/agent-framework/featured.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2025-10-07T09:52:19+02:00" />
+<meta property="article:modified_time" content="2025-10-07T09:52:19+02:00" />
+
+
+  <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://beyondelastic.github.io/posts/agent-framework/featured.png" /><meta name="twitter:title" content="Intro to Microsoft Agent Framework"/>
+<meta name="twitter:description" content="Intro # The Microsoft Agent Framework has been around for a while now and, with the 1."/>
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "Intro to Microsoft Agent Framework",
+    "headline": "Intro to Microsoft Agent Framework",
+    
+    "abstract": "Intro # The Microsoft Agent Framework has been around for a while now and, with the 1.",
+    "inLanguage": "en",
+    "url" : "https:\/\/beyondelastic.github.io\/posts\/agent-framework\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Alexander Ullah"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-10-07T09:52:19\u002b02:00",
+    "datePublished": "2025-10-07T09:52:19\u002b02:00",
+    
+    "dateModified": "2025-10-07T09:52:19\u002b02:00",
+    
+    "keywords": ["Agents","Foundry","Azure","Semantic Kernel","Multi-Agent","VS Code","Agent Framework"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2505"
+  }]
+  </script>
+
+
+  
+  
+  <meta name="author" content="Alexander Ullah" />
+  
+  
+  
+  <link href="mailto:alexander.ullah@gmail.com" rel="me" />
+  
+  
+  <link href="https://github.com/beyondelastic" rel="me" />
+  
+  
+  <link href="https://www.linkedin.com/in/alexander-ullah-a278a0b7/" rel="me" />
+  
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+  
+  
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/js/mermaid.bundle.e1dc118d1d5c060fb5035f6ed11303122f4ad26ae607992d7c428d00430883ca9f26a9f029180a9dd9c7c3774502a38f34fac2ad91dd4e8eb2a739f068841356.js"
+    integrity="sha512-4dwRjR1cBg&#43;1A19u0RMDEi9K0mrmB5ktfEKNAEMIg8qfJqnwKRgKndnHw3dFAqOPNPrCrZHdTo6ypznwaIQTVg=="
+  ></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/lite-youtube-embed/lite-yt-embed.css" integrity=""/>
+<script src="/lib/lite-youtube-embed/lite-yt-embed.58a8a22aed9d1cd05780869df4b0d87972fcd144a9eaff8f9a1453e58e6521c5a89ccd80bdb9f48e25ae5ee87b98bd9de51b14dd9988c60e4c89630433292084.js" integrity="sha512-WKiiKu2dHNBXgIad9LDYeXL80USp6v&#43;PmhRT5Y5lIcWonM2Avbn0jiWuXuh7mL2d5RsU3ZmIxg5MiWMEMykghA=="></script>
+
+
+  
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YWTBZP3Y84"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YWTBZP3Y84');
+</script>
+
+
+
+  
+  
+  <meta name="theme-color"/>
+  
+  
+</head>
+<body
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+  <div id="the-top" class="absolute flex self-center">
+    <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+      href="#main-content"><span
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a>
+  </div>
+  
+  
+  <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
+    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3">
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">BeyondElastic</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Posts
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Tags
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/categories/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Categories
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/author/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Author
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/disclaimer/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Disclaimer
+    </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class=" flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" style="padding-top:5px;"
+                class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li id="menu-close-button">
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Posts
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Tags
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/categories/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Categories
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/author/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Author
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/disclaimer/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Disclaimer
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+  
+  <div class="relative flex flex-col grow">
+    <main id="main-content" class="grow">
+      
+
+
+<article>
+  
+  
+  
+  
+  
+  
+
+
+
+
+    
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url(/posts/agent-framework/featured_hu6c3f8f952c5c6d8f15c73da4dcd48cdf_1949930_1200x0_resize_box_3.png);">
+    
+
+
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+    </div>
+    <div
+        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
+    </div>
+</div>
+
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+<script>
+    window.addEventListener('scroll', function (e) {
+        var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        var background_blur = document.getElementById('background-blur');
+        background_blur.style.opacity = (scroll / 300)
+    });
+</script>
+
+  
+  
+
+  <header id="single_header" class="mt-5 max-w-prose">
+    
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      Intro to Microsoft Agent Framework
+    </h1>
+    <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2025-10-07T09:52:19&#43;02:00">7 October 2025</time><span class="px-2 text-primary-500">&middot;</span><span>2505 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">12 mins</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/ai/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    AI
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/agents/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Agents
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/foundry/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Foundry
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/azure/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Azure
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/semantic-kernel/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Semantic Kernel
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/multi-agent/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Multi-Agent
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/vs-code/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    VS Code
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/agent-framework/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Agent Framework
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      
+      
+        
+        
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+    <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+      Author
+    </div>
+    <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+      Alexander Ullah
+    </div>
+    
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="mailto:alexander.ullah@gmail.com"
+          target="_blank"
+          aria-label="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/beyondelastic"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://www.linkedin.com/in/alexander-ullah-a278a0b7/"
+          target="_blank"
+          aria-label="Linkedin"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+      
+
+      
+
+      
+      <div class="mb-5"></div>
+      
+
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#requirements">Requirements</a>
+      <ul>
+        <li><a href="#installing-the-framework">Installing the framework</a></li>
+      </ul>
+    </li>
+    <li><a href="#coding">Coding</a>
+      <ul>
+        <li><a href="#no-more-kernel-and-stateless-agents">No more Kernel, and stateless agents</a></li>
+        <li><a href="#pick-your-model-provider">Pick your model provider</a></li>
+        <li><a href="#conversations-and-memory">Conversations and memory</a></li>
+        <li><a href="#giving-agents-tools-with-function-calling">Giving agents tools with function calling</a></li>
+        <li><a href="#orchestrating-a-team-of-specialists-with-magentic">Orchestrating a team of specialists with Magentic</a></li>
+        <li><a href="#testing-it-visually-with-devui">Testing it visually with DevUI</a></li>
+      </ul>
+    </li>
+    <li><a href="#wrap-up">Wrap-up</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#requirements">Requirements</a>
+      <ul>
+        <li><a href="#installing-the-framework">Installing the framework</a></li>
+      </ul>
+    </li>
+    <li><a href="#coding">Coding</a>
+      <ul>
+        <li><a href="#no-more-kernel-and-stateless-agents">No more Kernel, and stateless agents</a></li>
+        <li><a href="#pick-your-model-provider">Pick your model provider</a></li>
+        <li><a href="#conversations-and-memory">Conversations and memory</a></li>
+        <li><a href="#giving-agents-tools-with-function-calling">Giving agents tools with function calling</a></li>
+        <li><a href="#orchestrating-a-team-of-specialists-with-magentic">Orchestrating a team of specialists with Magentic</a></li>
+        <li><a href="#testing-it-visually-with-devui">Testing it visually with DevUI</a></li>
+      </ul>
+    </li>
+    <li><a href="#wrap-up">Wrap-up</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+</script>
+   </div>
+      </div>
+      
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+
+<h1 class="relative group">Intro 
+    <div id="intro" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>The Microsoft Agent Framework has been around for a while now and, with the <code>1.0.0</code> release, it is officially generally available. What is it you say? You might have heard about the open-source frameworks Semantic Kernel and AutoGen for building agentic apps? Both have their strengths and their weaknesses and are lacking capabilities of the other. The Microsoft Agent Framework combines the best of both worlds with enterprise grade features, tool &amp; protocol interoperability and deterministic &amp; dynamic orchestration patterns. Got your attention? In this blog post, I will give the framework a try and highlight important capabilities and sources.</p>
+
+
+<h2 class="relative group">Overview 
+    <div id="overview" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#overview" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>The release blog of the new Microsoft Agent Framework can be found <a href="https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps/" target="_blank">here</a>. In short, the new framework is an open-source development kit for building multi-agent apps in .NET and Python. It is the successor of the two well-known open-source frameworks Semantic Kernel and AutoGen. It incorporates AutoGen&rsquo;s powerful orchestration capabilities with Semantic Kernel&rsquo;s enterprise features. Additionally, it introduces Workflows that provide control over multi-agent execution paths.</p>
+<p>What you get from the new framework:</p>
+<ol>
+<li><strong>Interoperability</strong> - MCP, A2A, OpenAPI, cloud-agnostic runtime and more</li>
+<li><strong>Advanced orchestration patterns</strong> - sequential, concurrent, handoff, Magentic orchestration and workflow based execution</li>
+<li><strong>Extensibility</strong> - built in connectors, pluggable memory modules, declarative agents, community innovation and more</li>
+<li><strong>Production ready</strong> - observability, security &amp; compliance, human in the loop and more</li>
+</ol>
+<p>The new Framework offers capabilities in two main categories and it is important to understand the difference between them.</p>
+<ul>
+<li>
+<p><strong>AI Agents</strong> are LLM-driven entities that <strong>dynamically</strong> process user inputs, call tools and MCP servers to perform actions, and generate context-aware responses using model providers like Azure OpenAI, OpenAI, and Azure AI.</p>
+</li>
+<li>
+<p><strong>Workflows</strong> are graph-based, <strong>predefined sequences</strong> that connect multiple agents, human interactions, and external systems to perform complex, multi-step tasks with controlled execution paths, supporting features like type-based routing, nesting, checkpointing, and human-in-the-loop scenarios.</p>
+</li>
+</ul>
+<p>For those of you who want to migrate from Semantic Kernel or AutoGen to the new Microsoft Agent Framework, have a look at the documentation links here:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/agent-framework/migration-guide/from-autogen/" target="_blank">Migrate from AutoGen</a></li>
+<li><a href="https://learn.microsoft.com/agent-framework/migration-guide/from-semantic-kernel/?pivots=programming-language-python" target="_blank">Migrate from Semantic Kernel</a></li>
+</ul>
+<p><strong>NOTE:</strong> The Microsoft Agent Framework reached general availability with the <code>1.0.0</code> release on <strong>April 3, 2026</strong> for both Python and .NET, so you no longer need the <code>--pre</code> flag for the core packages. The <a href="https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/" target="_blank">GA announcement</a> and the <a href="https://learn.microsoft.com/agent-framework/support/upgrade/python-2026-significant-changes" target="_blank">Python significant changes guide</a> have the details.</p>
+
+
+<h2 class="relative group">Requirements 
+    <div id="requirements" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#requirements" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>To follow along, all you need is:</p>
+<ul>
+<li><strong>Python 3.10 or later</strong></li>
+<li>A <strong>Microsoft Foundry</strong> project (formerly Azure AI Foundry) with a <strong>model deployment</strong></li>
+<li>The <strong>Azure CLI</strong> (<code>az</code>), sign in once with <code>az login</code></li>
+<li>A local IDE such as <strong>VS Code</strong></li>
+</ul>
+<p>In terms of infrastructure deployment, you can find Bicep templates creating the Foundry resources and model deployments <a href="https://github.com/microsoft-foundry/foundry-samples/blob/main/infrastructure/infrastructure-setup-bicep/README.md" target="_blank">here</a>.</p>
+
+
+<h3 class="relative group">Installing the framework 
+    <div id="installing-the-framework" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#installing-the-framework" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>The core packages plus the <strong>OpenAI</strong>, <strong>Azure OpenAI</strong> and <strong>Foundry</strong> providers are stable in <code>1.0.0</code> release, so a plain <code>pip install</code> works for them.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pip install agent-framework
+</span></span></code></pre></div><p>Several other <strong>providers</strong> are still in preview and need the <code>--pre</code> flag, for example <code>agent-framework-anthropic</code> (Claude), <code>agent-framework-bedrock</code>, <code>agent-framework-gemini</code> and <code>agent-framework-ollama</code>. The same goes for integration packages like <code>agent-framework-copilotstudio</code>. When in doubt, check the individual package README, since the install command there tells you whether <code>--pre</code> is required.</p>
+<p>I use the Microsoft Foundry as the provider and point <code>agent-framework</code> at a model I deployed in my Foundry project via two environment variables in a local <code>.env</code> file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nv">FOUNDRY_PROJECT_ENDPOINT</span><span class="o">=</span><span class="s2">&#34;https://&lt;your-resource&gt;.services.ai.azure.com/api/projects/&lt;your-project&gt;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">FOUNDRY_MODEL</span><span class="o">=</span><span class="s2">&#34;&lt;your-model-deployment-name&gt;&#34;</span>
+</span></span></code></pre></div><p><strong>NOTE:</strong> Agent Framework does not load <code>.env</code> files automatically, so call <code>load_dotenv()</code> at the start of your script.</p>
+
+
+<h2 class="relative group">Coding 
+    <div id="coding" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#coding" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>For this demo, I will build a small healthcare triage app with the new framework and the <strong>Magentic</strong> orchestration pattern. This is the same scenario I use in my workshop: instead of one all-knowing agent, a <strong>manager</strong> delegates to specialist doctors (a cardiologist, a neurologist and a general practitioner) and pulls their input together into a single assessment. If you have seen my earlier <a href="https://beyondelastic.github.io/posts/multi-agent/" target="_blank">Semantic Kernel multi-agent post</a>, the idea will feel familiar.</p>
+<p>I packaged a full, hands-on version of everything below, including setup, code and lessons, into a workshop you can clone and run yourself:</p>
+<ul>
+<li><a href="https://beyondelastic.github.io/maf-workshop/" target="_blank">Microsoft Agent Framework Workshop</a></li>
+</ul>
+<p>Let me walk through the parts that stood out to me when moving over from Semantic Kernel.</p>
+
+
+<h3 class="relative group">No more Kernel, and stateless agents 
+    <div id="no-more-kernel-and-stateless-agents" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#no-more-kernel-and-stateless-agents" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>In Semantic Kernel, the <code>Kernel</code> was the central object you registered services and plugins on. In Agent Framework that abstraction is <strong>gone</strong>. You create a chat client, hand it to an <code>Agent</code>, and you are up and running:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">asyncio</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">agent_framework</span> <span class="kn">import</span> <span class="n">Agent</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">agent_framework.foundry</span> <span class="kn">import</span> <span class="n">FoundryChatClient</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">azure.identity</span> <span class="kn">import</span> <span class="n">AzureCliCredential</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">load_dotenv</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Create a FoundryChatClient to connect to the Foundry project</span>
+</span></span><span class="line"><span class="cl">    <span class="n">client</span> <span class="o">=</span> <span class="n">FoundryChatClient</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">project_endpoint</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&#34;FOUNDRY_PROJECT_ENDPOINT&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="n">model</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;FOUNDRY_MODEL&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">credential</span><span class="o">=</span><span class="n">AzureCliCredential</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Create an agent with instructions for a healthcare assistant</span>
+</span></span><span class="line"><span class="cl">    <span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">name</span><span class="o">=</span><span class="s2">&#34;HealthBot&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">instructions</span><span class="o">=</span><span class="s2">&#34;You are a friendly healthcare assistant. Give short, practical answers and always remind the user to consult a real doctor.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Execute agent run and print the result</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;User: What are common causes of a persistent headache?&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&#34;What are common causes of a persistent headache?&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;HealthBot: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</span></span></code></pre></div><p>One thing to be aware of: an <code>Agent</code> is <strong>stateless</strong> by default, meaning it does not remember previous turns. For multi-turn conversations you give it an <code>AgentSession</code>, and for automatic memory you add a history provider, both of which I cover below. Small change from Semantic Kernel, but good to know up front.</p>
+
+
+<h3 class="relative group">Pick your model provider 
+    <div id="pick-your-model-provider" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#pick-your-model-provider" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>The <code>Agent</code> interface is the same no matter which model provider you use, you just swap the client. Handy when you want to move a prototype from OpenAI to your own Foundry deployment:</p>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Client class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microsoft Foundry</td>
+<td><code>FoundryChatClient</code></td>
+</tr>
+<tr>
+<td>Azure OpenAI / OpenAI</td>
+<td><code>OpenAIChatClient</code> / <code>OpenAIChatCompletionClient</code></td>
+</tr>
+<tr>
+<td>Anthropic Claude</td>
+<td><code>AnthropicClient</code></td>
+</tr>
+<tr>
+<td>Amazon Bedrock</td>
+<td><code>BedrockChatClient</code></td>
+</tr>
+<tr>
+<td>Google Gemini</td>
+<td><code>GeminiChatClient</code></td>
+</tr>
+<tr>
+<td>Ollama (local)</td>
+<td><code>OllamaChatClient</code></td>
+</tr>
+</tbody>
+</table>
+<p>NOTE: In the latest Python release, Azure OpenAI uses the same <code>agent_framework.openai</code> clients as OpenAI, you select Azure by passing <code>credential</code> or <code>azure_endpoint</code>.</p>
+<p>Keep in mind that not every provider supports every feature. Things like function tools, structured outputs, a code interpreter, file search, MCP tools and background responses vary from provider to provider, so it is worth checking the <a href="https://learn.microsoft.com/agent-framework/agents/providers/?pivots=programming-language-python" target="_blank">Providers Overview</a> and its provider comparison table before you commit to one.</p>
+
+
+<h3 class="relative group">Conversations and memory 
+    <div id="conversations-and-memory" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#conversations-and-memory" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>By default every <code>agent.run(...)</code> call is independent, so the agent has no memory of what you said before. To hold an actual conversation, you create an <strong><code>AgentSession</code></strong> and pass it on each turn. The session carries the conversation state for you:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">asyncio</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">agent_framework</span> <span class="kn">import</span> <span class="n">Agent</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">agent_framework.foundry</span> <span class="kn">import</span> <span class="n">FoundryChatClient</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">azure.identity</span> <span class="kn">import</span> <span class="n">AzureCliCredential</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">load_dotenv</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">client</span> <span class="o">=</span> <span class="n">FoundryChatClient</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">project_endpoint</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&#34;FOUNDRY_PROJECT_ENDPOINT&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="n">model</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;FOUNDRY_MODEL&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">credential</span><span class="o">=</span><span class="n">AzureCliCredential</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">name</span><span class="o">=</span><span class="s2">&#34;SymptomChecker&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">instructions</span><span class="o">=</span><span class="s2">&#34;You are a symptom-checker. Remember what the patient tells you.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Create a session to maintain conversation state across turns</span>
+</span></span><span class="line"><span class="cl">    <span class="n">session</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">create_session</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># turn 1</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;User: Hi, I am Alex and I have a mild headache.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result1</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Hi, I am Alex and I have a mild headache.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">session</span><span class="o">=</span><span class="n">session</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;SymptomChecker: </span><span class="si">{</span><span class="n">result1</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># turn 2</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;User: What did I just tell you about my symptoms?&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result2</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;What did I just tell you about my symptoms?&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">session</span><span class="o">=</span><span class="n">session</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;SymptomChecker: </span><span class="si">{</span><span class="n">result2</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</span></span></code></pre></div><p>Because both calls share the same <code>session</code>, the second answer still knows about the headache from the first turn. Drop the <code>session</code> argument and that context is gone again. One session per user or per conversation also keeps their histories from mixing.</p>
+<p>An <code>AgentSession</code> holds context for the length of a single script run. To make the agent <strong>store and reload</strong> the history automatically, add a context provider. The built-in <code>InMemoryHistoryProvider</code> is the simplest one, just pass it to the <code>Agent</code> constructor:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">agent_framework</span> <span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">InMemoryHistoryProvider</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span><span class="o">=</span><span class="s2">&#34;MemoryBot&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">instructions</span><span class="o">=</span><span class="s2">&#34;You are a patient-intake assistant. Remember everything the patient tells you.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">context_providers</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="n">InMemoryHistoryProvider</span><span class="p">(</span><span class="s2">&#34;memory&#34;</span><span class="p">,</span> <span class="n">load_messages</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>With <code>load_messages=True</code> the provider reloads the full history before each LLM call, so the model always sees the whole conversation. History providers are a kind of <strong>context provider</strong>, the extension point that runs before and after every agent invocation. For production you would swap <code>InMemoryHistoryProvider</code> for a database-backed one (for example Cosmos DB) so the agent remembers across sessions, the interface stays the same.</p>
+
+
+<h3 class="relative group">Giving agents tools with function calling 
+    <div id="giving-agents-tools-with-function-calling" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#giving-agents-tools-with-function-calling" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>A chat-only agent is nice, but the real power shows up when the agent can <em>do</em> things. In Agent Framework you give an agent tools by handing it plain Python functions decorated with <code>@tool</code>. No plugin base classes and no hand-written JSON schema: the framework reads your type hints, docstring and the <code>@tool</code> metadata and builds the tool definition for you.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">asyncio</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Annotated</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">agent_framework</span> <span class="kn">import</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">tool</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">agent_framework.foundry</span> <span class="kn">import</span> <span class="n">FoundryChatClient</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">azure.identity</span> <span class="kn">import</span> <span class="n">AzureCliCredential</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">Field</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">load_dotenv</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Define a tool that can be used by the agent to look up information about common symptoms</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@tool</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&#34;check_symptom&#34;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&#34;Look up general information about a common symptom.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">check_symptom</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">symptom</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Field</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&#34;A symptom to look up, e.g. &#39;headache&#39;&#34;</span><span class="p">)],</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Return short, general information about a common symptom.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">knowledge</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;headache&#34;</span><span class="p">:</span> <span class="s2">&#34;Often caused by tension, dehydration or lack of sleep.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;fever&#34;</span><span class="p">:</span> <span class="s2">&#34;A common sign the body is fighting an infection.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">knowledge</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">symptom</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="s2">&#34;No information available for that symptom.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Create a FoundryChatClient to connect to the Foundry project</span>
+</span></span><span class="line"><span class="cl">    <span class="n">client</span> <span class="o">=</span> <span class="n">FoundryChatClient</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">project_endpoint</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&#34;FOUNDRY_PROJECT_ENDPOINT&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="n">model</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;FOUNDRY_MODEL&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">credential</span><span class="o">=</span><span class="n">AzureCliCredential</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Create an agent with the symptom-checking tool</span>
+</span></span><span class="line"><span class="cl">    <span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">name</span><span class="o">=</span><span class="s2">&#34;HealthBot&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">instructions</span><span class="o">=</span><span class="s2">&#34;You are a healthcare assistant. Use your tools when a user asks about a symptom.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="n">check_symptom</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Execute agent run and print the result</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;User: I have a headache, what could it be?&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&#34;I have a headache, what could it be?&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Agent: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</span></span></code></pre></div><p>When the model decides it needs the tool, the framework calls <code>check_symptom</code> for you, feeds the result back into the conversation, and lets the model finish its answer. The <code>Annotated</code> + <code>Field</code> description is exactly what the model sees as the parameter documentation, so write it like a mini prompt.</p>
+<p>TIP: Function tools are the most common type, but they are not the only one. Depending on the provider, Agent Framework also supports <strong>web search</strong>, <strong>file search</strong>, a <strong>code interpreter</strong> and tools from <strong>MCP servers</strong>, all wired in through the same <code>tools=[...]</code> mechanism.</p>
+
+
+<h3 class="relative group">Orchestrating a team of specialists with Magentic 
+    <div id="orchestrating-a-team-of-specialists-with-magentic" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#orchestrating-a-team-of-specialists-with-magentic" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Now the fun part. The <strong>Magentic</strong> pattern (inspired by AutoGen&rsquo;s <a href="https://learn.microsoft.com/en-us/agent-framework/workflows/orchestrations/magentic?pivots=programming-language-python" target="_blank">Magentic-One</a>) puts a <strong>manager</strong> agent in charge: it plans the task, decides which specialists to call and how many rounds are needed, then synthesises the result. No fixed edges, no routing logic, the manager figures it out.</p>
+<div class="mermaid" align="center">
+  
+flowchart LR
+    U[Patient case] --> M[Manager]
+    M --> C[Cardiologist]
+    M --> N[Neurologist]
+    M --> G[General Practitioner]
+    C --> M
+    N --> M
+    G --> M
+    M --> A[Final assessment]
+
+</div>
+
+<p>Here is the whole thing: three specialist doctors and a manager that coordinates them, wired together with <code>MagenticBuilder</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">asyncio</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">agent_framework</span> <span class="kn">import</span> <span class="n">Agent</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">agent_framework.foundry</span> <span class="kn">import</span> <span class="n">FoundryChatClient</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">agent_framework.orchestrations</span> <span class="kn">import</span> <span class="n">MagenticBuilder</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">azure.identity</span> <span class="kn">import</span> <span class="n">AzureCliCredential</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">load_dotenv</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">client</span> <span class="o">=</span> <span class="n">FoundryChatClient</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">project_endpoint</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&#34;FOUNDRY_PROJECT_ENDPOINT&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="n">model</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;FOUNDRY_MODEL&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">credential</span><span class="o">=</span><span class="n">AzureCliCredential</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Specialist agents</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cardiologist</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">name</span><span class="o">=</span><span class="s2">&#34;Cardiologist&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">instructions</span><span class="o">=</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;You are a cardiologist. Provide analysis only for heart-related &#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;symptoms. If the case is not cardiac, say so briefly.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">neurologist</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">name</span><span class="o">=</span><span class="s2">&#34;Neurologist&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">instructions</span><span class="o">=</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;You are a neurologist. Provide analysis only for neurological &#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;symptoms. If the case is not neurological, say so briefly.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">general_practitioner</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">name</span><span class="o">=</span><span class="s2">&#34;GeneralPractitioner&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">instructions</span><span class="o">=</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;You are a general practitioner. Provide a holistic assessment &#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;and summarise recommendations from the specialists.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># The manager coordinates the specialists</span>
+</span></span><span class="line"><span class="cl">    <span class="n">manager</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">name</span><span class="o">=</span><span class="s2">&#34;Manager&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">instructions</span><span class="o">=</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;You coordinate a team of medical specialists. Delegate tasks to the &#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;right specialist based on the patient&#39;s symptoms and synthesise their &#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;responses into a final assessment.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Build the Magentic orchestration</span>
+</span></span><span class="line"><span class="cl">    <span class="n">workflow</span> <span class="o">=</span> <span class="n">MagenticBuilder</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">participants</span><span class="o">=</span><span class="p">[</span><span class="n">cardiologist</span><span class="p">,</span> <span class="n">neurologist</span><span class="p">,</span> <span class="n">general_practitioner</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="n">manager_agent</span><span class="o">=</span><span class="n">manager</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">intermediate_output_from</span><span class="o">=</span><span class="p">[</span><span class="n">cardiologist</span><span class="p">,</span> <span class="n">neurologist</span><span class="p">,</span> <span class="n">general_practitioner</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">patient_case</span> <span class="o">=</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;A 55-year-old patient reports chest tightness, occasional headaches, &#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;and numbness in the left arm that started two weeks ago.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Patient case: </span><span class="si">{</span><span class="n">patient_case</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Stream each specialist&#39;s contribution as it arrives</span>
+</span></span><span class="line"><span class="cl">    <span class="n">current_agent</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    <span class="k">async</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">workflow</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">patient_case</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&#34;output&#34;</span><span class="p">,</span> <span class="s2">&#34;intermediate&#34;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="s2">&#34;text&#34;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">name</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="s2">&#34;author_name&#34;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">name</span> <span class="o">!=</span> <span class="n">current_agent</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">current_agent</span> <span class="o">=</span> <span class="n">name</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="se">\n\n</span><span class="s2">[</span><span class="si">{</span><span class="n">current_agent</span><span class="si">}</span><span class="s2">]</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</span></span></code></pre></div><p>That is it. <code>MagenticBuilder</code> takes a list of <code>participants</code> and a <code>manager_agent</code>, and <code>intermediate_output_from=[...]</code> surfaces each specialist&rsquo;s contribution as an intermediate event so I can stream it as the manager works through the case. If you prefer fixed pipelines instead of an AI-planned flow, the framework also ships <code>SequentialBuilder</code>, <code>ConcurrentBuilder</code>, <code>HandoffBuilder</code> and <code>GroupChatBuilder</code>, same idea, different control style.</p>
+
+
+<h3 class="relative group">Testing it visually with DevUI 
+    <div id="testing-it-visually-with-devui" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#testing-it-visually-with-devui" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Running scripts in a terminal is fine, but the framework also ships <strong>DevUI</strong>, a lightweight browser interface where you can chat with and debug your agents and workflows without building a frontend first. You point it at your agent module and it gives you a proper chat window, tool-call inspection and more. It made iterating on the agents a lot quicker for me.</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="/devui.png" alt="DevUI chat interface for the healthcare triage agents" />
+      
+    </figure>
+</p>
+<p>On top of that, the <strong><a href="https://learn.microsoft.com/azure/foundry/how-to/develop/get-started-projects-vs-code" target="_blank">Foundry Toolkit</a></strong> extension for VS Code (formerly the AI Toolkit) adds an OpenTelemetry trace viewer, so once you call <code>configure_otel_providers()</code> you can watch every LLM call, tool invocation and token count for a run right inside the editor. I cover both DevUI and tracing in the <a href="https://beyondelastic.github.io/maf-workshop/" target="_blank">workshop</a>.</p>
+
+
+<h2 class="relative group">Wrap-up 
+    <div id="wrap-up" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#wrap-up" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>The Microsoft Agent Framework really does bring the best of both worlds together: AutoGen&rsquo;s orchestration muscle and Semantic Kernel&rsquo;s enterprise features, now stable and shipping as <code>1.0.0</code>. For me the highlights are the leaner developer experience without the Kernel, being able to swap model providers in one line, and Workflows plus Magentic orchestration for coordinating multiple agents, with DevUI and the Foundry Toolkit making it genuinely pleasant to build and debug.</p>
+<p>If you want to get hands-on, clone my <a href="https://beyondelastic.github.io/maf-workshop/" target="_blank">Microsoft Agent Framework Workshop</a> and work through it lesson by lesson. And if you are coming from Semantic Kernel or AutoGen, the official <a href="https://learn.microsoft.com/agent-framework/migration-guide/from-semantic-kernel/" target="_blank">migration guides</a> should make the move a good bit easier, do not expect it to be completely painless, but they give you a solid starting point. This space is still moving fast, so treat this as a snapshot, but the foundation feels solid now. Happy building!</p>
+
+
+<h2 class="relative group">Sources 
+    <div id="sources" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#sources" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Everything I referenced while writing this post:</p>
+<ul>
+<li><a href="https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps/" target="_blank">Introducing Microsoft Agent Framework (release blog)</a></li>
+<li><a href="https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/" target="_blank">Microsoft Agent Framework 1.0 (GA announcement)</a></li>
+<li><a href="https://learn.microsoft.com/agent-framework/overview/" target="_blank">Microsoft Agent Framework overview</a></li>
+<li><a href="https://learn.microsoft.com/agent-framework/agents/providers/?pivots=programming-language-python" target="_blank">Providers overview</a></li>
+<li><a href="https://learn.microsoft.com/agent-framework/support/upgrade/python-2026-significant-changes" target="_blank">Python 2026 significant changes guide</a></li>
+<li><a href="https://learn.microsoft.com/agent-framework/migration-guide/from-autogen/" target="_blank">Migrate from AutoGen</a></li>
+<li><a href="https://learn.microsoft.com/agent-framework/migration-guide/from-semantic-kernel/?pivots=programming-language-python" target="_blank">Migrate from Semantic Kernel</a></li>
+<li><a href="https://github.com/microsoft-foundry/foundry-samples/blob/main/infrastructure/infrastructure-setup-bicep/README.md" target="_blank">Foundry infrastructure Bicep templates</a></li>
+<li><a href="https://github.com/microsoft/agent-framework" target="_blank">Agent Framework GitHub repo</a></li>
+<li><a href="https://learn.microsoft.com/agent-framework/get-started/" target="_blank">Quickstart guide</a></li>
+<li><a href="https://learn.microsoft.com/azure/foundry/how-to/develop/get-started-projects-vs-code" target="_blank">Foundry Toolkit for VS Code</a></li>
+<li><a href="https://beyondelastic.github.io/maf-workshop/" target="_blank">My Microsoft Agent Framework Workshop</a></li>
+<li><a href="https://beyondelastic.github.io/posts/multi-agent/" target="_blank">My Semantic Kernel multi-agent post</a></li>
+</ul>
+<p>And a few videos worth watching:</p>
+<lite-youtube videoid="AAgdMhftj8w" playlabel="AAgdMhftj8w" params=""></lite-youtube>
+
+<lite-youtube videoid="VBz5HMYIRI4" playlabel="VBz5HMYIRI4" params=""></lite-youtube>
+
+<lite-youtube videoid="suBDqt4677I" playlabel="suBDqt4677I" params=""></lite-youtube>
+
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+        
+
+          
+      </div>
+     
+      
+      
+        
+        
+          
+          
+        
+      <script>
+        var oid = "views_posts\/agent-framework\/index.md"
+        var oid_likes = "likes_posts\/agent-framework\/index.md"
+      </script>
+      
+      
+      <script type="text/javascript" src="/js/page.min.b06a29d42a4ed16787978e2eee1e8c797b7698db2bc14ccee78f5c80ac566fc996190a73ad80a5e987558474b20b96fa38f7d85b405f165ff72b7b163c5ad11b.js" integrity="sha512-sGop1CpO0WeHl44u7h6MeXt2mNsrwUzO549cgKxWb8mWGQpzrYCl6YdVhHSyC5b6OPfYW0BfFl/3K3sWPFrRGw=="></script>
+      
+  
+    </section>
+  <footer class="pt-8 max-w-prose print:hidden">
+
+    
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/foundry-news/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Azure AI Foundry News & Changes</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-07-03T11:42:12&#43;02:00">3 July 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+    
+  </footer>
+</article>
+
+      <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top" title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+    </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+
+    
+    
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">
+      &copy;
+      2026
+      Alexander Ullah
+    </p>
+    
+
+    
+    
+    <p class="text-xs text-neutral-500 dark:text-neutral-400">
+      
+      
+      Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+    </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script>
+  
+  
+  <script type="text/javascript" src="/js/process.min.62060bb247f4de2b6dde45903668fefb68d792f365587605177b1227c0cf43588701edaca0cb40e2c8e2789bd5ce67c1d2a215b9fb258c3496a7cd25e7cb5fdf.js" integrity="sha512-YgYLskf03itt3kWQNmj&#43;&#43;2jXkvNlWHYFF3sSJ8DPQ1iHAe2soMtA4sjieJvVzmfB0qIVufsljDSWp80l58tf3w=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url="https://beyondelastic.github.io/"
+  style="z-index:500"
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+  </div>
+</body>
+
+</html>

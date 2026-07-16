@@ -3,19 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://beyondelastic.github.io/posts/foundry-news/</loc>
-    <lastmod>2025-07-03T11:42:12+02:00</lastmod>
+    <loc>https://beyondelastic.github.io/</loc>
+    <lastmod>2025-10-07T09:52:19+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://beyondelastic.github.io/</loc>
-    <lastmod>2025-07-03T11:42:12+02:00</lastmod>
+    <loc>https://beyondelastic.github.io/posts/agent-framework/</loc>
+    <lastmod>2025-10-07T09:52:19+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://beyondelastic.github.io/posts/</loc>
+    <lastmod>2025-10-07T09:52:19+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://beyondelastic.github.io/posts/foundry-news/</loc>
     <lastmod>2025-07-03T11:42:12+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

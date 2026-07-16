@@ -6,8 +6,18 @@
     <description>Recent content in Semantic Kernel on BeyondElastic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2025 Alexander Ullah</copyright>
-    <lastBuildDate>Wed, 23 Apr 2025 09:42:05 +0200</lastBuildDate><atom:link href="https://beyondelastic.github.io/tags/semantic-kernel/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2026 Alexander Ullah</copyright>
+    <lastBuildDate>Tue, 07 Oct 2025 09:52:19 +0200</lastBuildDate><atom:link href="https://beyondelastic.github.io/tags/semantic-kernel/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Intro to Microsoft Agent Framework</title>
+      <link>https://beyondelastic.github.io/posts/agent-framework/</link>
+      <pubDate>Tue, 07 Oct 2025 09:52:19 +0200</pubDate>
+      
+      <guid>https://beyondelastic.github.io/posts/agent-framework/</guid>
+      <description>Intro # The Microsoft Agent Framework has been around for a while now and, with the 1.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://beyondelastic.github.io/posts/agent-framework/featured.png" />
+    </item>
     
     <item>
       <title>Semantic Kernel Function Calling &amp; Plugins</title>
@@ -15,7 +25,7 @@
       <pubDate>Wed, 23 Apr 2025 09:42:05 +0200</pubDate>
       
       <guid>https://beyondelastic.github.io/posts/skfc/</guid>
-      <description></description>
+      <description>Intro # These days, LLMs are not good enough anymore.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://beyondelastic.github.io/posts/skfc/featured.jpg" />
     </item>
     
@@ -25,7 +35,7 @@
       <pubDate>Thu, 10 Apr 2025 09:15:23 +0100</pubDate>
       
       <guid>https://beyondelastic.github.io/posts/multi-agent/</guid>
-      <description></description>
+      <description>Intro # In my last post, I have covered Azure AI Agent Service and how it can be used to easily build and run AI agents on Azure.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://beyondelastic.github.io/posts/multi-agent/featured.png" />
     </item>
     

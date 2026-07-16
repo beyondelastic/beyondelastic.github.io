@@ -6,13 +6,23 @@
     <description>Recent content in Tags on BeyondElastic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2025 Alexander Ullah</copyright>
-    <lastBuildDate>Thu, 03 Jul 2025 11:42:12 +0200</lastBuildDate><atom:link href="https://beyondelastic.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2026 Alexander Ullah</copyright>
+    <lastBuildDate>Tue, 07 Oct 2025 09:52:19 +0200</lastBuildDate><atom:link href="https://beyondelastic.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Agent Framework</title>
+      <link>https://beyondelastic.github.io/tags/agent-framework/</link>
+      <pubDate>Tue, 07 Oct 2025 09:52:19 +0200</pubDate>
+      
+      <guid>https://beyondelastic.github.io/tags/agent-framework/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>Agents</title>
       <link>https://beyondelastic.github.io/tags/agents/</link>
-      <pubDate>Thu, 03 Jul 2025 11:42:12 +0200</pubDate>
+      <pubDate>Tue, 07 Oct 2025 09:52:19 +0200</pubDate>
       
       <guid>https://beyondelastic.github.io/tags/agents/</guid>
       <description></description>
@@ -22,7 +32,7 @@
     <item>
       <title>Azure</title>
       <link>https://beyondelastic.github.io/tags/azure/</link>
-      <pubDate>Thu, 03 Jul 2025 11:42:12 +0200</pubDate>
+      <pubDate>Tue, 07 Oct 2025 09:52:19 +0200</pubDate>
       
       <guid>https://beyondelastic.github.io/tags/azure/</guid>
       <description></description>
@@ -32,9 +42,39 @@
     <item>
       <title>Foundry</title>
       <link>https://beyondelastic.github.io/tags/foundry/</link>
-      <pubDate>Thu, 03 Jul 2025 11:42:12 +0200</pubDate>
+      <pubDate>Tue, 07 Oct 2025 09:52:19 +0200</pubDate>
       
       <guid>https://beyondelastic.github.io/tags/foundry/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Multi-Agent</title>
+      <link>https://beyondelastic.github.io/tags/multi-agent/</link>
+      <pubDate>Tue, 07 Oct 2025 09:52:19 +0200</pubDate>
+      
+      <guid>https://beyondelastic.github.io/tags/multi-agent/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Semantic Kernel</title>
+      <link>https://beyondelastic.github.io/tags/semantic-kernel/</link>
+      <pubDate>Tue, 07 Oct 2025 09:52:19 +0200</pubDate>
+      
+      <guid>https://beyondelastic.github.io/tags/semantic-kernel/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>VS Code</title>
+      <link>https://beyondelastic.github.io/tags/vs-code/</link>
+      <pubDate>Tue, 07 Oct 2025 09:52:19 +0200</pubDate>
+      
+      <guid>https://beyondelastic.github.io/tags/vs-code/</guid>
       <description></description>
       
     </item>
@@ -45,16 +85,6 @@
       <pubDate>Thu, 03 Jul 2025 11:42:12 +0200</pubDate>
       
       <guid>https://beyondelastic.github.io/tags/ms-build/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>VS Code</title>
-      <link>https://beyondelastic.github.io/tags/vs-code/</link>
-      <pubDate>Thu, 03 Jul 2025 11:42:12 +0200</pubDate>
-      
-      <guid>https://beyondelastic.github.io/tags/vs-code/</guid>
       <description></description>
       
     </item>
@@ -75,16 +105,6 @@
       <pubDate>Wed, 23 Apr 2025 09:42:05 +0200</pubDate>
       
       <guid>https://beyondelastic.github.io/tags/plugins/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Semantic Kernel</title>
-      <link>https://beyondelastic.github.io/tags/semantic-kernel/</link>
-      <pubDate>Wed, 23 Apr 2025 09:42:05 +0200</pubDate>
-      
-      <guid>https://beyondelastic.github.io/tags/semantic-kernel/</guid>
       <description></description>
       
     </item>
@@ -115,16 +135,6 @@
       <pubDate>Fri, 11 Apr 2025 08:37:54 +0200</pubDate>
       
       <guid>https://beyondelastic.github.io/tags/mcp/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Multi-Agent</title>
-      <link>https://beyondelastic.github.io/tags/multi-agent/</link>
-      <pubDate>Thu, 10 Apr 2025 09:15:23 +0100</pubDate>
-      
-      <guid>https://beyondelastic.github.io/tags/multi-agent/</guid>
       <description></description>
       
     </item>
