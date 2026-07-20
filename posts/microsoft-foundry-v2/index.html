@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth" data-default-appearance="dark"
+  data-auto-appearance="true"><head>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>Microsoft Foundry V2 &middot; BeyondElastic</title>
+  <meta name="title" content="Microsoft Foundry V2 &middot; BeyondElastic" />
+  
+  
+  <meta name="keywords" content="Agents, Foundry, Azure, MCP, " />
+  
+  
+  <link rel="canonical" href="https://beyondelastic.github.io/posts/microsoft-foundry-v2/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.c9b6c5bad9d9b9a8f5b3bd6daf0b1c10c381f761b86dc05093ace16f3fdf1194cc780925f423b9d64a5e34aaf208419bef714c3e8da1939da826dbb870a6f072.css"
+    integrity="sha512-ybbFutnZuaj1s71trwscEMOB92G4bcBQk6zhbz/fEZTMeAkl9CO51kpeNKryCEGb73FMPo2hk52oJtu4cKbwcg==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.f09368ab07ce36a5adf2e846b12c3df96d62bcf1f141603d031af888519b4ca2e3f6fb5178bfa47caef06cd31fe8ba39cfd61689d96f35b1d409b1c3b394295e.js"
+    integrity="sha512-8JNoqwfONqWt8uhGsSw9&#43;W1ivPHxQWA9Axr4iFGbTKLj9vtReL&#43;kfK7wbNMf6Lo5z9YWidlvNbHUCbHDs5QpXg==" data-copy="" data-copied=""></script>
+  
+  
+  
+  <script src="/lib/zoom/zoom.min.37d2094687372da3f7343a221a470f6b8806f7891aa46a5a03966af7f0ebd38b9fe536cb154e6ad28f006d184b294525a7c4054b6bbb4be62d8b453b42db99bd.js" integrity="sha512-N9IJRoc3LaP3NDoiGkcPa4gG94kapGpaA5Zq9/Dr04uf5TbLFU5q0o8AbRhLKUUlp8QFS2u7S&#43;Yti0U7QtuZvQ=="></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Microsoft Foundry V2" />
+<meta property="og:description" content="Intro # The platform formerly known as Azure AI Foundry has quietly turned into something quite different over the course of this year: a new name, a new portal, and a genuinely new engine under the hood." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://beyondelastic.github.io/posts/microsoft-foundry-v2/" /><meta property="og:image" content="https://beyondelastic.github.io/posts/microsoft-foundry-v2/featured.png" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2026-07-17T09:00:00+02:00" />
+<meta property="article:modified_time" content="2026-07-17T09:00:00+02:00" />
+
+
+  <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://beyondelastic.github.io/posts/microsoft-foundry-v2/featured.png" /><meta name="twitter:title" content="Microsoft Foundry V2"/>
+<meta name="twitter:description" content="Intro # The platform formerly known as Azure AI Foundry has quietly turned into something quite different over the course of this year: a new name, a new portal, and a genuinely new engine under the hood."/>
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Posts",
+    "name": "Microsoft Foundry V2",
+    "headline": "Microsoft Foundry V2",
+    
+    "abstract": "Intro # The platform formerly known as Azure AI Foundry has quietly turned into something quite different over the course of this year: a new name, a new portal, and a genuinely new engine under the hood.",
+    "inLanguage": "en",
+    "url" : "https:\/\/beyondelastic.github.io\/posts\/microsoft-foundry-v2\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Alexander Ullah"
+    },
+    "copyrightYear": "2026",
+    "dateCreated": "2026-07-17T09:00:00\u002b02:00",
+    "datePublished": "2026-07-17T09:00:00\u002b02:00",
+    
+    "dateModified": "2026-07-17T09:00:00\u002b02:00",
+    
+    "keywords": ["Agents","Foundry","Azure","MCP"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2951"
+  }]
+  </script>
+
+
+  
+  
+  <meta name="author" content="Alexander Ullah" />
+  
+  
+  
+  <link href="mailto:alexander.ullah@gmail.com" rel="me" />
+  
+  
+  <link href="https://github.com/beyondelastic" rel="me" />
+  
+  
+  <link href="https://www.linkedin.com/in/alexander-ullah-a278a0b7/" rel="me" />
+  
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+  
+  
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/js/mermaid.bundle.e1dc118d1d5c060fb5035f6ed11303122f4ad26ae607992d7c428d00430883ca9f26a9f029180a9dd9c7c3774502a38f34fac2ad91dd4e8eb2a739f068841356.js"
+    integrity="sha512-4dwRjR1cBg&#43;1A19u0RMDEi9K0mrmB5ktfEKNAEMIg8qfJqnwKRgKndnHw3dFAqOPNPrCrZHdTo6ypznwaIQTVg=="
+  ></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<script data-id="umami-script" async
+        src="https://cloud.umami.is/script.js"
+        data-website-id="244d1905-255a-422b-893b-a2246ab86f18"
+        data-domains="beyondelastic.github.io">
+</script>
+
+
+
+<script type="text/javascript">
+    document.querySelector('script[data-id="umami-script"]')
+        .addEventListener('load', function () {
+            const type = document.head.querySelector('meta[property = "og:type"]').getAttribute('content');
+            let title = document.head.querySelector('meta[property = "og:title"]').getAttribute('content');
+            let url = document.head.querySelector('meta[property = "og:url"]').getAttribute('content');
+            umami.track(type + ':' + title, {'url': url});
+    });
+</script>
+
+
+
+  
+  
+  <meta name="theme-color"/>
+  
+  
+</head>
+<body
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+  <div id="the-top" class="absolute flex self-center">
+    <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+      href="#main-content"><span
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a>
+  </div>
+  
+  
+  <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
+    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3">
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">BeyondElastic</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Posts
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Tags
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/categories/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Categories
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/author/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Author
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/disclaimer/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        Disclaimer
+    </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class=" flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" style="padding-top:5px;"
+                class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li id="menu-close-button">
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Posts
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/tags/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Tags
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/categories/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Categories
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/author/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Author
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/disclaimer/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            Disclaimer
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+
+  
+  <div class="relative flex flex-col grow">
+    <main id="main-content" class="grow">
+      
+
+
+<article>
+  
+  
+  
+  
+  
+  
+
+
+
+
+    
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url(/posts/microsoft-foundry-v2/featured_hu30e9ecfd5a028afb1102220473607ca2_1984122_1200x0_resize_box_3.png);">
+    
+
+
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+    </div>
+    <div
+        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
+    </div>
+</div>
+
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+<script>
+    window.addEventListener('scroll', function (e) {
+        var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        var background_blur = document.getElementById('background-blur');
+        background_blur.style.opacity = (scroll / 300)
+    });
+</script>
+
+  
+  
+
+  <header id="single_header" class="mt-5 max-w-prose">
+    
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      Microsoft Foundry V2
+    </h1>
+    <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2026-07-17T09:00:00&#43;02:00">17 July 2026</time><span class="px-2 text-primary-500">&middot;</span><span>2951 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">14 mins</span><span class="px-2 text-primary-500">&middot;</span>
+
+
+<script type="text/javascript" src="/js/zen-mode.min.eea5245cf9244ecbdf2c150d1c8833226c1541cadf6e98f63a7c9192b1a3676df2c3ec603b14f4cfaaa53971fd9d8955640c0f405bf3de2b43ee7a5fb29ae721.js" integrity="sha512-7qUkXPkkTsvfLBUNHIgzImwVQcrfbpj2OnyRkrGjZ23yw&#43;xgOxT0z6qlOXH9nYlVZAwPQFvz3itD7npfsprnIQ=="></script>
+
+<span class="mb-[2px]">
+    <span id="zen-mode-button"
+          class="text-lg hover:text-primary-500"
+          title="Enable zen mode"
+          data-title-i18n-disable="Enable zen mode"
+          data-title-i18n-enable="Disable zen mode">
+        <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
+    <path fill="currentColor" d="M 12.980469 4 C 9.1204688 4 5.9804688 7.14 5.9804688 11 L 6 26 L 9.9804688 26 L 9.9804688 11 C 9.9804688 9.35 11.320469 8 12.980469 8 L 40.019531 8 C 41.679531 8 43.019531 9.35 43.019531 11 L 43.019531 39 C 43.019531 40.65 41.679531 42 40.019531 42 L 29 42 C 29 43.54 28.420938 44.94 27.460938 46 L 40.019531 46 C 43.879531 46 47.019531 42.86 47.019531 39 L 47.019531 11 C 47.019531 7.14 43.879531 4 40.019531 4 L 12.980469 4 z M 7 28 C 4.794 28 3 29.794 3 32 L 3 42 C 3 44.206 4.794 46 7 46 L 23 46 C 25.206 46 27 44.206 27 42 L 27 32 C 27 29.794 25.206 28 23 28 L 7 28 z M 7 32 L 23 32 L 23.001953 42 L 7 42 L 7 32 z"/>
+</svg>
+  </span>
+
+</span>
+    </span>
+</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/ai/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    AI
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/agents/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Agents
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/foundry/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Foundry
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/azure/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Azure
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/mcp/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    MCP
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    
+      
+      
+        
+        
+<div class="flex author">
+  
+  <div class="place-self-center">
+    
+    <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+      Author
+    </div>
+    <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+      Alexander Ullah
+    </div>
+    
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="mailto:alexander.ullah@gmail.com"
+          target="_blank"
+          aria-label="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/beyondelastic"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://www.linkedin.com/in/alexander-ullah-a278a0b7/"
+          target="_blank"
+          aria-label="Linkedin"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+      
+
+      
+
+      
+      <div class="mb-5"></div>
+      
+
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10">
+
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview-the-big-changes">Overview: the big changes</a></li>
+    <li><a href="#what-changed-since-my-last-foundry-post">What changed since my last Foundry post</a></li>
+    <li><a href="#setup-and-the-responses-api">Setup and the Responses API</a></li>
+    <li><a href="#conversations-instead-of-threads">Conversations instead of threads</a></li>
+    <li><a href="#prompt-agents">Prompt agents</a></li>
+    <li><a href="#foundry-tools">Foundry tools</a></li>
+    <li><a href="#the-new-portal">The new portal</a></li>
+    <li><a href="#operate-and-monitor">Operate and monitor</a></li>
+    <li><a href="#a-few-things-i-did-not-cover">A few things I did not cover</a></li>
+    <li><a href="#wrap-up">Wrap-up</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview-the-big-changes">Overview: the big changes</a></li>
+    <li><a href="#what-changed-since-my-last-foundry-post">What changed since my last Foundry post</a></li>
+    <li><a href="#setup-and-the-responses-api">Setup and the Responses API</a></li>
+    <li><a href="#conversations-instead-of-threads">Conversations instead of threads</a></li>
+    <li><a href="#prompt-agents">Prompt agents</a></li>
+    <li><a href="#foundry-tools">Foundry tools</a></li>
+    <li><a href="#the-new-portal">The new portal</a></li>
+    <li><a href="#operate-and-monitor">Operate and monitor</a></li>
+    <li><a href="#a-few-things-i-did-not-cover">A few things I did not cover</a></li>
+    <li><a href="#wrap-up">Wrap-up</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+<script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
+</script>
+   </div>
+      </div>
+      
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+
+<h1 class="relative group">Intro 
+    <div id="intro" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#intro" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>The platform formerly known as <strong>Azure AI Foundry</strong> has quietly turned into something quite different
+over the course of this year: a new name, a new portal, and a genuinely new engine under the hood.
+Welcome to <strong>Microsoft Foundry</strong> and the <strong>V2</strong> wave of changes. None of this landed overnight, it has
+been rolling out in stages since the beginning of the year, for example the
+<a href="https://devblogs.microsoft.com/foundry/foundry-agent-service-ga/" target="_blank">Foundry Agent Service went GA back in March</a>.
+By now enough of it has settled that it is worth stepping back and looking at the whole picture.
+If you have read my earlier post <a href="https://beyondelastic.github.io/posts/foundry-news/" target="_blank">Azure AI Foundry News &amp; Changes</a>,
+this is the sequel: what was in preview back then has matured, the rebrand is official, and the way we
+build agents has changed quite a bit.</p>
+<p>In this post I want to give you a quick overview of the most important changes first, then dive into
+the details with code examples: the <strong>Responses API</strong>, <strong>conversations</strong> replacing threads, <strong>prompt
+agents</strong>, the growing set of <strong>Foundry tools</strong>, the <strong>new portal UI</strong>, and how you <strong>operate and
+monitor</strong> everything. I will also call out what changed compared to my previous Foundry post, because
+the shift from threads and runs to conversations and responses is the part that will bite you if you
+copy old code. Let&rsquo;s check it out.</p>
+<p>NOTE: A lot of this space is moving fast, and some capabilities are still in preview. I link to the
+official docs throughout so you always have the current state of GA vs preview.</p>
+
+
+<h2 class="relative group">Overview: the big changes 
+    <div id="overview-the-big-changes" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#overview-the-big-changes" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Let&rsquo;s start with the headline changes before we get into code. The single most important thing to
+internalize is that this is not just a rename, it is a new API generation. The official
+<a href="https://learn.microsoft.com/azure/foundry/what-is-foundry" target="_blank">What is Microsoft Foundry?</a> doc has a
+great mapping table from the old world to the new one. Here is the short version:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Previous (classic)</th>
+<th>Current (V2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Brand</td>
+<td>Azure AI Studio / Azure AI Foundry</td>
+<td><strong>Microsoft Foundry</strong></td>
+</tr>
+<tr>
+<td>Azure AI Services</td>
+<td>Azure AI Services</td>
+<td><strong>Foundry Tools</strong></td>
+</tr>
+<tr>
+<td>Portal</td>
+<td>Foundry (classic)</td>
+<td><strong>Foundry</strong> (new portal)</td>
+</tr>
+<tr>
+<td>Agent API</td>
+<td>Assistants API (Agents v0.5/v1)</td>
+<td><strong>Responses API</strong> (Agents v2)</td>
+</tr>
+<tr>
+<td>API versioning</td>
+<td>Monthly <code>api-version</code> params</td>
+<td>v1 stable routes (<code>/openai/v1/</code>)</td>
+</tr>
+<tr>
+<td>Resource model</td>
+<td>Hub + Azure OpenAI + Azure AI Services</td>
+<td><strong>Foundry resource</strong> (single, with projects)</td>
+</tr>
+<tr>
+<td>SDKs &amp; endpoints</td>
+<td>Multiple packages against 5+ endpoints</td>
+<td>Unified project client (<code>azure-ai-projects</code> 2.x) + <code>OpenAI()</code></td>
+</tr>
+<tr>
+<td>Terminology</td>
+<td>Threads, Messages, Runs, Assistants</td>
+<td><strong>Conversations, Items, Responses, Agent Versions</strong></td>
+</tr>
+</tbody>
+</table>
+<p>If you only remember one row, make it the last one. <strong>Threads, messages, runs, and assistants are
+out. Conversations, items, responses, and agent versions are in.</strong> Everything now builds on the
+<strong>Responses API</strong>, the same modern primitive you may know from OpenAI, exposed through stable
+<code>/openai/v1/</code> routes so you are no longer chasing monthly <code>api-version</code> strings.</p>
+<p>The other big story is the resource simplification I teased in my last post. In the classic Hub-based
+world you needed a whole pile of Azure resources. The new model is a single <strong>Foundry resource</strong> with
+projects, and the old <strong>Azure AI Services</strong> brand is now called <strong>Foundry Tools</strong>. One resource
+provider namespace, unified RBAC, networking, and policies.</p>
+<p>TIP: Coming from a plain Azure OpenAI resource? You can
+<a href="https://learn.microsoft.com/azure/foundry/how-to/upgrade-azure-openai" target="_blank">upgrade it to a Foundry resource</a>
+and keep your endpoint, keys, and existing state.</p>
+
+
+<h2 class="relative group">What changed since my last Foundry post 
+    <div id="what-changed-since-my-last-foundry-post" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#what-changed-since-my-last-foundry-post" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>In my <a href="https://beyondelastic.github.io/posts/foundry-news/" target="_blank">previous Foundry post</a> I was still using
+<strong>threads</strong>, <strong>messages</strong>, and <strong>runs</strong>, and there was no Responses API in sight. Here is the exact
+code I wrote back then to talk to an agent:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># The old way: threads + messages + runs</span>
+</span></span><span class="line"><span class="cl"><span class="n">thread</span> <span class="o">=</span> <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">threads</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">messages</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">thread_id</span><span class="o">=</span><span class="n">thread</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">role</span><span class="o">=</span><span class="s2">&#34;user&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">content</span><span class="o">=</span><span class="s2">&#34;Who is the greatest Basketball player of all time?&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">run</span> <span class="o">=</span> <span class="n">project_client</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">runs</span><span class="o">.</span><span class="n">create_and_process</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">thread_id</span><span class="o">=</span><span class="n">thread</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">agent_id</span><span class="o">=</span><span class="n">agent</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>In V2 that same interaction becomes a <strong>conversation</strong> plus a <strong>response</strong>. Runs with their
+queued/in-progress polling loops are gone, and you talk to the model through the OpenAI-compatible
+client that the project hands you:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># The new way: conversations + responses</span>
+</span></span><span class="line"><span class="cl"><span class="n">conversation</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">conversations</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">items</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;message&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;user&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;Who is the greatest Basketball player of all time?&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conversation</span><span class="o">=</span><span class="n">conversation</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">input</span><span class="o">=</span><span class="s2">&#34;Who is the greatest Basketball player of all time?&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">extra_body</span><span class="o">=</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;agent_reference&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="n">agent</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;agent_reference&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>Microsoft published a detailed
+<a href="https://learn.microsoft.com/azure/foundry/agents/how-to/migrate?tabs=python" target="_blank">Migrate to the new Foundry Agent Service</a>
+guide that walks through threads to conversations, runs to responses, and assistants to new agents.
+There is even a <a href="https://aka.ms/agent/migrate/tool" target="_blank">migration tool</a> that automates the code
+constructs for you. One caveat worth repeating from the docs: the migration tool moves your <strong>code</strong>,
+not your <strong>state</strong>. Old threads, runs, and messages are not migrated, so you start fresh
+conversations after moving over.</p>
+<p>Here is the mental model as a diagram:</p>
+<div class="mermaid" align="center">
+  
+flowchart LR
+    subgraph Classic["Classic (v1)"]
+        A1[Assistant] --> A2[Thread]
+        A2 --> A3[Messages]
+        A3 --> A4[Run + polling]
+    end
+    subgraph V2["Microsoft Foundry V2"]
+        B1[Agent version] --> B2[Conversation]
+        B2 --> B3[Items]
+        B3 --> B4[Response]
+    end
+    Classic -->|migrate| V2
+
+</div>
+
+
+
+<h2 class="relative group">Setup and the Responses API 
+    <div id="setup-and-the-responses-api" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#setup-and-the-responses-api" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Let&rsquo;s build this up from scratch. First, grab the SDK. The V2 surface lives in <code>azure-ai-projects</code>
+2.x (it pulls in the <code>openai</code> package as a dependency), and you&rsquo;ll want <code>azure-identity</code> for
+<code>DefaultAzureCredential</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pip install <span class="s2">&#34;azure-ai-projects&gt;=2.3.0&#34;</span> azure-identity
+</span></span></code></pre></div><p>As before, you connect with a <strong>project endpoint</strong> (no more connection strings) and
+<code>DefaultAzureCredential</code>. The new twist is that the project client hands you an
+<strong>OpenAI-compatible client</strong> via <code>get_openai_client()</code>, and that is what you use for conversations
+and responses:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">azure.identity</span> <span class="kn">import</span> <span class="n">DefaultAzureCredential</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">azure.ai.projects</span> <span class="kn">import</span> <span class="n">AIProjectClient</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Format: https://&lt;resource&gt;.services.ai.azure.com/api/projects/&lt;project&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="n">PROJECT_ENDPOINT</span> <span class="o">=</span> <span class="s2">&#34;your_project_endpoint&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">project</span> <span class="o">=</span> <span class="n">AIProjectClient</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">endpoint</span><span class="o">=</span><span class="n">PROJECT_ENDPOINT</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">credential</span><span class="o">=</span><span class="n">DefaultAzureCredential</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># The OpenAI-compatible client for conversations and responses</span>
+</span></span><span class="line"><span class="cl"><span class="n">openai</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">get_openai_client</span><span class="p">()</span>
+</span></span></code></pre></div><p>The simplest thing you can do is a plain model call through the Responses API, no agent required:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span><span class="o">=</span><span class="s2">&#34;gpt-5-mini&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">input</span><span class="o">=</span><span class="s2">&#34;What are the common symptoms of type 2 diabetes?&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
+</span></span></code></pre></div><p>That is the whole point of V2: <strong>one project endpoint, one OpenAI-compatible client for every model,
+one Responses API</strong>. The same <code>responses.create()</code> call is used whether you hit a raw model or route
+through an agent. You can even let Foundry pick the model for you with
+<a href="https://learn.microsoft.com/azure/foundry/openai/how-to/responses-model-routing" target="_blank">model routing</a>.</p>
+<p>NOTE: The division of labor trips people up at first. Use the <strong>project client</strong> for agent creation
+and versioning, and the <strong>OpenAI client</strong> (<code>project.get_openai_client()</code>) for conversations and
+responses. If you call <code>conversations.create()</code> on the project client, it will not exist.</p>
+
+
+<h2 class="relative group">Conversations instead of threads 
+    <div id="conversations-instead-of-threads" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#conversations-instead-of-threads" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>A <strong>conversation</strong> is the successor to a thread, but it stores a stream of <strong>items</strong>, not just
+messages. Items can be messages, tool calls, tool outputs, and more. You create one, then keep sending
+responses against it, and it retains context across calls automatically. Here is a complete two-turn
+exchange, no agent required, just a model and the conversation:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># The conversation holds the running state</span>
+</span></span><span class="line"><span class="cl"><span class="n">conversation</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">conversations</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;agent&#34;</span><span class="p">:</span> <span class="s2">&#34;patient-education-agent&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># First turn: the response is appended to the conversation automatically</span>
+</span></span><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span><span class="o">=</span><span class="s2">&#34;gpt-5-mini&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conversation</span><span class="o">=</span><span class="n">conversation</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">input</span><span class="o">=</span><span class="s2">&#34;Explain what an mRNA vaccine is in one sentence.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Follow-up turn: notice we never repeat the earlier context,</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># the conversation remembers it for us</span>
+</span></span><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span><span class="o">=</span><span class="s2">&#34;gpt-5-mini&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conversation</span><span class="o">=</span><span class="n">conversation</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">input</span><span class="o">=</span><span class="s2">&#34;How is it different from a traditional vaccine?&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
+</span></span></code></pre></div><p>That second question only makes sense because the conversation carried the context from the first
+turn. A multi-turn chat is just repeated <code>responses.create()</code> calls that reference the same
+<code>conversation.id</code>, no more manual message list juggling. If you ever need to seed a conversation with
+prior items without generating a response, you can add them directly with
+<code>openai.conversations.items.create(conversation_id=..., items=[...])</code>.</p>
+
+
+<h2 class="relative group">Prompt agents 
+    <div id="prompt-agents" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#prompt-agents" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Agents themselves got a redesign too. Instead of <code>create_agent()</code>, you now create <strong>versions</strong> of an
+agent with a structured definition. The most common type is a <strong>prompt agent</strong>: a declarative agent
+defined by a model plus instructions (and optionally tools). Here is the pattern straight from the
+<a href="https://learn.microsoft.com/azure/foundry/agents/how-to/migrate?tabs=python" target="_blank">migration guide</a> and my
+<a href="https://beyondelastic.github.io/foundry-workshop/03-build-an-agent/" target="_blank">Foundry workshop</a>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">azure.ai.projects.models</span> <span class="kn">import</span> <span class="n">CodeInterpreterTool</span><span class="p">,</span> <span class="n">PromptAgentDefinition</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">agent</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">create_version</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">agent_name</span><span class="o">=</span><span class="s2">&#34;lab-results-agent&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">definition</span><span class="o">=</span><span class="n">PromptAgentDefinition</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">model</span><span class="o">=</span><span class="s2">&#34;gpt-5-mini&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">instructions</span><span class="o">=</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;You politely help interpret patient lab results. Use the Code &#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;Interpreter tool when asked to visualize biomarker trends.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="n">CodeInterpreterTool</span><span class="p">()],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>Note that the instructions reference the Code Interpreter tool, but the guidance alone is not enough,
+you also have to <strong>attach</strong> the tool via <code>tools=[CodeInterpreterTool()]</code>. It is a built-in tool, so
+Foundry runs it server-side in a sandbox and you do not need to host anything or add a connection. With
+the tool attached, the plot request below can actually execute Python and return a chart.</p>
+<p>Notice the two nice properties this gives you. First, <strong>versioning is built in</strong>: every call to
+<code>create_version()</code> under the same <code>agent_name</code> produces a new version (<code>lab-results-agent:1</code>,
+<code>lab-results-agent:2</code>, and so on), so you can iterate without deleting the old one. Second, there is
+a clean <strong>separation of duties</strong>: you define the agent once, then execute it with different inputs by
+passing an <code>agent_reference</code> on your responses.</p>
+<p>To actually talk to the agent, you combine everything from above: a conversation for state, and a
+response that references the agent:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># A fresh conversation to hold the agent&#39;s working state</span>
+</span></span><span class="line"><span class="cl"><span class="n">conversation</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">conversations</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conversation</span><span class="o">=</span><span class="n">conversation</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">input</span><span class="o">=</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Plot this patient&#39;s HbA1c readings over the last six months: &#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;7.8, 7.4, 7.1, 6.9, 6.7, 6.5.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">extra_body</span><span class="o">=</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;agent_reference&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="n">agent</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;agent_reference&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">output</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&#34;message&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">block</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</span></span></code></pre></div><p>The loop above prints the agent&rsquo;s text explanation. The chart itself comes back as its own output
+item (Code Interpreter returns files/images separately, not inside <code>output_text</code>), so in a real app
+you would also iterate the non-message items to grab the generated image.</p>
+<p>There is a second agent type, the <strong>Hosted agent</strong>, for running your own agent code and containers on
+Foundry. That deserves its own hands-on walkthrough, so I will cover Hosted agents in a <strong>separate
+post</strong>. For this one, prompt agents are all we need.</p>
+
+
+<h2 class="relative group">Foundry tools 
+    <div id="foundry-tools" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#foundry-tools" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Tools are where V2 really opens up. The new Foundry Agent Service ships a broad set of built-in tools,
+some carried over from classic and some brand new. A few highlights from the
+<a href="https://learn.microsoft.com/azure/foundry/agents/how-to/migrate?tabs=python" target="_blank">migration guide&rsquo;s tool availability table</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Classic</th>
+<th>V2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web Search</td>
+<td>No</td>
+<td><strong>Yes (GA)</strong></td>
+</tr>
+<tr>
+<td>Image Generation</td>
+<td>No</td>
+<td>Yes (Public Preview)</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>Public Preview</td>
+<td><strong>Yes (GA)</strong></td>
+</tr>
+<tr>
+<td>Agent to Agent (A2A)</td>
+<td>No</td>
+<td>Yes (Public Preview)</td>
+</tr>
+<tr>
+<td>Code Interpreter</td>
+<td>Yes (GA)</td>
+<td>Yes (GA)</td>
+</tr>
+<tr>
+<td>File Search</td>
+<td>Yes (GA)</td>
+<td>Yes (GA)</td>
+</tr>
+<tr>
+<td>Azure AI Search</td>
+<td>Yes (GA)</td>
+<td>Yes (GA)</td>
+</tr>
+<tr>
+<td>Grounding with Bing Search</td>
+<td>Yes (GA)</td>
+<td>Yes (GA)</td>
+</tr>
+<tr>
+<td>OpenAPI</td>
+<td>Yes (GA)</td>
+<td>Yes (GA)</td>
+</tr>
+</tbody>
+</table>
+<p>Two things jump out for me: <strong>MCP is now GA</strong> (it was preview in my last post), and <strong>Web Search</strong> and
+<strong>Image Generation</strong> are new. Beyond the built-ins, Foundry now has a
+<a href="https://learn.microsoft.com/azure/foundry/agents/concepts/tool-catalog" target="_blank">tool catalog</a> with over
+1,400 tools via public and private catalogs.</p>
+<p>Adding a tool to a prompt agent is just a line in the definition. Here is the web search example from
+my workshop&rsquo;s <a href="https://beyondelastic.github.io/foundry-workshop/06-tool-calls/" target="_blank">tool calls lab</a>, and
+the official <a href="https://learn.microsoft.com/azure/foundry/agents/how-to/tools/web-search?tabs=prompt-agents&amp;pivots=python" target="_blank">web search tool docs</a>
+have the full reference:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">azure.ai.projects.models</span> <span class="kn">import</span> <span class="n">PromptAgentDefinition</span><span class="p">,</span> <span class="n">WebSearchTool</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">agent</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">create_version</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">agent_name</span><span class="o">=</span><span class="s2">&#34;clinical-web-search-agent&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">definition</span><span class="o">=</span><span class="n">PromptAgentDefinition</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">model</span><span class="o">=</span><span class="s2">&#34;gpt-5-mini&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">instructions</span><span class="o">=</span><span class="s2">&#34;Answer medical questions and use web search for recent clinical guidelines.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="n">WebSearchTool</span><span class="p">()],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><p>When you send a time-sensitive question through <code>responses.create()</code>, the agent decides on its own to
+call the tool. The final answer still comes back as plain text, but the response payload also includes
+structured items describing what happened, so you can confirm the tool actually ran:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">openai</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">input</span><span class="o">=</span><span class="s2">&#34;What are the latest FDA-approved treatments for rheumatoid arthritis?&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">extra_body</span><span class="o">=</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;agent_reference&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="n">agent</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;agent_reference&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># The answer itself is plain text</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">output_text</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># ...but the structured items tell you whether web search was actually used</span>
+</span></span><span class="line"><span class="cl"><span class="n">tool_used</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">getattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">&#34;type&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&#34;web_search_call&#34;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">output</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Web search tool used: </span><span class="si">{</span><span class="n">tool_used</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>TIP: A tool-backed answer and a plain model answer look identical to the user. The structured items
+in the response are how you verify grounding actually happened, which is gold for debugging and
+evaluation.</p>
+
+
+<h2 class="relative group">The new portal 
+    <div id="the-new-portal" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#the-new-portal" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>The portal moved too. Everything now lives at <a href="https://ai.azure.com" target="_blank">ai.azure.com</a>, and to get the V2
+experience you make sure the <strong>New Foundry</strong> toggle in the banner is switched on. Foundry (classic)
+still exists for Hub-based projects, but all new investment is going into the new portal.</p>
+<p>If you are used to the classic layout, some things moved around. Microsoft has a handy
+<a href="https://learn.microsoft.com/azure/foundry/how-to/navigate-from-classic" target="_blank">Find features in the Foundry portal</a>
+guide to help you relocate everything. The
+<a href="https://learn.microsoft.com/azure/foundry/concepts/concept-playgrounds" target="_blank">playgrounds</a> are still there
+for trying models and agents in the browser before you drop into code, and of course my favorite
+workflow, developing in VS Code, is fully supported through the
+<a href="https://learn.microsoft.com/azure/foundry/how-to/develop/get-started-projects-vs-code" target="_blank">Microsoft Foundry for VS Code extension</a>.</p>
+<p>Here are the parts of the new UI I think are worth showing.</p>
+<p><strong>The new portal home</strong> at <a href="https://ai.azure.com/" target="_blank">ai.azure.com</a> with the &ldquo;New Foundry&rdquo; toggle switched on in the banner:</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/microsoft-foundry-v2/home_hud939742864d6fa9a4b7086f06da17ea1_299579_330x0_resize_box_3.png 330w,
+        /posts/microsoft-foundry-v2/home_hud939742864d6fa9a4b7086f06da17ea1_299579_660x0_resize_box_3.png 660w,
+        /posts/microsoft-foundry-v2/home_hud939742864d6fa9a4b7086f06da17ea1_299579_1024x0_resize_box_3.png 1024w,
+        /posts/microsoft-foundry-v2/home_hud939742864d6fa9a4b7086f06da17ea1_299579_1320x0_resize_box_3.png 2x"
+        src="/posts/microsoft-foundry-v2/home_hud939742864d6fa9a4b7086f06da17ea1_299579_660x0_resize_box_3.png"
+        alt="The new portal home at ai.azure.com with the &amp;ldquo;New Foundry&amp;rdquo; toggle switched on in the banner"
+      />
+      
+    </figure>
+</p>
+<p><strong>The model catalog</strong> under the &ldquo;Discover&rdquo; tab, to choose from over 11,000 different models:</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/microsoft-foundry-v2/models_hu7b9da0850bf082f6c9b1cc5ed3dc2dfc_153144_330x0_resize_box_3.png 330w,
+        /posts/microsoft-foundry-v2/models_hu7b9da0850bf082f6c9b1cc5ed3dc2dfc_153144_660x0_resize_box_3.png 660w,
+        /posts/microsoft-foundry-v2/models_hu7b9da0850bf082f6c9b1cc5ed3dc2dfc_153144_1024x0_resize_box_3.png 1024w,
+        /posts/microsoft-foundry-v2/models_hu7b9da0850bf082f6c9b1cc5ed3dc2dfc_153144_1320x0_resize_box_3.png 2x"
+        src="/posts/microsoft-foundry-v2/models_hu7b9da0850bf082f6c9b1cc5ed3dc2dfc_153144_660x0_resize_box_3.png"
+        alt="The model catalog to choose and deploy models"
+      />
+      
+    </figure>
+</p>
+<p><strong>Foundry Tools</strong>, also under the &ldquo;Discover&rdquo; tab, where you browse the tool catalog and configure tools for your agents:</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/microsoft-foundry-v2/tools_hu3d039ee1b72c5d30d94986c633d032f6_192260_330x0_resize_box_3.png 330w,
+        /posts/microsoft-foundry-v2/tools_hu3d039ee1b72c5d30d94986c633d032f6_192260_660x0_resize_box_3.png 660w,
+        /posts/microsoft-foundry-v2/tools_hu3d039ee1b72c5d30d94986c633d032f6_192260_1024x0_resize_box_3.png 1024w,
+        /posts/microsoft-foundry-v2/tools_hu3d039ee1b72c5d30d94986c633d032f6_192260_1320x0_resize_box_3.png 2x"
+        src="/posts/microsoft-foundry-v2/tools_hu3d039ee1b72c5d30d94986c633d032f6_192260_660x0_resize_box_3.png"
+        alt="The Foundry Tools view with the tool catalog in the new portal"
+      />
+      
+    </figure>
+</p>
+<p><strong>The Agents view</strong> (list of agents and agent versions) in the new portal under the &ldquo;Build&rdquo; tab:</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/microsoft-foundry-v2/agents_hu0065c8e29a6e26b3e84fae4126ab692c_93899_330x0_resize_box_3.png 330w,
+        /posts/microsoft-foundry-v2/agents_hu0065c8e29a6e26b3e84fae4126ab692c_93899_660x0_resize_box_3.png 660w,
+        /posts/microsoft-foundry-v2/agents_hu0065c8e29a6e26b3e84fae4126ab692c_93899_1024x0_resize_box_3.png 1024w,
+        /posts/microsoft-foundry-v2/agents_hu0065c8e29a6e26b3e84fae4126ab692c_93899_1320x0_resize_box_3.png 2x"
+        src="/posts/microsoft-foundry-v2/agents_hu0065c8e29a6e26b3e84fae4126ab692c_93899_660x0_resize_box_3.png"
+        alt="The Agents view listing agents and agent versions in the new portal"
+      />
+      
+    </figure>
+</p>
+<p><strong>The deployments view</strong> to list all your model deployments:</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/microsoft-foundry-v2/deployments_hu1ce7fd7e814a7908c1a8d4a56c9d648c_173229_330x0_resize_box_3.png 330w,
+        /posts/microsoft-foundry-v2/deployments_hu1ce7fd7e814a7908c1a8d4a56c9d648c_173229_660x0_resize_box_3.png 660w,
+        /posts/microsoft-foundry-v2/deployments_hu1ce7fd7e814a7908c1a8d4a56c9d648c_173229_1024x0_resize_box_3.png 1024w,
+        /posts/microsoft-foundry-v2/deployments_hu1ce7fd7e814a7908c1a8d4a56c9d648c_173229_1320x0_resize_box_3.png 2x"
+        src="/posts/microsoft-foundry-v2/deployments_hu1ce7fd7e814a7908c1a8d4a56c9d648c_173229_660x0_resize_box_3.png"
+        alt="The deployments view listing your deployed models"
+      />
+      
+    </figure>
+</p>
+<p><strong>The playground</strong> for trying a model or agent in the browser:</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/microsoft-foundry-v2/playground_hu6d4bde5c5d3e0a8607278abb6c35b1d8_251336_330x0_resize_box_3.png 330w,
+        /posts/microsoft-foundry-v2/playground_hu6d4bde5c5d3e0a8607278abb6c35b1d8_251336_660x0_resize_box_3.png 660w,
+        /posts/microsoft-foundry-v2/playground_hu6d4bde5c5d3e0a8607278abb6c35b1d8_251336_1024x0_resize_box_3.png 1024w,
+        /posts/microsoft-foundry-v2/playground_hu6d4bde5c5d3e0a8607278abb6c35b1d8_251336_1320x0_resize_box_3.png 2x"
+        src="/posts/microsoft-foundry-v2/playground_hu6d4bde5c5d3e0a8607278abb6c35b1d8_251336_660x0_resize_box_3.png"
+        alt="The playground for trying a model or agent in the browser"
+      />
+      
+    </figure>
+</p>
+<p><strong>The monitor agents dashboard</strong> with metrics, agent runs, and more:</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/microsoft-foundry-v2/agentmon_huaade05f77067b78996fdbcb370b0f738_170024_330x0_resize_box_3.png 330w,
+        /posts/microsoft-foundry-v2/agentmon_huaade05f77067b78996fdbcb370b0f738_170024_660x0_resize_box_3.png 660w,
+        /posts/microsoft-foundry-v2/agentmon_huaade05f77067b78996fdbcb370b0f738_170024_1024x0_resize_box_3.png 1024w,
+        /posts/microsoft-foundry-v2/agentmon_huaade05f77067b78996fdbcb370b0f738_170024_1320x0_resize_box_3.png 2x"
+        src="/posts/microsoft-foundry-v2/agentmon_huaade05f77067b78996fdbcb370b0f738_170024_660x0_resize_box_3.png"
+        alt="The monitor agents dashboard with metrics and agent runs"
+      />
+      
+    </figure>
+</p>
+<p><strong>The Operate overview dashboard</strong> under the &ldquo;Operate&rdquo; tab, with alerts, success rates, token usage, and cost:</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/microsoft-foundry-v2/operate_hu9fe86291c2199a75ace374df5504951c_145479_330x0_resize_box_3.png 330w,
+        /posts/microsoft-foundry-v2/operate_hu9fe86291c2199a75ace374df5504951c_145479_660x0_resize_box_3.png 660w,
+        /posts/microsoft-foundry-v2/operate_hu9fe86291c2199a75ace374df5504951c_145479_1024x0_resize_box_3.png 1024w,
+        /posts/microsoft-foundry-v2/operate_hu9fe86291c2199a75ace374df5504951c_145479_1320x0_resize_box_3.png 2x"
+        src="/posts/microsoft-foundry-v2/operate_hu9fe86291c2199a75ace374df5504951c_145479_660x0_resize_box_3.png"
+        alt="The Operate overview dashboard under the &amp;ldquo;Operate&amp;rdquo; tab"
+      />
+      
+    </figure>
+</p>
+
+
+<h2 class="relative group">Operate and monitor 
+    <div id="operate-and-monitor" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#operate-and-monitor" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>The part I appreciate most as a platform person is that <strong>operate and monitor</strong> is now first-class,
+not an afterthought. The new portal has a dedicated <strong>Operate</strong> section for centralized management of
+all your AI assets: agents, models, and tools in one place, including agents registered from other
+clouds.</p>
+<p>On the observability side, Foundry gives you:</p>
+<ul>
+<li><strong>Near-real-time observability</strong> with built-in operational metrics (token usage, latency, run
+success rate) surfaced in the
+<a href="https://learn.microsoft.com/azure/foundry/observability/how-to/how-to-monitor-agents-dashboard" target="_blank">monitor agents dashboard</a>.
+It reads telemetry from a connected Application Insights resource, so expect a short ingestion
+delay rather than a live stream.</li>
+<li><strong>Continuous evaluation</strong> so you keep scoring quality and safety on live traffic, not just in a
+one-off test run.</li>
+<li><strong>Tracing</strong> built on <strong>OpenTelemetry</strong>, which you can wire up in a few lines and then inspect the
+traces right inside Foundry. I walk through exactly this in my workshop&rsquo;s
+<a href="https://beyondelastic.github.io/foundry-workshop/05-observability-and-tracing/" target="_blank">observability lab</a>.</li>
+<li><strong>Enterprise controls</strong>: full authentication for MCP and A2A, AI gateway integration, and Azure
+Policy support.</li>
+</ul>
+<p>That combination of build, operate, and govern under one resource is really what &ldquo;V2&rdquo; is about for
+me. It is less a fresh coat of paint and more a consolidation of the whole lifecycle.</p>
+<p>NOTE: a few of these pieces are still in public preview, such as the portal <strong>View agent metrics</strong>
+view, scheduled evaluations, red team scans, and alerts. Expect them to keep evolving.</p>
+
+
+<h2 class="relative group">A few things I did not cover 
+    <div id="a-few-things-i-did-not-cover" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#a-few-things-i-did-not-cover" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Foundry V2 is broad, so I deliberately kept this post on the core building blocks. A few areas I
+skipped but that are well worth a look:</p>
+<ul>
+<li><strong>Publishing agents where people already work.</strong> Once an agent is ready, you can push it straight to
+<a href="https://learn.microsoft.com/azure/foundry/agents/how-to/publish-copilot" target="_blank">Microsoft 365 Copilot and Teams</a>,
+so colleagues discover and chat with it without leaving their usual tools. What gets published is the
+agent&rsquo;s stable endpoint, so you can roll out new versions behind the scenes.</li>
+<li><strong>Multi-agent orchestration.</strong> For coordinating several specialized agents, the go-to engine is
+<a href="https://beyondelastic.github.io/posts/agent-framework/" target="_blank">Microsoft Agent Framework</a>, which I wrote a
+whole post on. The Foundry portal also has a visual
+<a href="https://learn.microsoft.com/azure/foundry/agents/concepts/workflow" target="_blank">Workflows</a> designer, but it is
+being retired on December 1, 2026, so for anything new I would start with Agent Framework.</li>
+<li><strong>Foundry IQ.</strong> A managed knowledge layer that connects agents to your enterprise data (Azure Blob
+Storage, SharePoint, OneLake, and the public web) through
+<a href="https://learn.microsoft.com/azure/foundry/agents/concepts/what-is-foundry-iq" target="_blank">agentic retrieval</a>.
+One knowledge base can serve many agents with permission-aware, citation-backed grounding, so you do
+not have to wire each agent to each source yourself.</li>
+<li><strong>AI Services in the portal.</strong> It is not all LLMs. The portal also surfaces the classic Azure AI
+capabilities you can use straight from Foundry, like
+<a href="https://learn.microsoft.com/azure/ai-services/speech-service/overview" target="_blank">Speech</a> (speech-to-text,
+text-to-speech, and even a photorealistic
+<a href="https://learn.microsoft.com/azure/ai-services/speech-service/text-to-speech-avatar/what-is-text-to-speech-avatar" target="_blank">text-to-speech avatar</a>),
+Vision, Language, and more.</li>
+</ul>
+<p>And that is still not everything, Foundry keeps growing, so treat this list as a starting point rather
+than the full map.</p>
+
+
+<h2 class="relative group">Wrap-up 
+    <div id="wrap-up" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#wrap-up" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>So where does that leave us? <strong>Microsoft Foundry V2</strong> is a meaningful step up from the Azure AI
+Foundry I wrote about last time. The rebrand is the least interesting part. The real changes are the
+<strong>Responses API</strong> as the single primitive, <strong>conversations and items</strong> replacing threads and messages,
+<strong>versioned prompt agents</strong> replacing assistants, a much richer <strong>tool</strong> story (MCP GA, Web Search,
+Image Generation), a <strong>new portal</strong>, and a proper <strong>operate and monitor</strong> experience.</p>
+<p>If you have older Foundry code, do not just copy your threads-and-runs snippets, plan a small
+migration to conversations and responses. The
+<a href="https://learn.microsoft.com/azure/foundry/agents/how-to/migrate?tabs=python" target="_blank">migration guide</a> and the
+<a href="https://aka.ms/agent/migrate/tool" target="_blank">migration tool</a> make it painless. And if you want a hands-on,
+runnable path through all of this in Python, I put together a
+<a href="https://beyondelastic.github.io/foundry-workshop/" target="_blank">Microsoft Foundry workshop</a>
+(<a href="https://github.com/beyondelastic/foundry-workshop" target="_blank">GitHub repo</a>) that covers model calls, prompt
+agents, tools, RAG, evaluation, observability, and more.</p>
+<p>Next up, I will dig into <strong>Hosted agents</strong> in a dedicated post, since running your own agent code on
+Foundry deserves more than a paragraph. Until then, flip on that <strong>New Foundry</strong> toggle and have fun
+building.</p>
+
+
+<h2 class="relative group">Sources 
+    <div id="sources" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#sources" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li><a href="https://learn.microsoft.com/azure/foundry/what-is-foundry" target="_blank">What is Microsoft Foundry?</a></li>
+<li><a href="https://learn.microsoft.com/azure/foundry/agents/how-to/migrate?tabs=python" target="_blank">Migrate to the new Foundry Agent Service</a></li>
+<li><a href="https://aka.ms/agent/migrate/tool" target="_blank">Foundry migration tool (GitHub)</a></li>
+<li><a href="https://learn.microsoft.com/azure/foundry/how-to/develop/sdk-overview?tabs=sync&amp;pivots=programming-language-python" target="_blank">Microsoft Foundry SDKs and Endpoints</a></li>
+<li><a href="https://learn.microsoft.com/azure/foundry/quickstarts/get-started-code" target="_blank">Quickstart: Build with models and agents</a></li>
+<li><a href="https://learn.microsoft.com/azure/foundry/openai/how-to/responses-model-routing" target="_blank">Model routing with the Responses API</a></li>
+<li><a href="https://learn.microsoft.com/azure/foundry/agents/concepts/tool-catalog" target="_blank">Agent tool catalog</a></li>
+<li><a href="https://learn.microsoft.com/azure/foundry/agents/how-to/tools/web-search?tabs=prompt-agents&amp;pivots=python" target="_blank">Use the web search tool in Foundry Agent Service</a></li>
+<li><a href="https://learn.microsoft.com/azure/foundry/how-to/navigate-from-classic" target="_blank">Find features in the Foundry portal</a></li>
+<li><a href="https://learn.microsoft.com/azure/foundry/observability/how-to/how-to-monitor-agents-dashboard" target="_blank">Monitor agents dashboard</a></li>
+<li><a href="https://learn.microsoft.com/azure/foundry/how-to/develop/get-started-projects-vs-code" target="_blank">Microsoft Foundry for VS Code</a></li>
+<li><a href="https://beyondelastic.github.io/posts/foundry-news/" target="_blank">My previous post: Azure AI Foundry News &amp; Changes</a></li>
+<li><a href="https://beyondelastic.github.io/foundry-workshop/" target="_blank">Microsoft Foundry workshop</a> and <a href="https://github.com/beyondelastic/foundry-workshop" target="_blank">GitHub repo</a></li>
+</ul>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+        
+
+          
+      </div>
+     
+      
+      
+        
+        
+          
+          
+        
+      <script>
+        var oid = "views_posts\/microsoft-foundry-v2\/index.md"
+        var oid_likes = "likes_posts\/microsoft-foundry-v2\/index.md"
+      </script>
+      
+      
+      <script type="text/javascript" src="/js/page.min.b06a29d42a4ed16787978e2eee1e8c797b7698db2bc14ccee78f5c80ac566fc996190a73ad80a5e987558474b20b96fa38f7d85b405f165ff72b7b163c5ad11b.js" integrity="sha512-sGop1CpO0WeHl44u7h6MeXt2mNsrwUzO549cgKxWb8mWGQpzrYCl6YdVhHSyC5b6OPfYW0BfFl/3K3sWPFrRGw=="></script>
+      
+  
+    </section>
+  <footer class="pt-8 max-w-prose print:hidden">
+
+    
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/agent-framework/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Intro to Microsoft Agent Framework</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-10-07T09:52:19&#43;02:00">7 October 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+    
+  </footer>
+</article>
+
+      <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top" title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+    </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+  
+  <div class="flex items-center justify-between">
+
+    
+    
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">
+      &copy;
+      2026
+      Alexander Ullah
+    </p>
+    
+
+    
+    
+    <p class="text-xs text-neutral-500 dark:text-neutral-400">
+      
+      
+      Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+    </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script>
+  
+  
+  <script type="text/javascript" src="/js/process.min.62060bb247f4de2b6dde45903668fefb68d792f365587605177b1227c0cf43588701edaca0cb40e2c8e2789bd5ce67c1d2a215b9fb258c3496a7cd25e7cb5fdf.js" integrity="sha512-YgYLskf03itt3kWQNmj&#43;&#43;2jXkvNlWHYFF3sSJ8DPQ1iHAe2soMtA4sjieJvVzmfB0qIVufsljDSWp80l58tf3w=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
+  data-url="https://beyondelastic.github.io/"
+  style="z-index:500"
+>
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+  </div>
+</body>
+
+</html>

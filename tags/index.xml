@@ -7,22 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Alexander Ullah</copyright>
-    <lastBuildDate>Tue, 07 Oct 2025 09:52:19 +0200</lastBuildDate><atom:link href="https://beyondelastic.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Agent Framework</title>
-      <link>https://beyondelastic.github.io/tags/agent-framework/</link>
-      <pubDate>Tue, 07 Oct 2025 09:52:19 +0200</pubDate>
-      
-      <guid>https://beyondelastic.github.io/tags/agent-framework/</guid>
-      <description></description>
-      
-    </item>
+    <lastBuildDate>Fri, 17 Jul 2026 09:00:00 +0200</lastBuildDate><atom:link href="https://beyondelastic.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Agents</title>
       <link>https://beyondelastic.github.io/tags/agents/</link>
-      <pubDate>Tue, 07 Oct 2025 09:52:19 +0200</pubDate>
+      <pubDate>Fri, 17 Jul 2026 09:00:00 +0200</pubDate>
       
       <guid>https://beyondelastic.github.io/tags/agents/</guid>
       <description></description>
@@ -32,7 +22,7 @@
     <item>
       <title>Azure</title>
       <link>https://beyondelastic.github.io/tags/azure/</link>
-      <pubDate>Tue, 07 Oct 2025 09:52:19 +0200</pubDate>
+      <pubDate>Fri, 17 Jul 2026 09:00:00 +0200</pubDate>
       
       <guid>https://beyondelastic.github.io/tags/azure/</guid>
       <description></description>
@@ -42,9 +32,29 @@
     <item>
       <title>Foundry</title>
       <link>https://beyondelastic.github.io/tags/foundry/</link>
-      <pubDate>Tue, 07 Oct 2025 09:52:19 +0200</pubDate>
+      <pubDate>Fri, 17 Jul 2026 09:00:00 +0200</pubDate>
       
       <guid>https://beyondelastic.github.io/tags/foundry/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>MCP</title>
+      <link>https://beyondelastic.github.io/tags/mcp/</link>
+      <pubDate>Fri, 17 Jul 2026 09:00:00 +0200</pubDate>
+      
+      <guid>https://beyondelastic.github.io/tags/mcp/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Agent Framework</title>
+      <link>https://beyondelastic.github.io/tags/agent-framework/</link>
+      <pubDate>Tue, 07 Oct 2025 09:52:19 +0200</pubDate>
+      
+      <guid>https://beyondelastic.github.io/tags/agent-framework/</guid>
       <description></description>
       
     </item>
@@ -125,16 +135,6 @@
       <pubDate>Fri, 11 Apr 2025 08:37:54 +0200</pubDate>
       
       <guid>https://beyondelastic.github.io/tags/github/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>MCP</title>
-      <link>https://beyondelastic.github.io/tags/mcp/</link>
-      <pubDate>Fri, 11 Apr 2025 08:37:54 +0200</pubDate>
-      
-      <guid>https://beyondelastic.github.io/tags/mcp/</guid>
       <description></description>
       
     </item>
