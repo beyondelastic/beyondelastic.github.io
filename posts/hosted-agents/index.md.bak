@@ -1,0 +1,439 @@
++++
+date = '2026-07-22T14:30:00+02:00'
+draft = true
+title = 'Hosted Agents in Microsoft Foundry: Bring Your Own Code, Ship to Production'
+description = 'Hosted agents in Microsoft Foundry Agent Service give every agent session its own secure sandbox. Here is how the feature works, with hands-on code examples.'
+categories = ['AI']
+tags = ['Agents', 'Foundry', 'Azure', 'Agent Framework']
++++
+
+## Intro
+
+Building an agent on your laptop is the easy part. Getting that same agent to run securely for thousands of users, with its own identity, persistent state, and proper observability? That is where most projects hit a wall. I have spent a lot of time lately building agents, and the pattern is always the same: the intelligence is done in an afternoon, and then the "make it production-ready" work eats the next two weeks.
+
+[Hosted agents in Microsoft Foundry Agent Service](https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agents) are Microsoft's answer to exactly that gap. In this post I want to walk through what hosted agents are, why I think they are a big deal, and then get hands-on with real code from lessons 01 to 03 of my [Microsoft Foundry Advanced Workshop](https://beyondelastic.github.io/foundry-advanced-workshop/). Let's dig in.
+
+## Overview
+
+A **hosted agent** is a containerized agentic application that Foundry runs and manages for you. You write the agent logic (in Python or C#), pick whatever framework you like, and deploy it. Foundry provisions the compute, gives the agent a dedicated identity, exposes a stable endpoint, and handles scaling, state, and tracing. You bring the code, the platform handles the plumbing.
+
+The important word here is **"your code"**. Unlike prompt-based agents that you define entirely through prompts and tool configuration in the portal, a hosted agent is your own application. You choose the framework ([Microsoft Agent Framework](https://learn.microsoft.com/en-us/agent-framework/), LangGraph, Semantic Kernel, or plain custom code), you control the runtime behaviour, and you deploy a container image (or, more recently, just your source code) to Microsoft-managed infrastructure.
+
+Microsoft [announced the public preview refresh](https://devblogs.microsoft.com/foundry/introducing-the-new-hosted-agents-in-foundry-agent-service-secure-scalable-compute-built-for-agents/) of hosted agents earlier this year and followed up with a [batch of updates around Microsoft Build](https://devblogs.microsoft.com/foundry/hosted-agents-build26/). The feature moved quickly, and hosted agents reached general availability at the beginning of July 2026. Several of the newer capabilities on top (like source-code deployment and the agent optimizer) are still in public preview, which I will flag as we go.
+
+### Why not just use a container app or a function?
+
+This was my first question too. Traditional compute (web apps, containers, serverless functions) was built for web services where many users share the same instance. That is perfectly fine for a REST API. It is a problem for agents.
+
+Think about what an agent harness actually does: it reads and writes files, it executes arbitrary code, it holds sensitive context and credentials. Now imagine Customer A and Customer B both hitting the same shared container. Suddenly one session can see another session's files and state. That is not just inefficient, it is a security and isolation nightmare.
+
+Hosted agents solve this with **per-session, VM-isolated sandboxes**. Every single agent session gets its own hypervisor-isolated sandbox with a persistent filesystem. Here is how the two approaches compare:
+
+| | Traditional compute | Hosted agents |
+| --- | --- | --- |
+| Isolation | Many sessions share a container | Every session gets a dedicated sandbox |
+| Cold starts | Seconds to minutes, high variance | Seconds, low variance, predictable |
+| Idle cost | Always-on billing or slow scale-from-zero | Scale to zero with filesystem-preserving resume |
+| State | You build it (databases, external storage) | Built in, files and disk survive scale-to-zero |
+| Identity | Shared service account | Per-agent Microsoft Entra ID (agent identity) |
+| Observability | You build it | Built in (agent, session, fleet) |
+
+### How it works
+
+You package your agent as a container image and push it to Azure Container Registry (or deploy straight from source, more on that later). When you deploy, Agent Service pulls the image, provisions compute, assigns a dedicated Microsoft Entra ID, and exposes a dedicated endpoint. At runtime your code handles requests and can call Foundry models, Toolbox tools, and downstream Azure services using its agent identity.
+
+{{< mermaid >}}
+flowchart LR
+    Dev["Developer (local)"] -->|azd deploy| ACR["Azure Container Registry"]
+    ACR -->|image pull| Host["Foundry hosted runtime"]
+    Host -->|Responses / Invocations| Client["Portal / SDK / Teams"]
+    Host -->|agent identity| Model["Foundry model"]
+    Host -->|agent identity| Tools["Toolbox / Azure services"]
+{{< /mermaid >}}
+
+### Real-world examples
+
+This clicks faster with concrete scenarios. A few that map neatly onto hosted agents:
+
+- **A coding agent** that refactors a repo overnight. It clones the code into its sandbox, writes and executes code, and needs that working directory to survive across a long-running task. Per-session filesystem persistence is exactly what it wants.
+- **A customer support agent** published to Teams. It answers thousands of conversations in parallel, each one isolated, each one carrying the user's identity through On-Behalf-Of so it only sees what that user is allowed to see.
+- **A research agent** that synthesizes hundreds of documents into a briefing. It downloads files into `$HOME`, processes them, and can scale to zero between runs so you pay nothing while it waits for the next request.
+- **A webhook receiver** for GitHub, Stripe, or Jira. These systems send their own payload format, so the agent uses the Invocations protocol to accept arbitrary JSON rather than an OpenAI-style chat message.
+
+### Key concepts to know
+
+Before we write code, a few concepts that shape how you build:
+
+- **Sessions and conversations.** A *session* is a logical unit with persisted state (`$HOME` plus files uploaded via the `/files` endpoint). A *conversation* is a durable record of the message history stored in Foundry. With the Responses protocol the platform manages conversation history for you; with Invocations you manage session state in your own code.
+- **Session lifecycle.** Compute is created on first use. After **15 minutes** of inactivity the platform deprovisions the compute and persists the session state, then restores it automatically when the session resumes. A session is permanently deleted after **30 days** of inactivity. This is where scale-to-zero comes from.
+- **Two identities.** Each agent gets its own **Microsoft Entra ID (agent identity)** for runtime calls (models, tools, downstream services). Separately, the **project managed identity** is used by the platform for infrastructure operations like pulling the container image. You do not wire these up manually.
+- **Protocols.** Hosted agents can speak **Responses** (OpenAI-compatible, platform-managed history and streaming), **Invocations** (arbitrary JSON in and out, you own the schema), and **Invocations (WebSocket)** for real-time voice. A single agent can expose more than one. Not sure which to pick? Start with Responses, you can add Invocations later.
+- **Sandbox sizes.** You choose the CPU and memory per session: 0.5 vCPU / 1 GiB, 1 vCPU / 2 GiB, or 2 vCPU / 4 GiB. Billing is based on CPU and memory consumed across active sessions, so oversizing multiplies cost by your concurrency.
+
+## Requirements
+
+Everything below follows my [Foundry advanced workshop](https://beyondelastic.github.io/foundry-advanced-workshop/), where all the files are ready to go. If you would rather assemble things yourself, here is the full checklist.
+
+### Local tooling
+
+- An [Azure subscription](https://azure.microsoft.com/free/) with access to Microsoft Foundry.
+- [Python 3.13+](https://www.python.org/downloads/) (the `azd ai agent run` tooling and the supported hosting runtimes require 3.13 or newer).
+- The [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) and the [Azure Developer CLI (azd)](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd).
+- The azd agent extension: `azd ext install azure.ai.agents`.
+
+NOTE: Docker Desktop is **not** required. `azd deploy` builds the container image remotely and pushes it to your Azure Container Registry, which the platform then pulls from at deploy time. That remote build was a pleasant surprise the first time I ran it. (If you use the newer source-code deploy mode instead, you skip the container and the registry entirely, more on that later.)
+
+### Azure resources
+
+You need four Azure pieces: a **Foundry resource and project** in a [region that supports hosted agents](https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agents#region-availability), a **model deployment** (the examples use `gpt-4.1-mini`), and an **[Azure Container Registry](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro)** to hold the agent image. There are two ways to get them.
+
+**Option A: provision everything with Bicep (recommended).** The workshop ships a [`main.bicep`](https://github.com/beyondelastic/foundry-advanced-workshop/blob/main/infra/main.bicep) that creates the Foundry resource, project, the `gpt-4.1-mini` model deployment, the container registry, and the role assignments in one shot:
+
+```sh
+az group create --name rg-foundry-advanced-workshop --location eastus2
+
+az deployment group create \
+  --resource-group rg-foundry-advanced-workshop \
+  --template-file infra/main.bicep \
+  --parameters baseName=<your-unique-name>
+```
+
+TIP: `baseName` becomes both the resource name and the endpoint subdomain, so keep it globally unique and lowercase. Save the `projectEndpoint` output, you will need it in a moment.
+
+**Option B: bring your own (manual).** If you already have a Foundry project, a model deployment, and a registry (or you create them by hand in the portal), that is fine too. You just wire up the role assignments yourself, which the Bicep would otherwise handle. The [Permissions](#permissions) section below walks through each one step by step, with a matching `az` command.
+
+### Permissions
+
+The platform runs on managed identities, and the [official hosted agent permissions reference](https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agent-permissions) lays out every role in detail. There are three principals to keep straight (you, the project's managed identity, and the per-agent identity), each needing a role at a specific scope:
+
+{{< mermaid >}}
+flowchart LR
+    You[You<br/>user] -->|Foundry Project Manager<br/>+ Contributor + User Access Administrator| Proj[Foundry project]
+    ProjMI[Project managed identity] -->|AcrPull| ACR[(Container registry)]
+    ProjMI -->|Foundry User| Acct[Foundry resource]
+    Agent[Agent identity<br/>created at first deploy] -->|Foundry User| Acct
+{{< /mermaid >}}
+
+On the Bicep path (Option A) steps 1 to 3 are created for you; on the manual path (Option B) you add them yourself. **Step 4 always runs after the first deploy, on either path**, because the agent identity does not exist until then. Most commands need the project's system-assigned managed identity, so grab it once and reuse `$PROJECT_PRINCIPAL_ID`:
+
+```sh
+PROJECT_PRINCIPAL_ID=$(az resource show \
+  --ids "/subscriptions/<sub-id>/resourceGroups/<rg>/providers/Microsoft.CognitiveServices/accounts/<resource>/projects/<project>" \
+  --query identity.principalId -o tsv)
+```
+
+**1. Your own identity.** If you are **Owner** on the subscription or resource group (very likely when testing in your own subscription), you are covered for everything. Otherwise you need **Foundry Project Manager** on the project to manage agents, **Contributor** to provision the resources, and **User Access Administrator** to grant the assignments in steps 2 to 4.
+
+**2. Project managed identity, `AcrPull` on the registry.** So the platform can pull the agent image at deploy time.
+
+```sh
+az role assignment create \
+  --assignee-object-id "$PROJECT_PRINCIPAL_ID" \
+  --assignee-principal-type ServicePrincipal \
+  --role AcrPull \
+  --scope "$(az acr show --name <your-acr> --query id -o tsv)"
+```
+
+**3. Project managed identity, `Foundry User` on the Foundry resource.** So the project endpoint can run model inference. The resource-to-project link does not grant this on its own, so it needs an explicit assignment, though provisioning often creates it automatically (check before adding it).
+
+```sh
+az role assignment create \
+  --assignee-object-id "$PROJECT_PRINCIPAL_ID" \
+  --assignee-principal-type ServicePrincipal \
+  --role "Foundry User" \
+  --scope "$(az resource show \
+    --ids "/subscriptions/<sub-id>/resourceGroups/<rg>/providers/Microsoft.CognitiveServices/accounts/<resource>" \
+    --query id -o tsv)"
+```
+
+**4. The agent's own identity (agent identity), `Foundry User` on the resource.** The platform creates a dedicated per-agent Microsoft Entra ID on the first deploy, and it needs the same grant to call the model at runtime. This runs on **both** paths, since even Bicep cannot set it before the identity exists. There is no command up front, the workshop's post-deploy step handles it (see [Lesson 01](#lesson-01-your-first-hosted-agent)).
+
+NOTE: `Foundry User` is a built-in role (id `53ca6127-db72-4b80-b1b0-d745d6d5456d`, identical in every subscription), which is why the workshop scripts sometimes reference the id instead of the display name.
+
+### Local project setup
+
+Each example reads two values via `load_dotenv()`, so drop a `.env` next to `main.py` with your project endpoint and model deployment name (both come straight from the Bicep output or your Foundry project settings):
+
+```sh
+AZURE_AI_PROJECT_ENDPOINT=https://<your-resource>.services.ai.azure.com/api/projects/<your-project>
+AZURE_AI_MODEL_DEPLOYMENT_NAME=gpt-4.1-mini
+```
+
+Then create a virtual environment and install the dependencies (Agent Framework plus the Foundry hosting adapter, `azure-identity`, and `python-dotenv`; the exact pins live in each lesson's [`requirements.txt`](https://github.com/beyondelastic/foundry-advanced-workshop/blob/main/examples/01-first-hosted-agent/requirements.txt)):
+
+```sh
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+Finally, sign in with both CLIs, `az` for your local credentials and `azd` for deployment:
+
+```sh
+az login
+azd auth login
+```
+
+TIP: If you would rather not log in twice, run `azd config set auth.useAzCliAuth true` once and `azd` will reuse your `az` credential, so a single `az login` covers both.
+
+## Coding
+
+Let's build from the ground up. I will use [Microsoft Agent Framework](https://learn.microsoft.com/en-us/agent-framework/) for the first two examples, then show how the exact same platform hosts a completely different framework in the third.
+
+### Lesson 01: your first hosted agent
+
+The smallest possible hosted agent is genuinely small. You create a `FoundryChatClient`, wrap an `Agent` in a `ResponsesHostServer`, and call `run()`:
+
+```python
+import os
+
+from azure.identity import DefaultAzureCredential
+from dotenv import load_dotenv
+
+from agent_framework import Agent
+from agent_framework.foundry import FoundryChatClient
+from agent_framework_foundry_hosting import ResponsesHostServer
+
+load_dotenv()
+
+credential = DefaultAzureCredential()
+
+client = FoundryChatClient(
+    project_endpoint=os.environ["AZURE_AI_PROJECT_ENDPOINT"],
+    model=os.environ["AZURE_AI_MODEL_DEPLOYMENT_NAME"],
+    credential=credential,
+)
+
+agent = Agent(
+    client=client,
+    instructions=(
+        "You are a helpful healthcare assistant. "
+        "You answer questions about general health, wellness, and medical terminology. "
+        "Always remind the user that your answers are for informational purposes only "
+        "and not a substitute for professional medical advice."
+    ),
+    default_options={"store": False},
+)
+
+server = ResponsesHostServer(agent)
+server.run()
+```
+
+The nice detail here is `DefaultAzureCredential`. Locally it uses your `az login` session. Once deployed, Foundry injects a managed identity automatically, so the exact same code authenticates in the cloud with no changes.
+
+Next to `main.py` you need an `agent.yaml` that tells Foundry how to host the agent:
+
+```yaml
+kind: hosted
+name: my-hosted-agent1
+protocols:
+  - protocol: responses
+    version: 1.0.0
+environment_variables:
+  - name: AZURE_AI_MODEL_DEPLOYMENT_NAME
+    value: ${AZURE_AI_MODEL_DEPLOYMENT_NAME}
+  - name: AZURE_AI_PROJECT_ENDPOINT
+    value: ${AZURE_AI_PROJECT_ENDPOINT}
+```
+
+And a `Dockerfile` following the standard pattern (Foundry expects your agent on port 8088):
+
+```dockerfile
+FROM python:3.13-slim
+WORKDIR /app
+COPY . user_agent/
+WORKDIR /app/user_agent
+RUN if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+EXPOSE 8088
+CMD ["python", "main.py"]
+```
+
+Because that `Dockerfile` does `COPY . user_agent/`, add a `.dockerignore` next to it so the build context stays small and, more importantly, doesn't include files that change while they are being archived:
+
+```dockerignore
+.venv/
+.azure/
+.git/
+__pycache__/
+*.pyc
+.env
+*.log
+```
+
+Skip this and a remote build can fail with `archive/tar: write too long`, because your local `.venv/` and the `.azure/` folder (which azd writes to during the run) end up in the context and mutate mid-upload.
+
+With the prerequisites from the [Requirements](#requirements) section in place, the developer loop is tight. Initialize the project, run it locally against your `az login` session, invoke it, then ship it to the cloud:
+
+```sh
+# Initialize the project (detects the existing files and scaffolds azure.yaml)
+azd ai agent init
+
+# Point the new environment at the resources you provisioned earlier
+azd env set AZURE_SUBSCRIPTION_ID <your-sub-id>
+azd env set AZURE_RESOURCE_GROUP <your-existing-rg>
+azd env set AZURE_LOCATION <your-region>
+azd env set AZD_AGENT_SKIP_ACR true   # reuse your existing registry instead of creating one
+azd env set AZURE_CONTAINER_REGISTRY_ENDPOINT <your-acr>.azurecr.io   # which registry to push to
+
+# Supply the values agent.yaml references as ${...} placeholders
+azd env set AZURE_AI_PROJECT_ENDPOINT https://<your-resource>.services.ai.azure.com/api/projects/<your-project>
+azd env set AZURE_AI_MODEL_DEPLOYMENT_NAME gpt-4.1-mini
+
+# Deploy also needs the project's full resource ID (not just the endpoint URL)
+azd env set AZURE_AI_PROJECT_ID "/subscriptions/<your-sub-id>/resourceGroups/<your-rg>/providers/Microsoft.CognitiveServices/accounts/<your-resource>/projects/<your-project>"
+
+# Run locally, no Docker or cloud resources needed
+azd ai agent run
+
+# In a second terminal, invoke the local agent
+azd ai agent invoke --local "What are the symptoms of vitamin D deficiency?"
+
+# Deploy: builds the container remotely, pushes to ACR, deploys to Foundry
+azd deploy first-hosted-agent
+```
+
+Why all those `azd env set` calls after init? Because we already have `main.py`, `agent.yaml`, and the `Dockerfile` in the folder, `azd ai agent init` detects the existing definition and takes the lightweight path: it scaffolds `azure.yaml`, copies the code, and seeds an environment, without running the full interactive wizard. (Run it in an empty folder and it will instead prompt you for the project, registry, and model.) That lighter path leaves the environment values for us to fill in, and `azd ai agent init` seeds a **fresh, self-contained environment** in `.azure/<env-name>/.env`, which everything the run and deploy steps read from, not the `.env` next to your code (that local one is only used when you run `python main.py` directly). Two things follow from that:
+
+- **Point it at your existing resources.** The wizard defaults to a generated resource group like `rg-<env>-<token>`. Since we already stood up the Foundry project and registry (via Bicep or by hand), the `AZURE_SUBSCRIPTION_ID`, `AZURE_RESOURCE_GROUP`, and `AZURE_LOCATION` values redirect azd to them. `AZD_AGENT_SKIP_ACR true` tells it to reuse your ACR instead of creating a new one, and `AZURE_CONTAINER_REGISTRY_ENDPOINT` names which registry to push the built image to.
+- **Fill in the placeholders.** Your `agent.yaml` doesn't store the model and endpoint directly, it references them as `${AZURE_AI_PROJECT_ENDPOINT}` and `${AZURE_AI_MODEL_DEPLOYMENT_NAME}`. azd resolves those from the same environment file at run time, so they have to be set there too.
+
+NOTE: `azd deploy` needs one more value that `azd ai agent run` doesn't: `AZURE_AI_PROJECT_ID`, the project's full ARM resource ID (`/subscriptions/.../accounts/<resource>/projects/<project>`), not the endpoint URL. When you `azd provision` a project this gets set for you, but on the bring-your-own path you set it yourself, otherwise the deploy fails with `AZURE_AI_PROJECT_ID is not set`. You can also bind it at init time with `azd ai agent init --project-id <resource-id>`.
+
+Why no `azd provision`? On the Bicep path, `azd provision` would run the IaC to create the resources and write outputs like `AZURE_CONTAINER_REGISTRY_ENDPOINT` and `AZURE_AI_PROJECT_ID` straight into the environment. Since we created everything by hand, we skip provision and set those same values ourselves, which is exactly what the `azd env set` lines above are doing.
+
+TIP: If you switch target projects later, refresh `.azure/<env-name>/.env` (re-run the `azd env set` commands) or start over with `azd ai agent init`.
+
+A nice touch: `azd ai agent run` doesn't just start the agent, it also pops open a browser with the **Agent Inspector**, a little chat UI wired straight to your local `http://localhost:8088` endpoint. You can send prompts and watch the raw Responses API events stream in on the side (`response.output_text.delta`, `response.completed`, and friends), which makes it easy to see exactly what the agent is emitting. Great for a quick sanity check before you deploy.
+
+![Agent Inspector testing the local hosted agent](/agent-inspector.png)
+
+Both ways of talking to the agent work the same locally: the Inspector UI and the `azd ai agent invoke --local` command hit that same endpoint, so use whichever fits your loop.
+
+Remember the post-deploy role assignment from [Requirements](#requirements): the agent gets its own identity on first deploy, and it needs the **Foundry User** role before that first cloud invocation can reach the model.
+
+### Lesson 02: tools and file persistence
+
+An agent that only chats is not that interesting. The next step is giving it **tools** and letting it **remember things across turns**. With Agent Framework you decorate plain Python functions with `@tool`, and because each session has a persistent `$HOME`, notes written to disk survive idle periods.
+
+```python
+from typing import Annotated
+
+from agent_framework import Agent, tool
+from pydantic import Field
+
+
+@tool(approval_mode="never_require")
+def lookup_patient_record(
+    patient_id: Annotated[str, Field(description="The patient identifier, e.g., P-1001")],
+) -> str:
+    """Look up a patient record by ID. Returns basic demographics and vitals."""
+    ...
+
+
+agent = Agent(
+    client=client,
+    instructions=(
+        "You are a healthcare assistant with access to patient records and health tools. "
+        "Use the lookup_patient_record tool when asked about a patient. "
+        "Use save_session_note and list_session_notes to manage session notes. "
+        "Always remind the user your answers are informational only."
+    ),
+    tools=[lookup_patient_record, calculate_bmi, save_session_note, list_session_notes],
+    default_options={"store": False},
+)
+```
+
+The `save_session_note` and `list_session_notes` tools simply read and write files under `$HOME`. This is where per-session persistence really shows its value. Deploy the agent, then invoke it twice in the same session:
+
+```sh
+azd ai agent invoke "Save a note: Patient P-1001 follow-up scheduled for December."
+azd ai agent invoke "List my session notes"
+```
+
+The second call reuses the same session by default and the note is still there, even though the compute may have scaled down in between. You did not provision a database, wire up storage, or manage any of it. That is the platform doing the boring-but-critical work for you.
+
+### Lesson 03: bring your own framework (LangGraph)
+
+Here is the part I find genuinely powerful. Foundry does not care which framework you use. It only needs your agent to speak the Responses protocol on port 8088. So you can take a completely different stack, in this case **LangGraph**, and host it on the exact same platform.
+
+The trick is a thin adapter. You build your LangGraph `StateGraph` as usual, then wrap it in a `ResponsesAgentServerHost` and translate Responses API requests into LangChain messages:
+
+```python
+from azure.ai.agentserver.responses import (
+    CreateResponse,
+    ResponseContext,
+    ResponsesAgentServerHost,
+    ResponsesServerOptions,
+    TextResponse,
+)
+from langchain_core.messages import AIMessage, HumanMessage
+
+app = ResponsesAgentServerHost(
+    options=ResponsesServerOptions(default_fetch_history_count=20),
+)
+
+
+@app.response_handler
+async def handle_create(
+    request: CreateResponse,
+    context: ResponseContext,
+    cancellation_signal,
+):
+    messages = []
+    for item in await context.get_history():
+        text = "".join(part.text for part in item.content if hasattr(part, "text"))
+        if item.role == "user":
+            messages.append(HumanMessage(content=text))
+        elif item.role == "assistant":
+            messages.append(AIMessage(content=text))
+
+    messages.append(HumanMessage(content=await context.get_input_text()))
+
+    result = await graph.ainvoke({"messages": messages})
+    return TextResponse(result["messages"][-1].content)
+```
+
+The `agent.yaml` and `Dockerfile` are identical to the previous lessons. That is the whole point: no lock-in. Foundry is multi-model and multi-harness by design, so you can run models from OpenAI, Anthropic, Meta, Mistral and others, and bring LangGraph, Agent Framework, the OpenAI Agents SDK, or your own custom loop.
+
+## What's new since the preview
+
+Because this space moves fast, it is worth calling out the updates Microsoft shipped after the initial refresh. A few stood out to me:
+
+- **Deploy straight from source code, no container required.** You can now zip a Python or .NET project and let the platform build it. With azd it is two commands. This removes a lot of early-development friction:
+
+  ```sh
+  azd ai agent init \
+    --src ./src/my-agent \
+    --agent-name my-unique-agent \
+    --deploy-mode code \
+    --runtime python_3_13 \
+    --entry-point main.py \
+    --dep-resolution remote_build
+
+  azd deploy
+  ```
+
+  Supported runtimes are `python_3_13`, `python_3_14`, and `dotnet_10`. Container-based deployment (the `Dockerfile` approach used in the lessons above) is still fully supported when you want full control over the runtime, so you can pick whichever `--deploy-mode` fits: `code` to let the platform build the image, or `container` to build your own. The [hosted agent quickstart (azd)](https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-hosted-agent?pivots=azd) walks through the source-code flow end to end.
+- **Built-in content safety guardrails.** Instead of standing up your own Content Safety endpoint and middleware, you can attach guardrail policies to the agent definition. Every prompt is checked before it reaches your code, and every response before it reaches the user.
+- **Voice Live and WebSocket support.** The Invocations (WebSocket) protocol adds a persistent bidirectional connection for real-time voice agents, pairing with frameworks like Voice Live, Pipecat, or LiveKit. It started out limited to North Central US, and per the docs the WebSocket protocol is now available across all regions that support hosted agents.
+- **Agent optimizer.** A closed-loop engine that evaluates your agent against defined criteria, generates better instructions (or skills, model choices, and tool descriptions), ranks the candidates, and lets you deploy the winner as a new version. It is now in public preview.
+
+## Closing
+
+What I like most about hosted agents is that they let me keep the fun part (writing the agent) and hand off the hard part (running it safely at scale). Per-session isolation, a persistent filesystem, a built-in identity, scale-to-zero economics, and observability out of the box are exactly the things I used to cobble together by hand. Add source-code deployment, guardrails, and the agent optimizer on top, and the path from "works on my machine" to "running in production" gets dramatically shorter.
+
+If you want to get your hands dirty, the [Microsoft Foundry Advanced Workshop](https://beyondelastic.github.io/foundry-advanced-workshop/) walks through all of this end to end, from your first hosted agent to Toolbox, guardrails, and knowledge grounding. And since this space keeps evolving fast, keep an eye on the [official docs](https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agents) for the latest. Happy building!
+
+## Sources
+
+- [What are hosted agents? (Microsoft Learn)](https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agents)
+- [Introducing the new hosted agents in Foundry Agent Service (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/introducing-the-new-hosted-agents-in-foundry-agent-service-secure-scalable-compute-built-for-agents/)
+- [What's New in Hosted Agents in Foundry Agent Service (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/hosted-agents-build26/)
+- [Microsoft Foundry Advanced Workshop](https://beyondelastic.github.io/foundry-advanced-workshop/)
+- [Microsoft Agent Framework documentation](https://learn.microsoft.com/en-us/agent-framework/)
+- [What is Microsoft Foundry?](https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry)
+- [Hosted agents region availability](https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agents#region-availability)
+- [Install the Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+- [Install the Azure Developer CLI (azd)](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd)
+- [Download Python](https://www.python.org/downloads/)
+- [Create an Azure free account](https://azure.microsoft.com/free/)
